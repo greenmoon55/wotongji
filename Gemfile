@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Added by greenmoon55
+gem 'bcrypt-ruby', '3.0.1'
+
 gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
