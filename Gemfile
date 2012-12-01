@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Added by greenmoon55
 gem 'bcrypt-ruby', '3.0.1'
+gem "magic_encoding", "~> 0.0.2"
 
 gem 'rails', '3.2.8'
 
