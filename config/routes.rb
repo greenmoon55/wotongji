@@ -1,6 +1,8 @@
 Wotongji::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create]
   match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
 
   root to: 'static_pages#home'
   
