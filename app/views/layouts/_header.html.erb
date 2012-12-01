@@ -6,8 +6,12 @@
         <!-- <a class="brand" href="#">Home</a> -->
         <ul class="nav pull-right">
     	    <li><%= link_to "发布", new_activity_path %></li>
-    	    <li><%= link_to "登录", signin_path %></li>
-    	    <li><%= link_to "注册", signup_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "登出", signout_path, method: "delete" %>
+          <% else %>
+      	    <li><%= link_to "登录", signin_path %></li>
+       	    <li><%= link_to "注册", signup_path %></li>
+          <% end %>
     	  </ul>
       </nav>
     </div>
