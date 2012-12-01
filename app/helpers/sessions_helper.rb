@@ -22,4 +22,9 @@ module SessionsHelper
 	  redirect_to(session[:return_to] || default)
 	  session.delete(:return_to)
 	end
+
+  def sign_out
+    self.current_user = nil
+    session.delete(:current_user_id)
+  end
 end
