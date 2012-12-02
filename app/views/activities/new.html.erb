@@ -1,3 +1,13 @@
 <% provide(:title, "发布活动") %>
 <h1>发布活动</h1>
 
+<%= form_for(@activity) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :start_time %>
+  <%= f.datetime_select :start_time %>
+
+  <%= f.submit "发布", class: "btn btn-large btn-primary" %>
+<% end %>
+

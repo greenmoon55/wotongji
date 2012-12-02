@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       redirect_back_or user
     else
       flash.now[:error] = "Email或密码错误"
-      #render post_signin_path
       render "new"
     end
   end
