@@ -17,8 +17,8 @@ class ActivitiesController < ApplicationController
       flash[:success] = "发布成功！"
       redirect_to root_url
     else
-      flash[:error] = "错误"
-      redirect_to root_url
+      flash.now[:error] = "错误"
+      render 'new'
     end
   end
 end
