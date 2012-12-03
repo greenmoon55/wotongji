@@ -1,12 +1,11 @@
 # -*- encoding : utf-8 -*-
 Wotongji::Application.routes.draw do
   resources :users
-  #resources :sessions, only: [:new, :create]
   resources :sessions, only: :create
-  resources :activities, only: [:new, :create]
+  resources :activities
 
   match '/signup', to: 'users#new'
-  match '/signin', to: 'sessions#new', as: :post_signin_path
+  match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
   root to: 'static_pages#home'
