@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ActivitiesController < ApplicationController
+  before_filter :require_signin, only: [:new, :create, :destroy]
+
   def index
   end
 
