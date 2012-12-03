@@ -8,6 +8,13 @@
   <%= f.label :start_time %>
   <%= f.datetime_select :start_time %>
 
+
+  <%= f.label :end_time %>
+  <%= f.datetime_select :end_time %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
   <%= f.submit "发布", class: "btn btn-large btn-primary" %>
 <% end %>
 

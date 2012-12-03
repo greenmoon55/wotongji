@@ -27,4 +27,15 @@ module SessionsHelper
     self.current_user = nil
     session.delete(:current_user_id)
   end
+
+  def store_location
+    session[:return_to] = request.url
+  end
+
+  def require_signin
+    unless signed_in?
+      store_location
+      redirect_to signin_url, notice: "请先登录"
+    end
+  end
 end
