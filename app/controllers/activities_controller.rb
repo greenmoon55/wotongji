@@ -1,7 +1,14 @@
 # -*- encoding : utf-8 -*-
 class ActivitiesController < ApplicationController
+  def index
+  end
+
   def new
     @activity = Activity.new
+  end
+
+  def show
+    @activity = Activity.find(params[:id])
   end
 
   def create

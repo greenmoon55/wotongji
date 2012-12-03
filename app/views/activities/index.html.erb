@@ -1,0 +1,11 @@
+<% provide(:title, '全部活动') %>
+<h1> <%= yield(:title)%> </h1>
+
+<ul>
+  <% Activity.all.each do |activity| %>
+    <ul> 
+      <li> <%= link_to activity.title, activity %> </li>
+      <li> <%= activity.user.name %> </li>
+    </ul>
+  <% end %>
+</ul>

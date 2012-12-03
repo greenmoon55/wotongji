@@ -1,0 +1,8 @@
+<% provide(:title, @activity.title) %>
+<h2><%= @activity.title %></h2>
+<ul>
+  <li><%= @activity.start_time %> </li>
+  <li><%= @activity.end_time %> </li>
+  <li><%= @activity.user.name %> </li>
+  <li><%= @activity.content %> </li>
+</ul>
