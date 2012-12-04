@@ -3,19 +3,7 @@
 	<div class="span12">
 		<div>
 			<h1>注册用户</h1>
-			<% if @user.errors.any? %>
-			  <div id="error_explanation">
-			    <div class="alert alert-error">
-			      The form contains.
-			    </div>
-			    <ul>
-				    <% @user.errors.full_messages.each do |msg| %>
-				      <li>* <%= msg %></li>
-				    <% end %>
-			    </ul>
-			  </div>
-			<% end %>
-
+      <%= render 'shared/error_messages', :object => @user %>
 			<%= form_for(@user) do |f| %>
 				<%= f.label :email %>
 				<%= f.text_field :email %>

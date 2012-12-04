@@ -1,6 +1,27 @@
-<h1>Editing user</h1>
+<% provide(:title, "编辑个人资料") %>
+<div class="row">
+	<div class="span12">
+		<div>
+			<h1>编辑个人资料</h1>
+      <%= render 'shared/error_messages', :object => @user %>
+			<%= form_for(@user) do |f| %>
+				<%= f.label :email %>
+				<%= f.text_field :email %>
 
-<%= render 'form' %>
+				<%= f.label :name, "用户名" %>
+				<%= f.text_field :name %>
+
+				<%= f.label :password, "密码" %>
+				<%= f.password_field :password %>
+
+				<%= f.label :password_confirmation, "密码确认" %>
+				<%= f.password_field :password_confirmation %>
+
+				<%= f.submit "更新", class: "btn btn-large btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>

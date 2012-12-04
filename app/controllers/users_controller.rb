@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
+  before_filter :require_signin, only: [:edit, :update, :destroy]
+
   # GET /users
   def index
     @users = User.all
