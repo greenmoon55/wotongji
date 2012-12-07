@@ -20,12 +20,24 @@
 
 全部文档、各种图都放在 `doc` 文件夹中，请大家关注文件更新，随时修改。
 
-##调试##
+##如何调试##
 
-启动服务器的方法是进入 `wotongji` 目录，然后运行
+首先进入 `wotongji` 目录，然后：
+
+1. 运行
+
+ > bundle install --without production
+
+ 安装我们需要的软件包
+
+2. 执行
+ > bundle exec rake db:migrate
+ “更新”数据库
+
+3. 启动服务器
 > rails server
 
-推荐使用 [Chrome 浏览器](https://www.google.com/chrome)，按 `F12` 打开 `开发人员工具`。
+4. css 文件在 `app/assets/stylesheets/` 里，生成网页的 .html.erb  文件在 `app/views/` 里。推荐使用 [Chrome 浏览器](https://www.google.com/chrome)，按 `F12` 打开 `开发人员工具`。
 
 ##任务分配##
 有时我会把任务放在 [Issues](https://github.com/greenmoon55/wotongji/issues) 里，同时你的邮箱里会收到一封提醒的邮件，完成任务后请 Close。
