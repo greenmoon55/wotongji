@@ -5,10 +5,12 @@ Wotongji::Application.routes.draw do
   resources :activities
 
   match '/signup', to: 'users#new'
-  match '/signin', to: 'sessions#new'
+  match '/signin', to: 'sessions#new', via: :get
+  match '/signin', to: 'sessions#create', via: :post
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  root to: 'static_pages#home'
+  #root to: 'static_pages#home'
+  root to: 'activities#index'
   
   match 'help',    to: 'static_pages#help'
 

@@ -1,7 +1,8 @@
 <%= provide(:title, "登录") %>
 <h1>登录</h1>
 
-<%= form_tag sessions_path do%>
+<%- #form_tag sessions_path do%>
+<%= form_tag signin_path do%>
   <%= label_tag :email %>
   <%= text_field_tag :email, params[:email]%>
 
