@@ -1,14 +1,14 @@
 <%= provide(:title, "登录") %>
 <h1>登录</h1>
 
-<%= form_for(:session, url: sessions_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<%= form_tag sessions_path do%>
+  <%= label_tag :email %>
+  <%= text_field_tag :email, params[:email]%>
 
-  <%= f.label :password, "密码"%>
-  <%= f.password_field :password %>
+  <%= label_tag :password, "密码"%>
+  <%= password_field_tag :password %>
 
-  <%= f.submit "登录", class: "btn btn-large btn-primary" %>
+  <%= submit_tag "登录", class: "btn btn-large btn-primary" %>
 <% end %>
 
 <p>第一次来？<%= link_to "新用户注册", signup_path %> </p>
