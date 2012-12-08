@@ -10,27 +10,31 @@ module SessionsHelper
 	  !current_user.nil?
 	end
 
-	def current_user=(user)
-	  @current_user = user
-	end
-
-	def current_user
-	  @current_user ||= User.find_by_id(session[:current_user_id])
-	end
-
-	def redirect_back_or(default)
-	  redirect_to(session[:return_to] || default)
-	  session.delete(:return_to)
-	end
-
   def sign_out
     self.current_user = nil
     session.delete(:current_user_id)
   end
 
+  # setter
+	def current_user=(user)
+	  @current_user = user
+	end
+
+  # getter
+	def current_user
+	  @current_user ||= User.find_by_id(session[:current_user_id])
+	end
+
+  # store current url
   def store_location
     session[:return_to] = request.url
   end
+  
+  # redirect to stored location (see store_location fuction) or default
+	def redirect_back_or(default)
+	  redirect_to(session[:return_to] || default)
+	  session.delete(:return_to)
+	end
 
   def require_signin
     unless signed_in?
