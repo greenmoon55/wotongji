@@ -8,7 +8,7 @@
         <li class="activity">
 		      <ul> 
 		        <li class="title"> <%= link_to activity.title, activity %> </li>
-		        <li class="starttime"> <%= activity.start_time.in_time_zone %> </li>
+		        <li class="starttime"> <%= activity.start_time.in_time_zone.to_s(:cn) %> </li>
 		        <li class="username"> <%= activity.user.name %> </li>
 		      </ul>
         </li>
