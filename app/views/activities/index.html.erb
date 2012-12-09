@@ -1,11 +1,21 @@
 <% provide(:title, '全部活动') %>
 <h1> <%= yield(:title)%> </h1>
 
-<ul>
-  <% Activity.all.each do |activity| %>
-    <ul> 
-      <li> <%= link_to activity.title, activity %> </li>
-      <li> <%= activity.user.name %> </li>
-    </ul>
-  <% end %>
-</ul>
+<div class="row">
+	<div class="span8">
+		<ul id="activities">
+		  <% Activity.all.each do |activity| %>
+        <li class="activity">
+		      <ul> 
+		        <li class="title"> <%= link_to activity.title, activity %> </li>
+		        <li class="starttime"> <%= activity.start_time.in_time_zone %> </li>
+		        <li class="username"> <%= activity.user.name %> </li>
+		      </ul>
+        </li>
+		  <% end %>
+		</ul>
+	</div>
+	<div class="span4">
+		<p> test </p>
+	</div>
+</div>

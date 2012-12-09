@@ -2,8 +2,8 @@
 body {
   padding-top: 60px;
 }
-/* footer */
 
+/* footer */
 footer {
 	margin-top: 45px;
 	padding-top: 5px;
@@ -19,4 +19,18 @@ footer ul {
 footer ul li {
 	float: left;
 	margin-left: 10px;
+}
+
+/* activity index */
+ul {
+	list-style: none;
+	margin-left: 0;
+}
+
+li.activity {
+	margin-top: 10px;
+}
+
+.title {
+	font-size: 14px;
 }
