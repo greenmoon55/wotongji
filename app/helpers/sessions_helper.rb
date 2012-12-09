@@ -30,8 +30,12 @@ module SessionsHelper
     session[:return_to] = request.url
   end
   
+  def store_previous_location  
+    session[:return_to] = request.referer
+  end
+
   # redirect to stored location (see store_location fuction) or default
-	def redirect_back_or(default)
+	def redirect_back_or(default = root_url)
 	  redirect_to(session[:return_to] || default)
 	  session.delete(:return_to)
 	end
