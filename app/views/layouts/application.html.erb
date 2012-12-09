@@ -16,6 +16,7 @@
       <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+      <%= request.referer.to_s #if Rails.env.development? %>
     </div>  
   </body>
 </html>

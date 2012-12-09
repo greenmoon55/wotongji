@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    #store_location
+    session[:return_to] = request.referer
     @user = User.new
   end
 
@@ -26,9 +28,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      sign_in @user
+      flash[:success] = "注册成功！"
+      redirect_back_or root_url
     else
-      render action: "new"
+      render 'new'
     end
   end
 
