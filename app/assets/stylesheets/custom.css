@@ -34,3 +34,9 @@ li.activity {
 .title {
 	font-size: 14px;
 }
+
+.dailin {
+	position: absolute;
+	left: 175px;
+	top: 640px;
+}

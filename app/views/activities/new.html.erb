@@ -14,8 +14,8 @@
   <%= f.text_field :end_time %>
 
   <%= f.label :content %>
-  <%= f.text_area :content %>
-
+  <%- # f.text_area :content %>
+  <textarea cols="20" id="activity_content" name="activity[content]" rows="14"></textarea>   
 
   
   <%= f.submit "发布", class: "dailin btn btn-default btn-primary" %>
