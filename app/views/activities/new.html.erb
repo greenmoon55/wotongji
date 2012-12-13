@@ -1,5 +1,7 @@
 <% provide(:title, "发布活动") %>
-<h1>发布活动++</h1>
+
+<div id="new_activities">
+<h1>发布活动</h1>
 
 <%= form_for(@activity) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
@@ -20,6 +22,8 @@
   
   <%= f.submit "发布", class: "dailin btn btn-default btn-primary" %>
 <% end %>
+
+</div>
 
 <script>
     $("#activity_start_time, #activity_end_time").datetimepicker({dateFormat: 'yy-mm-dd'});
