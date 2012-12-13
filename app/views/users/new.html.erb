@@ -5,7 +5,6 @@
 	<div id="register">
 			<h1>注册用户</h1>
             <%= render 'shared/error_messages', :object => @user %>
-
         
 			<%= form_for(@user) do |f| %>
 				<%= f.label :email %>
@@ -26,22 +25,26 @@
 	</div>
 	
     <div class="well-white bottom20px">
+    	
         <div class="logo">
             <h1>注册用户</h1>
             <%= render 'shared/error_messages', :object => @user %>
         </div>
        
        <div class="padding20px form">
-           
+
            <input type="text" name="email" value placeholder="email">
            <input type="text" name="用户名" value placeholder="用户名">
            <input type="text" name="密码" value placeholder="密码"> 
            <input type="text" name="密码确认" value placeholder="密码确认">   
-         <%= form_for(@user) do |f| %>
-           <%= f.submit "注册", class: "btn btn-default btn-primary" %>
-			<% end %>
+           
+           <%= form_for(@user) do |f| %>
+            <%= f.submit "注册", class: "btn btn-default btn-success" %>
+		   <% end %>
+        </div>
+
         </div>
 
 
         
-    </div>
+ 
