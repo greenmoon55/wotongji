@@ -1,28 +1,23 @@
 <% provide(:title, "注册") %>
+<div id="register">
+	<h1>注册用户</h1>
+  <%= render 'shared/error_messages', :object => @user %>    
+	<%= form_for(@user) do |f| %>
+		<%= f.label :email %>
+		<%= f.text_field :email, :placeholder => "Email" %>
 
+		<%= f.label :name, "用户名" %>
+		<%= f.text_field :name %>
 
+		<%= f.label :password, "密码" %>
+		<%= f.password_field :password, :placeholder => "密码" %>
 
-	<div id="register">
-			<h1>注册用户</h1>
-            <%= render 'shared/error_messages', :object => @user %>
-        
-			<%= form_for(@user) do |f| %>
-				<%= f.label :email %>
-				<%= f.text_field :email %>
+		<%= f.label :password_confirmation, "密码确认" %>
+		<%= f.password_field :password_confirmation, :placeholder => "密码确认" %>
 
-				<%= f.label :name, "用户名" %>
-				<%= f.text_field :name %>
-
-				<%= f.label :password, "密码" %>
-				<%= f.password_field :password %>
-
-				<%= f.label :password_confirmation, "密码确认" %>
-				<%= f.password_field :password_confirmation %>
-
-				<%= f.submit "注册", class: "btn btn-default btn-primary" %>
-			<% end %>
-		
-	</div>
+		<%= f.submit "注册", class: "btn btn-default btn-primary" %>
+	<% end %>
+</div>
 	
     <div class="well-white bottom20px">
     	
