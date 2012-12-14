@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :activities, dependent: :destroy
+  has_many :intrestrelations, foreign_key: "user_id", dependent: :destroy
+  has_many :intrestactivities, through: :intrestrelations, source: :activity
 
   #http://ruby.railstutorial.org/chapters/modeling-users#sec-format_validation
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -27,4 +29,16 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   before_save { |user| user.email = email.downcase }
+
+  def intrested_in?(intrest_activiy)
+    intrestrelations.find_by_activity_id(intrest_activity.id)
+  end
+
+  def intrest_in!(intrest_activity)
+    intrestrelations.create!(user_id: intrest_activity.id)
+  end
+
+  def unintrest!(intrest_activity)
+    intrestrelations.find_by_activity_id(intrest_activity.id).destroy
+  end
 end

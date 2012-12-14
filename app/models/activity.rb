@@ -14,8 +14,12 @@
 #
 
 class Activity < ActiveRecord::Base
-  attr_accessible :content, :end_time, :start_time, :title
+  attr_accessible :id, :content, :end_time, :start_time, :title
   belongs_to :user
+  has_many :reverse_intrestrelations, foreign_key: "activity_id",
+                                      class_name: "Intrestrelation",
+                                      dependent: :destroy
+  has_many :intrestedusers, through: :reverse_intrestrelations, source: :user
 
   validates :title, :content, :end_time, :start_time, :user_id, presence: true
   validates :title, length: { maximum: 50 }
@@ -35,4 +39,5 @@ class Activity < ActiveRecord::Base
       errors.add(:alarm, "开始时间应早于结束时间")
     end
   end
+
 end

@@ -1,6 +1,10 @@
 # -*- encoding : utf-8 -*-
 Wotongji::Application.routes.draw do
-  resources :users
+  resources :users do
+    collection do
+      get :tigers
+    end
+  end
   resources :sessions, only: :create
   resources :activities
 
