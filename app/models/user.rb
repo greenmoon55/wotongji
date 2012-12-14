@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :activities, dependent: :destroy
-  has_many :intrestrelations, foreign_key: "user_id", dependent: :destroy
-  has_many :intrestactivities, through: :intrestrelations, source: :activity
+  has_many :interests, foreign_key: "user_id", dependent: :destroy
+  has_many :interestactivities, through: :interests, source: :activity
 
   #http://ruby.railstutorial.org/chapters/modeling-users#sec-format_validation
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -30,15 +30,17 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.email = email.downcase }
 
-  def intrested_in?(intrest_activiy)
-    intrestrelations.find_by_activity_id(intrest_activity.id)
+  def interested_in?(interest_activiy)
+    interests.find_by_activity_id(interest_activity.id)
   end
 
-  def intrest_in!(intrest_activity)
-    intrestrelations.create!(user_id: intrest_activity.id)
+  #Can be inproved?
+  def interest_in!(interest_activity)
+    #interests.create!(user_id: interest_activity.id)
+    interests.create!(user_id: self.id, activity_id: interest_activity.id)
   end
 
-  def unintrest!(intrest_activity)
-    intrestrelations.find_by_activity_id(intrest_activity.id).destroy
+  def uninterest!(interest_activity)
+    interests.find_by_activity_id(interest_activity.id).destroy
   end
 end

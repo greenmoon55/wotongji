@@ -16,10 +16,10 @@
 class Activity < ActiveRecord::Base
   attr_accessible :id, :content, :end_time, :start_time, :title
   belongs_to :user
-  has_many :reverse_intrestrelations, foreign_key: "activity_id",
-                                      class_name: "Intrestrelation",
+  has_many :reverse_interests, foreign_key: "activity_id",
+                                      class_name: "Interest",
                                       dependent: :destroy
-  has_many :intrestedusers, through: :reverse_intrestrelations, source: :user
+  has_many :interestedusers, through: :reverse_interests, source: :user
 
   validates :title, :content, :end_time, :start_time, :user_id, presence: true
   validates :title, length: { maximum: 50 }
