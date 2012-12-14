@@ -7,6 +7,7 @@
         <ul class="nav pull-right">
     	    <li><%= link_to "发布", new_activity_path %></li>
           <% if signed_in? %>
+            <li><%= link_to "个人中心", current_user %></li>
             <li><%= link_to "登出", signout_path, method: "delete" %>
           <% else %>
       	    <li><%= link_to "登录", signin_path %></li>

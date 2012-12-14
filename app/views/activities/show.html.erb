@@ -1,8 +1,30 @@
 <% provide(:title, @activity.title) %>
-<h2><%= @activity.title %></h2>
-<ul>
-  <li><%= @activity.start_time %> </li>
-  <li><%= @activity.end_time %> </li>
-  <li><%= @activity.user.name %> </li>
-  <li><%= @activity.content %> </li>
-</ul>
+<div class="row">
+  <div class="span8">
+    <h2><%= @activity.title %></h2>
+    <li>
+      <b>开始时间:</b>
+      <%= @activity.start_time %>
+    </li>
+    <li>
+      <b>结束时间:</b>
+      <%= @activity.end_time %>
+    </li>
+    <li>
+      <b>发布者:</b>
+      <%= @activity.user.name %>
+    </li>
+    <li>
+      <b>感兴趣人数:</b>
+    </li>
+    <li>
+      <b>活动内容:</b>
+        <div class="activity-content">
+        <%= @activity.content %>
+        </div>
+    </li>
+  </div>
+  <div class="span4">
+    <p>感兴趣的人:</p>
+  </div>
+</div>

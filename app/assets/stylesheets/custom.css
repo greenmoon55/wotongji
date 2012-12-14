@@ -142,3 +142,15 @@ text-align: center;
     top: 0px;
     left: 300px;
   }
+=======
+	left: 175px;
+	top: 640px;
+}
+
+.activity-content {
+  width: 650;
+  background: #eaeaea;
+  word-wrap: break-word;
+  word-break: normal;
+}
+>>>>>>> Add gravatar for user
