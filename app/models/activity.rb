@@ -14,7 +14,7 @@
 #
 
 class Activity < ActiveRecord::Base
-  attr_accessible :id, :content, :end_time, :start_time, :title
+  attr_accessible :content, :end_time, :start_time, :title
   belongs_to :user
   has_many :reverse_interests, foreign_key: "activity_id",
                                       class_name: "Interest",

@@ -1,0 +1,4 @@
+<%= form_for(Interest.new(user_id: @activity.id),
+            remote: true) do |f| %>
+  <%= f.submit "感兴趣", class: "btn btn-larg btn-primary" %>
+<% end %>

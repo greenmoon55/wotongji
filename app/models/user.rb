@@ -31,14 +31,18 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.email = email.downcase }
 
-  def interested_in?(interest_activiy)
+  def interested_in?(interest_activity)
     interests.find_by_activity_id(interest_activity.id)
   end
 
   #Can be inproved?
   def interest_in!(interest_activity)
-    #interests.create!(user_id: interest_activity.id)
+    #interests.create!(self: interest_activity)
     interests.create!(user_id: self.id, activity_id: interest_activity.id)
+  end
+
+  def build_interest(interest_activity)
+    interests.build(user_id: self.id, activity_id: interest_activity.id)
   end
 
   def uninterest!(interest_activity)
