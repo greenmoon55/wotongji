@@ -30,10 +30,14 @@
     <h3>评论</h3>
     <% @activity.comments.each do |comment| %>
       <div class="comment">
-        <span class="avatar"><%= gravatar_for comment.user%> </span>
+        <div class="avatar"><%= gravatar_for comment.user%> </div>
         <div class="comment-content">
-          <span class="content"><%= comment.content %></span>
-          <span class="timestamp"><%= comment.created_at %></span>
+          <div class="content"><%= comment.content %></div>
+          <%= link_to comment.user.name, comment.user %>
+          发表于
+          <span class="timestamp">
+            <%= comment.created_at.in_time_zone.to_s(:cn) %>
+          </span>
         </div>
       </div>
     <% end %>
@@ -41,7 +45,7 @@
     <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
       <div class="field">
         <%= f.hidden_field :activity_id, :value => @activity.id %>
-        <%= f.text_area :content, placeholder: "说点什么吧..." %>
+        <%= f.text_area :content, :cols => 70, :rows => 4, :placeholder => "说点什么吧..." %>
       </div>
       <%= f.submit "评论", class: "btn btn-large btn-primary" %>
     <% end %>

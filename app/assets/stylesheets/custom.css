@@ -150,6 +150,8 @@ text-align: center;
   word-break: normal;
 }
 
+
+
 /* activity#show comments */
 .comment {
   margin-top: 10px;
@@ -157,9 +159,15 @@ text-align: center;
 }
 .avatar {
   float: left;
-}
-.comment-content {
-  
+  margin-right: 10px;
 }
 
+/* override bootstrap default value */
+#comment_content {
+  width: auto; 
+}
+
+.field {
+  margin-top: 20px;
+}
 
