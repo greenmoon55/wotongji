@@ -7,7 +7,11 @@ Wotongji::Application.routes.draw do
   end
 
   resources :sessions, only: :create
-  resources :activities
+  resources :activities do
+    resources :comments
+  end
+
+  resources :comments, only: :create
 
   resources :interests, only: [:create, :destroy]
 
