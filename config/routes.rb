@@ -5,8 +5,15 @@ Wotongji::Application.routes.draw do
       get :tigers
     end
   end
+
   resources :sessions, only: :create
-  resources :activities
+  resources :activities do
+    member do
+      get :interestedusers
+    end
+  end
+
+  resources :interests, only: [:create, :destroy]
 
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new', via: :get

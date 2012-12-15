@@ -2,6 +2,7 @@
 <div class="row">
   <div class="span8">
     <h2><%= @activity.title %></h2>
+    <%= render 'interest_form' if signed_in? %>
     <li>
       <b>开始时间:</b>
       <%= @activity.start_time %>
@@ -16,7 +17,7 @@
     </li>
     <li>
       <b>感兴趣人数:</b>
-      <%= @activity.intrestedusers.count %>
+      <%= @activity.interestedusers.count %>
     </li>
     <li>
       <b>活动内容:</b>

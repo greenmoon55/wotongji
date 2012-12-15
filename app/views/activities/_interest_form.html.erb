@@ -1,0 +1,9 @@
+<% unless @activity.user_id == current_user.id %>
+  <div>
+    <% if current_user.interested_in?(@activity) %>
+      <%= render "uninterest" %>
+    <% else %>
+      <%= render "interest" %>
+    <% end %>
+  </div>
+<% end %>
