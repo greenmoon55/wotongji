@@ -27,26 +27,23 @@
           </div>
       </li>
     </ul>
-    <h3>Comments</h3>
-    <% if @activity.comments.count > 0 %>
-    <ul>
-      <% @activity.comments.each do |comment| %>
-      <li>
+    <h3>评论</h3>
+    <% @activity.comments.each do |comment| %>
+      <div class="comment">
         <span class="avatar"><%= gravatar_for comment.user%> </span>
-        <span class="content"><%= comment.content %></span>
-        <span class="timestamp">
-          Posted <%= time_ago_in_words(comment.created_at) %> ago.
-        </span>
-      </li>
-      <% end %>
-      
-    </ul>
+        <div class="comment-content">
+          <span class="content"><%= comment.content %></span>
+          <span class="timestamp"><%= comment.created_at %></span>
+        </div>
+      </div>
     <% end %>
+    </ul>
     <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
       <div class="field">
-        <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+        <%= f.hidden_field :activity_id, :value => @activity.id %>
+        <%= f.text_area :content, placeholder: "说点什么吧..." %>
       </div>
-      <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+      <%= f.submit "评论", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
   <div class="span4">

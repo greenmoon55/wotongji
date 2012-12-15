@@ -149,3 +149,17 @@ text-align: center;
   word-wrap: break-word;
   word-break: normal;
 }
+
+/* activity#show comments */
+.comment {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.avatar {
+  float: left;
+}
+.comment-content {
+  
+}
+
+
