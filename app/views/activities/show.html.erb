@@ -2,28 +2,50 @@
 <div class="row">
   <div class="span8">
     <h2><%= @activity.title %></h2>
-    <li>
-      <b>开始时间:</b>
-      <%= @activity.start_time %>
-    </li>
-    <li>
-      <b>结束时间:</b>
-      <%= @activity.end_time %>
-    </li>
-    <li>
-      <b>发布者:</b>
-      <%= @activity.user.name %>
-    </li>
-    <li>
-      <b>感兴趣人数:</b>
-      <%= @activity.intrestedusers.count %>
-    </li>
-    <li>
-      <b>活动内容:</b>
-        <div class="activity-content">
-        <%= @activity.content %>
-        </div>
-    </li>
+    <ul>
+      <li>
+        <b>开始时间:</b>
+        <%= @activity.start_time %>
+      </li>
+      <li>
+        <b>结束时间:</b>
+        <%= @activity.end_time %>
+      </li>
+      <li>
+        <b>发布者:</b>
+        <%= @activity.user.name %>
+      </li>
+      <li>
+        <b>感兴趣人数:</b>
+        <%-# @activity.intrestedusers.count %>
+      </li>
+      <li>
+        <b>活动内容:</b>
+          <div class="activity-content">
+          <%= @activity.content %>
+          </div>
+      </li>
+    </ul>
+    <h3>Comments</h3>
+    <% if @activity.comments.count > 0 %>
+    <ul>
+      <% @activity.comments.each do |comment| %>
+      <li>
+        <span class="content"><%= comment.content %></span>
+        <span class="timestamp">
+          Posted <%= time_ago_in_words(comment.created_at) %> ago.
+        </span>
+      </li>
+      <% end %>
+      
+    </ul>
+    <% end %>
+    <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
+      <div class="field">
+        <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+      </div>
+      <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    <% end %>
   </div>
   <div class="span4">
     <p>感兴趣的人:</p>

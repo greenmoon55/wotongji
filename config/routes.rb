@@ -6,7 +6,11 @@ Wotongji::Application.routes.draw do
     end
   end
   resources :sessions, only: :create
-  resources :activities
+  resources :activities do
+    resources :comments
+  end
+
+  resources :comments, only: :create
 
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new', via: :get

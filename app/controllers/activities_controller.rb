@@ -11,6 +11,9 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    if signed_in?
+      @comment = Comment.new
+    end
   end
 
   def create
