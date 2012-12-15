@@ -1,13 +1,14 @@
 class InterestsController < ApplicationController
+
   def create
-    @activity = Activity.find(params[:interest][:activity_id])
-    current_user.interest_in!(@activity)
-    redirect_to @activity
+    #@activity = Activity.find(params[:activity_id])
+    #current_user.interest_in!(@activity)
+    @interest = Interest.new(params[:interest])
+    @interest.save
+    redirect_to current_user
   end
 
   def destroy
-    @activity = Activity.find(params[:activity_id])
-    current_user.uninterest!(@activity)
-    redirect_to @activity
+    
   end
 end

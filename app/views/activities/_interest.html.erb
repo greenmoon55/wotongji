@@ -1,5 +1,4 @@
-<%= form_for(current_user.interests.build(user_id: current_user.id, activity_id: @activity.id), 
-             remote: true) do |f| %>
-  <div><%= f.hidden_field :user_id %></div>
-  <%= f.submit "感兴趣", class: "btn btn-large btn-primary" %>
+<%= form_for(Interest.new(user_id: @activity.id),
+            remote: true) do |f| %>
+  <%= f.submit "感兴趣", class: "btn btn-larg btn-primary" %>
 <% end %>

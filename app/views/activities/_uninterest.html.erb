@@ -1,5 +1,0 @@
-<%= form_for(current_user.interests.find_by_activity_id(@activity), 
-             html: { method: :delete }, 
-             remote: true) do |f| %>
-  <%= f.submit "取消感兴趣", class: "btn btn-large" %>
-<% end %>

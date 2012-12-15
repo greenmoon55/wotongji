@@ -7,11 +7,7 @@ Wotongji::Application.routes.draw do
   end
 
   resources :sessions, only: :create
-  resources :activities do
-    collection do
-      get :tigers
-    end
-  end
+  resources :activities
 
   resources :interests, only: [:create, :destroy]
 
