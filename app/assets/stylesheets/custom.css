@@ -166,8 +166,12 @@ text-align: center;
 #comment_content {
   width: auto; 
 }
+.comment-content {
+  width: 90%;
+  float: right;
+}
 
 .field {
-  margin-top: 20px;
+  margin: 20px 0 0 60px;
 }
 

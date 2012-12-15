@@ -45,7 +45,7 @@
     <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
       <div class="field">
         <%= f.hidden_field :activity_id, :value => @activity.id %>
-        <%= f.text_area :content, :cols => 70, :rows => 4, :placeholder => "说点什么吧..." %>
+        <%= f.text_area :content, :cols => 65, :rows => 4, :placeholder => "说点什么吧..." %>
       </div>
       <%= f.submit "评论", class: "btn btn-large btn-primary" %>
     <% end %>
