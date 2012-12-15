@@ -31,6 +31,7 @@
     <ul>
       <% @activity.comments.each do |comment| %>
       <li>
+        <span class="avatar"><%= gravatar_for comment.user%> </span>
         <span class="content"><%= comment.content %></span>
         <span class="timestamp">
           Posted <%= time_ago_in_words(comment.created_at) %> ago.
