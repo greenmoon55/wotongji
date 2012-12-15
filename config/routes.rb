@@ -8,8 +8,8 @@ Wotongji::Application.routes.draw do
 
   resources :sessions, only: :create
   resources :activities do
-    member do
-      get :interestedusers
+    collection do
+      get :tigers
     end
   end
 
