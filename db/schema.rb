@@ -45,17 +45,6 @@ ActiveRecord::Schema.define(:version => 20121215022830) do
   add_index "interests", ["activity_id"], :name => "index_interests_on_activity_id"
   add_index "interests", ["user_id"], :name => "index_interests_on_user_id"
 
-  create_table "intrestrelations", :force => true do |t|
-    t.integer  "activity_id"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "intrestrelations", ["activity_id", "user_id"], :name => "index_intrestrelations_on_activity_id_and_user_id", :unique => true
-  add_index "intrestrelations", ["activity_id"], :name => "index_intrestrelations_on_activity_id"
-  add_index "intrestrelations", ["user_id"], :name => "index_intrestrelations_on_user_id"
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
