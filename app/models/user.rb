@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :activities, dependent: :destroy
   has_many :interests, foreign_key: "user_id", dependent: :destroy
   has_many :interestactivities, through: :interests, source: :activity
+  has_many :comments, dependent: :destroy
 
   #http://ruby.railstutorial.org/chapters/modeling-users#sec-format_validation
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

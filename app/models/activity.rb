@@ -20,6 +20,7 @@ class Activity < ActiveRecord::Base
                                       class_name: "Interest",
                                       dependent: :destroy
   has_many :interestedusers, through: :reverse_interests, source: :user
+  has_many :comments, dependent: :destroy
 
   validates :title, :content, :end_time, :start_time, :user_id, presence: true
   validates :title, length: { maximum: 50 }
