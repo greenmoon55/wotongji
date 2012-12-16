@@ -1,0 +1,5 @@
+<% if @activities.any? %>
+  <ol class="activities">
+    <%= render partial: 'shared/activity', collection: @activities %>
+  </ol>
+<% end %>
