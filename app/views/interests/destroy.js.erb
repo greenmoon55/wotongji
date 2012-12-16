@@ -1,2 +1,2 @@
 $("#interest_form").html("<%= escape_javascript(render('activities/interest')) %>")
-$("#show").html('<%= @activity.interestedusers.count %>')
+$("#interested_users_num").html('<b>已经有 </b><%= @activity.interestedusers.count %><b> 人感兴趣</b>')
