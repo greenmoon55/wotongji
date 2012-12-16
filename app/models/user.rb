@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   #Can be inproved?
   def interest_in!(interest_activity)
     #interests.create!(self: interest_activity)
-    interests.create!(user_id: self.id, activity_id: interest_activity.id)
+    interests.create!(activity_id: interest_activity.id)
   end
 
   def build_interest(interest_activity)

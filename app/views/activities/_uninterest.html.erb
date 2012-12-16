@@ -1,0 +1,5 @@
+<%= form_for(current_user.interests.find_by_activity_id(@activity.id), 
+             html: { method: :delete }
+             ) do |f| %>
+  <% f.submit "取消感兴趣", class: "btn" %>
+<% end %>
