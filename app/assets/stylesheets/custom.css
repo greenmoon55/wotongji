@@ -6,7 +6,7 @@ body {
 
 /* footer */
 footer {
-	margin-top: 45px;
+  margin-top: 45px;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
 	color: #999;
@@ -122,7 +122,7 @@ margin-top: 20px;
     margin: 1px 1px;
   }
 }
-                
+
 .float_left {
   float: left;
 }
