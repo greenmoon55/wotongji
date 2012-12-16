@@ -6,13 +6,9 @@ body {
 
 /* footer */
 footer {
-	position: relative;
-	margin: 45px 0 0 0;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
 	color: #999;
-	
-
 }
 
 footer ul {
@@ -31,19 +27,12 @@ ul {
 	margin-left: 0;
 }
 
-li.activity {
+.activity {
 	margin-top: 10px;
 }
 
 .title {
 	font-size: 14px;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
 }
 
 .dailin {
@@ -68,6 +57,9 @@ li.activity {
     margin: 12px 0 0;
     padding: 20px 25px 15px;
    
+/* user#new */
+.container form input {
+  display: block;
 }
 
 .well-white{
@@ -95,18 +87,6 @@ li.activity {
 .form {
 margin-top: 20px;
 }
-
-.logo {
-text-align: center;
-
-}
-
-
-
-
-
-
-
 
 .well-white-activity{
 	background-color: white;
