@@ -48,5 +48,15 @@
   </div>
   <div class="span4">
     <p>感兴趣的人:</p>
+    <% if @activity.interestedusers.any? %>
+      <div class="user_avatars">
+        <% @activity.interestedusers.each do |user| %>
+          <div class="float_left">
+            <p><%= link_to gravatar_for(user, size: 30), user %></p>
+            <p><%= link_to user.name, user %></p>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
