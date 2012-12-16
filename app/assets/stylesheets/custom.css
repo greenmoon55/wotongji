@@ -6,15 +6,10 @@ body {
 
 /* footer */
 footer {
-	position: absolute;
-	top: 575px;
-	width:925px;
 	margin-top: 45px;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
 	color: #999;
-	
-
 }
 
 footer ul {
@@ -33,7 +28,7 @@ ul {
 	margin-left: 0;
 }
 
-li.activity {
+.activity {
 	margin-top: 10px;
 }
 
@@ -41,28 +36,9 @@ li.activity {
 	font-size: 14px;
 }
 
-.dailin {
-	position: absolute;
-	left: 605px;
-	top: 0px;
-}
-
-
-
-
-
-
-#register{
-	
-	position:absolute;
-	top: 135px;
-	left: 760px;
-	width: 230px;
-	
-   
-    margin: 12px 0 0;
-    padding: 20px 25px 15px;
-   
+/* user#new */
+.container form input {
+  display: block;
 }
 
 .well-white{
@@ -90,18 +66,6 @@ li.activity {
 .form {
 margin-top: 20px;
 }
-
-.logo {
-text-align: center;
-
-}
-
-
-
-
-
-
-
 
 .well-white-activity{
 	background-color: white;
@@ -158,7 +122,7 @@ text-align: center;
     margin: 1px 1px;
   }
 }
-
+                
 .float_left {
   float: left;
 }
