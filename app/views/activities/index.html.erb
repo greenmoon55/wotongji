@@ -3,17 +3,7 @@
 
 <div class="row">
 	<div class="span8">
-		<ul id="activities">
-		  <% Activity.all.each do |activity| %>
-        <li class="activity">
-		      <ul> 
-		        <li class="title"> <%= link_to activity.title, activity %> </li>
-		        <li class="starttime"> 开始时间：<%= activity.start_time.in_time_zone.to_s(:cn_without_year) %> </li>
-		        <li class="username"> 发布者：<%= activity.user.name %> </li>
-		      </ul>
-        </li>
-		  <% end %>
-		</ul>
+    <%= render 'shared/activities_form' %>
 	</div>
 	<div class="span4">
 		<p> test </p>

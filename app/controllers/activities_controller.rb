@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
   before_filter :require_signin, only: [:new, :create, :destroy]
 
   def index
+    @activities = Activity.paginate(page: params[:page])
   end
 
   def new

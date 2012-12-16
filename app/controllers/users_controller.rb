@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @user = User.find(params[:id])
+    @activities = @user.interestactivities.paginate(page: params[:page])
   end
 
   # GET /users/new

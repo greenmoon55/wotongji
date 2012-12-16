@@ -1,5 +1,7 @@
 <% if @activities.any? %>
+  <%= will_paginate @activities %>
   <ol class="activities">
     <%= render partial: 'shared/activity', collection: @activities %>
   </ol>
+  <%= will_paginate @activities %>
 <% end %>
