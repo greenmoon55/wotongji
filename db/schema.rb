@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121215022830) do
+ActiveRecord::Schema.define(:version => 20121216151730) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20121215022830) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "image"
   end
 
   create_table "comments", :force => true do |t|
@@ -44,6 +45,17 @@ ActiveRecord::Schema.define(:version => 20121215022830) do
   add_index "interests", ["activity_id", "user_id"], :name => "index_interests_on_activity_id_and_user_id", :unique => true
   add_index "interests", ["activity_id"], :name => "index_interests_on_activity_id"
   add_index "interests", ["user_id"], :name => "index_interests_on_user_id"
+
+  create_table "intrestrelations", :force => true do |t|
+    t.integer  "activity_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "intrestrelations", ["activity_id", "user_id"], :name => "index_intrestrelations_on_activity_id_and_user_id", :unique => true
+  add_index "intrestrelations", ["activity_id"], :name => "index_intrestrelations_on_activity_id"
+  add_index "intrestrelations", ["user_id"], :name => "index_intrestrelations_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

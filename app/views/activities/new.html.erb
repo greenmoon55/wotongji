@@ -1,12 +1,10 @@
 <% provide(:title, "发布活动") %>
 
-
 <h1>发布活动</h1>
 
 <div class="well-white-activity">
    
-  
-  <%= form_for(@activity) do |f| %>
+  <%= form_for @activity, :html => {:multipart => true} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
   <div class="space1-activities">
@@ -25,6 +23,7 @@
   <%= f.label :content %>
   <%- # f.text_area :content %>
   
+  <%= f.file_field :image %>
   <textarea cols="20" id="activity_content" name="activity[content]" rows="14"></textarea>   
   
  

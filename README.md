@@ -8,17 +8,19 @@
 
 代码注释为 **英语**（因为老师的要求）
 
+CSS里的class中用 '-' 而而不是 '_'，和 bootstrap 一致。
+
 ##进度##
 
-**12 月 11 日** Sprint1
-
+**12 月 10 日** Sprint1
+**12 月 18 日** Sprint2
 请点击[这里](https://github.com/greenmoon55/wotongji/issues/milestones)查看详细信息。
 
 以后大概每周一个 sprint。
 
 ##文档内容##
 
-全部文档、各种图都放在 `doc` 文件夹中，请大家关注文件更新，随时修改。
+全部文档、各种图都放在 QQ 群里，请大家关注文件更新，随时修改。
 
 ##如何调试##
 

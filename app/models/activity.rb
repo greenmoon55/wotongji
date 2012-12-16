@@ -14,8 +14,9 @@
 #
 
 class Activity < ActiveRecord::Base
-  attr_accessible :content, :end_time, :start_time, :title
+  attr_accessible :content, :end_time, :start_time, :title, :image
   belongs_to :user
+  mount_uploader :image, ImageUploader
   has_many :reverse_interests, foreign_key: "activity_id",
                                       class_name: "Interest",
                                       dependent: :destroy
