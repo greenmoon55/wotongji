@@ -30,10 +30,11 @@ ul {
 
 .activity {
 	margin-top: 10px;
+  border-bottom: 1px solid gray;
 }
 
 .title {
-	font-size: 14px;
+	font-size: 20px;
 }
 
 /* user#new */
