@@ -1,13 +1,13 @@
 <%= provide(:title, @user.name) %>
 <div class="row">
+  <div class="span8">
+    <h5>我感兴趣的活动：</h5>
+    <%= render 'shared/activities_form' %>
+  </div>
   <div class="span4">
     <div class="user_avatars">
       <%= gravatar_for @user %>
       <h2><%= @user.name %></h2>
     </div>
-  </div>
-  <div class="span8">
-    <h5>我感兴趣的活动：</h5>
-    <%= render 'shared/activities_form' %>
   </div>
 </div>
