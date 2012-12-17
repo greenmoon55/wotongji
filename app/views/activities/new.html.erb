@@ -17,6 +17,9 @@
   <%= f.label :end_time %>
   <%= f.text_field :end_time %>
 
+  <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]} %>
+  
+  <%= f.submit "发布", class: "dailin btn btn-default btn-primary" %>
   </div>
   
   <div class="space2-activities">
