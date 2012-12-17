@@ -116,9 +116,9 @@ margin-top: 20px;
 }
 
 /* activity#show users */
-.user_avatars {
+.user-avatars {
   overflow: auto;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   .avatar {
     margin: 1px 1px;
   }
