@@ -8,12 +8,14 @@
 
 代码注释为 **英语**（因为老师的要求）
 
-CSS里的class中用 '-' 而而不是 '_'，和 bootstrap 一致。
+CSS 里的 class 中用 `-` 而而不是 `_`，和 bootstrap 一致。
 
 ##进度##
 
 **12 月 10 日** Sprint1
+
 **12 月 18 日** Sprint2
+
 请点击[这里](https://github.com/greenmoon55/wotongji/issues/milestones)查看详细信息。
 
 以后大概每周一个 sprint。
@@ -30,12 +32,13 @@ CSS里的class中用 '-' 而而不是 '_'，和 bootstrap 一致。
 
  > bundle install --without production
 
- 安装我们需要的软件包
+  安装我们需要的软件包
 
 2. 执行
- > bundle exec rake db:migrate
 
- “更新”数据库
+ > bundle exec rake db:migrate
+ 
+  “更新”数据库
 
 3. 启动服务器
 > rails server
@@ -48,9 +51,10 @@ CSS里的class中用 '-' 而而不是 '_'，和 bootstrap 一致。
 ##git的使用##
 大家应该基本都会了吧。。
 
-再提醒一下，每次想修改代码之前， **都要先 pull**。修改了一定量的代码就要传上来。。
+再提醒一下，每次想修改代码之前**都要先 pull**。修改了一定量的代码就要传上来。。
 
 ##如何编辑本文档##
 这是一个 Markdown 格式的文档。
 
 可以使用记事本或者 [MarkdownPad](http://markdownpad.com) 等任意文本编辑器来编辑。
+

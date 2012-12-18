@@ -3,7 +3,7 @@
   <div class="span8">
     <h2><%= @activity.title %></h2>
     <%= render 'interest_form' if signed_in? %>
-    <%= image_tag(@activity.image_url) if @activity.image? %>
+    <%= image_tag @activity.image_url(:thumb) if @activity.image? %>
     <ul>
       <li>
         <b>开始时间:</b>
