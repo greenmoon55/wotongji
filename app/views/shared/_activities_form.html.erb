@@ -1,5 +1,4 @@
 <% if @activities.any? %>
-  <%= will_paginate @activities %>
   <div class="activities">
     <%= render partial: 'shared/activity', collection: @activities %>
   </div>
