@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "注册成功！"
+			UserMailer.welcome_email(@user).deliver
       redirect_back_or root_url
     else
       render 'new'
