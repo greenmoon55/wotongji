@@ -5,9 +5,28 @@
     <%= render 'shared/activities_form' %>
   </div>
   <div class="span4">
-    <div class="user_avatars">
-      <%= gravatar_for @user %>
-      <h2><%= @user.name %></h2>
+    <div class="row">
+      <p class="user_avatars float-left">
+        <%= gravatar_for(@user, size: 120) %>
+      </p>
+      <p class="float-left">
+        <h2><%= @user.name %></h2>
+      </p>
+      <% if current_user?(@user) %>
+        <p class="float-left">
+          <h5><%= link_to "我发布的活动 ( " + @user.activities.count.to_s + " )", "#" %></h5>
+        </p>
+        <p class="float-left">
+          <h5><%= link_to "我感兴趣的活动 ( " + @user.interestactivities.count.to_s + " )", "#" %></h5>
+        </p>
+      <% else %>
+        <p class="float-left">
+          <h5><%= link_to "他发布的活动 ( " + @user.activities.count.to_s + " )", "#" %></h5>
+        </p>
+        <p class="float-left">
+          <h5><%= link_to "他感兴趣的活动 ( " + @user.interestactivities.count.to_s + " )", "#" %></h5>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>
