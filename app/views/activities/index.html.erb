@@ -1,31 +1,20 @@
 <% provide(:title, '全部活动') %>
 
 <div class="row">
-	<div class="span8">
+	<div class="span9">
     <div class="row">
-      <div class="control-group span4">
-        <label class="control-label" for="select-time">按 </label>
-        <div class="controls">
-          <select class="span2" id="select-time">
-            <option>请选择</option>
-            <option>时间</option>
-          </select>
-        </div>
-      </div>
-      <div class="control-group span4">
-        <label class="control-label" for="select-other">  查看 </label>
-        <div class="controls">
-          <select class="span2" id="select-other">
-            <option>请选择</option>
-            <option>未开始的活动</option>
-            <option>已开始的活动</option>
-          </select>
-        </div>
-      </div>
+      <span class="controls">
+        <%= link_to "全部", { controller: "activities", action: "all" } %>
+      </span>
+      <span class="controls">
+        <%= link_to "未开始的活动", { controller: "activities", action: "unstart" } %> 
+      </span>
+    </div>
+    <div id="activities">
+      <%= render 'shared/activities_form' %>
     </div>
 	</div>
-	<div class="span4">
-    <h4>活动列表：</h4>
-    <%= render 'shared/activities_form' %>
+	<div class="span3">
+    <h4>新加入：</h4>
 	</div>
 </div>

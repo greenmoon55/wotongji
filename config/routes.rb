@@ -15,6 +15,8 @@ Wotongji::Application.routes.draw do
 
   resources :interests, only: [:create, :destroy]
 
+  match '/activites/all', to: 'activities#all'
+  match '/activites/unstart', to: 'activities#unstart'
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new', via: :get
   match '/signin', to: 'sessions#create', via: :post
@@ -22,7 +24,7 @@ Wotongji::Application.routes.draw do
 
   #root to: 'static_pages#home'
   root to: 'activities#index'
-  
+ 
   match 'help',    to: 'static_pages#help'
 
   # The priority is based upon order of creation:

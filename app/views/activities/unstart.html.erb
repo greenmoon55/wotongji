@@ -1,0 +1,20 @@
+<% provide(:title, '全部活动') %>
+
+<div class="row">
+	<div class="span9">
+    <div class="row">
+      <span class="controls">
+        <%= link_to "全部", { controller: "activities", action: "all" } %>
+      </span>
+      <span class="controls">
+        <%= link_to "未开始的活动", { controller: "activities", action: "unstart" } %> 
+      </span>
+    </div>
+    <div id="activities">
+      <%= render 'shared/activities_form' %>
+    </div>
+	</div>
+	<div class="span3">
+    <h4>新加入：</h4>
+	</div>
+</div>
