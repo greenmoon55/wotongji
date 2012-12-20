@@ -21,11 +21,35 @@ end
 
 def make_activities
   users = User.all(limit: 20)
-  10.times do
-    begin_time = Time.utc(2012, 12, 26, 12, 30)
-    end_time = Time.utc(2013, 1, 1, 12, 30)
+  3.times do
+    begin_time = Time.utc(2013, 1, 15)
+    end_time = Time.utc(2013, 1, 16)
     users.each do |user|
-      title = Faker::Name.name
+      title = "unstart " + Faker::Name.name
+      content = Faker::Lorem.sentence(15)
+      user.activities.create!(title: title,
+                              content: content,
+                              start_time: begin_time,
+                              end_time: end_time)
+    end
+  end
+  3.times do
+  begin_time = Time.utc(2012, 12, 1)
+  end_time = Time.utc(2013, 1, 15)
+  users.each do |user|
+    title = "started " + Faker::Name.name
+    content = Faker::Lorem.sentence(15)
+    user.activities.create!(title: title,
+                            content: content,
+                            start_time: begin_time,
+                            end_time: end_time)
+    end
+  end
+  4.times do
+    begin_time = Time.utc(2012, 12, 1)
+    end_time = Time.utc(2012, 12, 15)
+    users.each do |user|
+      title = "ended " + Faker::Name.name
       content = Faker::Lorem.sentence(15)
       user.activities.create!(title: title,
                               content: content,

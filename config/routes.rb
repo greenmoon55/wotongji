@@ -17,6 +17,8 @@ Wotongji::Application.routes.draw do
 
   match '/all', to: 'activities#all'
   match '/unstart', to: 'activities#unstart'
+  match '/started', to: 'activities#started'
+  match '/ended', to: 'activities#ended'
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new', via: :get
   match '/signin', to: 'sessions#create', via: :post

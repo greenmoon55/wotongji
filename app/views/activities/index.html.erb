@@ -9,6 +9,12 @@
       <span class="controls">
         <%= link_to "未开始的活动", { controller: "activities", action: "unstart" } %>
       </span>
+      <span class="controls">
+        <%= link_to "已开始的活动", { controller: "activities", action: "started" }%>
+      </span>
+      <span class="controls">
+        <%= link_to "已结束的活动", { controller: "activities", action: "ended" }%>
+      </span>
     </div>
     <div id="activities">
       <%= render 'shared/activities_form' %>

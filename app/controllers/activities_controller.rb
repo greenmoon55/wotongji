@@ -17,7 +17,7 @@ class ActivitiesController < ApplicationController
   end
 
   def unstart
-    @activities = Activity.where("start_time > ?", Time.utc(2012, 12, 27))
+    @activities = Activity.where("start_time > ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
     #respond_to do |format|
     #  format.html { render 'shared/activities_form' }
@@ -27,7 +27,15 @@ class ActivitiesController < ApplicationController
   end
 
   def started
-    
+    @activities = Activity.where("start_time < ?", Time.now)
+    @activities = @activities.paginate(page: params[:page])
+    render 'started'
+  end
+
+  def ended
+    @activities = Activity.where("end_time < ?", Time.now)
+    @activities = @activities.paginate(page: params[:page])
+    render 'ended'
   end
 
   def new
