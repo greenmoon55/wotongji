@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217111336) do
+ActiveRecord::Schema.define(:version => 20121220154228) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(:version => 20121217111336) do
   add_index "interests", ["activity_id", "user_id"], :name => "index_interests_on_activity_id_and_user_id", :unique => true
   add_index "interests", ["activity_id"], :name => "index_interests_on_activity_id"
   add_index "interests", ["user_id"], :name => "index_interests_on_user_id"
+
+  create_table "password_resets", :force => true do |t|
+    t.string   "token"
+    t.datetime "created_at"
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

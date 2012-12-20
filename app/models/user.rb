@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :interests, foreign_key: "user_id", dependent: :destroy
   has_many :interestactivities, through: :interests, source: :activity
   has_many :comments, dependent: :destroy
+  has_one  :password_reset, dependent: :destroy
 
   #http://ruby.railstutorial.org/chapters/modeling-users#sec-format_validation
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -47,5 +48,10 @@ class User < ActiveRecord::Base
 
   def uninterest!(interest_activity)
     interests.find_by_activity_id(interest_activity.id).destroy
+  end
+
+  def generate_token()
+    SecureRandom.urlsafe_base64
+    create_password_reset(token: SecureRandom.urlsafe_base64)
   end
 end
