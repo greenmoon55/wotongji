@@ -15,8 +15,8 @@ Wotongji::Application.routes.draw do
 
   resources :interests, only: [:create, :destroy]
 
-  match '/activites/all', to: 'activities#all'
-  match '/activites/unstart', to: 'activities#unstart'
+  match '/all', to: 'activities#all'
+  match '/unstart', to: 'activities#unstart'
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new', via: :get
   match '/signin', to: 'sessions#create', via: :post

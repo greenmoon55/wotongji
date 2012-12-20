@@ -20,10 +20,10 @@ class ActivitiesController < ApplicationController
     @activities = Activity.where("start_time > ?", Time.utc(2012, 12, 27))
     @activities = @activities.paginate(page: params[:page])
     #respond_to do |format|
-      #format.html { render 'shared/activities_form' }
-      #format.js
+    #  format.html { render 'shared/activities_form' }
+    #  format.js
     #end
-    render 'unstart'
+    #render 'unstart'
   end
 
   def started
