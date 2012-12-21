@@ -7,7 +7,7 @@
         <%= link_to "全部活动", { controller: "activities", action: "all" } %>
       </span>
       <span class="controls">
-        <%= link_to "未开始的活动", { controller: "activities", action: "unstart" } %>
+        <%= link_to "未开始的活动", { controller: "activities", action: "unstart" }, remote: true %>
       </span>
       <span class="controls">
         <%= link_to "正在进行的活动", { controller: "activities", action: "started" }%>
@@ -17,16 +17,16 @@
       </span>
     </div>
     <div id="activities">
-      <%= render 'shared/activities_form' %>
+      <% unless @activities == nil %>
+        <%= render 'shared/activities_form' %>
+      <% end %>
     </div>
   </div>
   <div class="span3">
-    <form action="<%= activities_path %>" method="get">
-      <p>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag "Search", :name => nil %>
-      </p>
-    </form>
+    <%= form_tag("/search", method:"get", remote: true) do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("查找活动") %>
+    <% end %>
     <h4>新加入：</h4>
   </div>
 </div>
