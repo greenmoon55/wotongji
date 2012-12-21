@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Interest < ActiveRecord::Base
   attr_accessible :activity_id, :user_id
 

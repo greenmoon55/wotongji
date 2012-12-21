@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreatePasswordResets < ActiveRecord::Migration
   def change
     create_table :password_resets do |t|
