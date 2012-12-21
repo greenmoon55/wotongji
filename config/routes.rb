@@ -28,6 +28,7 @@ Wotongji::Application.routes.draw do
   root to: 'activities#index'
  
   match 'help',    to: 'static_pages#help'
+  resources 'password_resets'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
