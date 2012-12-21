@@ -4,16 +4,16 @@
   <div class="span9">
     <div class="row">
       <span class="controls">
-        <%= link_to "全部活动", { controller: "activities", action: "all" } %>
+        <%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %>
       </span>
       <span class="controls">
         <%= link_to "未开始的活动", { controller: "activities", action: "unstart" }, remote: true %>
       </span>
       <span class="controls">
-        <%= link_to "正在进行的活动", { controller: "activities", action: "started" }%>
+        <%= link_to "正在进行的活动", { controller: "activities", action: "started" }, remote: true %>
       </span>
       <span class="controls">
-        <%= link_to "已结束的活动", { controller: "activities", action: "ended" }%>
+        <%= link_to "已结束的活动", { controller: "activities", action: "ended" }, remote: true %>
       </span>
     </div>
     <div id="activities">
