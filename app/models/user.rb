@@ -52,6 +52,10 @@ class User < ActiveRecord::Base
 
   def generate_token()
     SecureRandom.urlsafe_base64
-    create_password_reset(token: SecureRandom.urlsafe_base64)
+  end
+
+  def send_password_reset
+    create_password_reset!(token: generate_token)
+		UserMailer.password_reset(self).deliver   
   end
 end
