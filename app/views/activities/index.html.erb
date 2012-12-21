@@ -1,7 +1,7 @@
 <% provide(:title, '全部活动') %>
 
 <div class="row">
-	<div class="span9">
+  <div class="span9">
     <div class="row">
       <span class="controls">
         <%= link_to "全部", { controller: "activities", action: "all" } %>
@@ -19,8 +19,14 @@
     <div id="activities">
       <%= render 'shared/activities_form' %>
     </div>
-	</div>
-	<div class="span3">
+  </div>
+  <div class="span3">
+    <form action="<%= activities_path %>" method="get">
+      <p>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+    </form>
     <h4>新加入：</h4>
-	</div>
+  </div>
 </div>
