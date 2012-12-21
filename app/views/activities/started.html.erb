@@ -1,16 +1,16 @@
-<% provide(:title, '已开始的活动') %>
+<% provide(:title, '正在进行的活动') %>
 
 <div class="row">
 	<div class="span9">
     <div class="row">
       <span class="controls">
-        <%= link_to "全部", { controller: "activities", action: "all" } %>
+        <%= link_to "全部活动", { controller: "activities", action: "all" } %>
       </span>
       <span class="controls">
         <%= link_to "未开始的活动", { controller: "activities", action: "unstart" } %>
       </span>
       <span class="controls">
-        <%= link_to "已经开始的活动", { controller: "activities", action: "started" }%>
+        <%= link_to "正在进行的活动", { controller: "activities", action: "started" }%>
       </span>
       <span class="controls">
         <%= link_to "已结束的活动", { controller: "activities", action: "ended" }%>

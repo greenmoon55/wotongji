@@ -27,7 +27,7 @@ class ActivitiesController < ApplicationController
   end
 
   def started
-    @activities = Activity.where("start_time < ?", Time.now)
+    @activities = Activity.where("start_time < ? and end_time > ?", Time.now, Time.now)
     @activities = @activities.paginate(page: params[:page])
     render 'started'
   end
