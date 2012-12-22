@@ -12,6 +12,7 @@ gem 'carrierwave'
 # http://stackoverflow.com/questions/3894225
 gem 'rmagick' #image processing
 gem 'rinku' #autolink
+gem 'bootstrap-datepicker-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

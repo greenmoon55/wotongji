@@ -62,7 +62,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    params[:activity][:start_time] += ' ' + params[:activity]["start_time(4i)"]+ ':' + params[:activity]["start_time(5i)"]
+    params[:activity].delete("start_time(4i)")
+    params[:activity].delete("start_time(5i)")
     @activity = current_user.activities.build(params[:activity])
+    
     if @activity.save
       flash[:success] = "发布成功！"
       redirect_to @activity

@@ -11,4 +11,5 @@
  *= require bootstrap.min
  *= require custom
  *= require_tree ./smoothness
+ *= require bootstrap-datepicker
  */
