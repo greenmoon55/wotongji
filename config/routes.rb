@@ -27,8 +27,12 @@ Wotongji::Application.routes.draw do
   #root to: 'static_pages#home'
   root to: 'activities#index'
  
-  match 'help',    to: 'static_pages#help'
-  resources 'password_resets'
+  match 'help', to: 'static_pages#help'
+  #resources 'password_resets'
+  match '/password_reset', to: 'password_resets#new', via: :get
+  match '/password_reset', to: 'password_resets#create', via: :post
+  match '/password_reset/:id', to: 'password_resets#edit', via: :get, as: :check_password_reset
+  match '/password_reset/:id', to: 'password_resets#update', via: :put, as: :new_password
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

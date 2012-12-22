@@ -1,23 +1,17 @@
-<h1>Reset Password</h1>
+<% provide(:title, "重置密码") %>
+<h1>重置密码</h1>
 
-<%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @user, :url => new_password_path(params[:id]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>    
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "新密码"%>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, "密码确认"%>
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions"><%= f.submit "Update Password" %></div>
+  <div class="actions">
+    <%= f.submit "更新密码" %>
+  </div>
 <% end %>
