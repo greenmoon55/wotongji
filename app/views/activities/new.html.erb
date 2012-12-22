@@ -12,8 +12,12 @@
   <%= f.text_field :title %>
 
   <%= f.label :start_time %>
-  <%= f.text_field :start_time %>
-  <%= f.time_select :start_time , :ignore_date => true%>
+  <% if @activity.start_time? %>
+    <%= f.text_field :start_time, :autocomplete => :off, :value => @activity.start_time.to_s(:yymmdd)%>
+  <% else %>
+    <%= f.text_field :start_time, :autocomplete => :off %>
+  <% end %>
+  <%= f.time_select :start_time, :ignore_date => true, :minute_step => 5%>
 
   <%= f.label :end_time %>
   <%= f.text_field :end_time %>
