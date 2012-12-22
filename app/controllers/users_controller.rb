@@ -14,6 +14,24 @@ class UsersController < ApplicationController
     @activities = @user.interestactivities.paginate(page: params[:page])
   end
 
+  def my_activities
+    @user = User.find(params[:id])
+    @activities = @user.activities.paginate(page: params[:page])
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
+  end
+
+  def interest_activities
+    @user = User.find(params[:id])
+    @activities = @user.interestactivities.paginate(page: params[:page])
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
+  end
+
   # GET /users/new
   def new
     store_previous_location

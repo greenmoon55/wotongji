@@ -4,43 +4,53 @@ class ActivitiesController < ApplicationController
   before_filter :correct_user,   only: [:edit, :update, :destroy]
 
   def index
+    @activities = Activity.paginate(page: params[:page])
+  end
+
+  def search
     if params[:q]
       @activities = Activity.where("title LIKE ?", '%' + params[:q] + '%')
       @activities = @activities.paginate(page: params[:page])
-    else
-      @activities = Activity.paginate(page: params[:page])
+      respond_to do |format|
+        format.html { redirect_to root_url }
+        format.js
+      end
     end
   end
 
   def all
     @activities = Activity.paginate(page: params[:page])
-    #respond_to do |format|
-      #format.html { redirect_to @activities }
-      #format.js
-    #end
-    render 'index'
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   def unstart
     @activities = Activity.where("start_time > ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
-    #respond_to do |format|
-    #  format.html { render 'shared/activities_form' }
-    #  format.js
-    #end
-    #render 'unstart'
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   def started
     @activities = Activity.where("start_time < ? and end_time > ?", Time.now, Time.now)
     @activities = @activities.paginate(page: params[:page])
-    render 'started'
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   def ended
     @activities = Activity.where("end_time < ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
-    render 'ended'
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   def new

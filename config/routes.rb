@@ -19,7 +19,10 @@ Wotongji::Application.routes.draw do
   match '/unstart', to: 'activities#unstart'
   match '/started', to: 'activities#started'
   match '/ended', to: 'activities#ended'
+  match '/search', to: 'activities#search'
   match '/signup', to: 'users#new'
+  match '/users/:id/activities', to: 'users#my_activities'
+  match '/users/:id/interestact', to: 'users#interest_activities'
   match '/signin', to: 'sessions#new', via: :get
   match '/signin', to: 'sessions#create', via: :post
   match '/signout', to: 'sessions#destroy', via: :delete
