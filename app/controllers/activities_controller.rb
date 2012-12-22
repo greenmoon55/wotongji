@@ -65,7 +65,7 @@ class ActivitiesController < ApplicationController
     @activity = current_user.activities.build(params[:activity])
     if @activity.save
       flash[:success] = "发布成功！"
-      redirect_to root_url
+      redirect_to @activity
     else
       flash.now[:error] = "错误"
       render 'new'
@@ -79,7 +79,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     if @activity.update_attributes(params[:activity])
       flash[:success] = "编辑成功！"
-      redirect_to root_url
+      redirect_to @activity
     else
       flash.now[:error] = "错误"
       render 'new'

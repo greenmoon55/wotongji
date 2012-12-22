@@ -20,7 +20,8 @@
       <li>
         <b>活动内容:</b>
           <div class="activity-content">
-						<%= simple_format(@activity.content, {}, :sanitize => true) %>
+						<%- #simple_format(@activity.content, {}, :sanitize => true) %>
+            <%= simple_format(Rinku.auto_link(@activity.content)) %>
           </div>
       </li>
     </ul>
