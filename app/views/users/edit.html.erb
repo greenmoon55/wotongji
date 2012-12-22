@@ -4,6 +4,8 @@
 		<div>
 			<h1>编辑个人资料</h1>
       <%= render 'shared/error_messages', :object => @user %>
+      <%= gravatar_for(@user) %>
+      <%= link_to "编辑头像", "http://gravatar.com" %>
 			<%= form_for(@user) do |f| %>
 				<%= f.label :current_password, "当前密码" %>
 				<%= f.password_field :current_password %>
