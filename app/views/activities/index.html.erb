@@ -1,7 +1,7 @@
 <% provide(:title, '全部活动') %>
 
 <div class="row">
-  <div class="span9">
+  <div class="span8">
     <div class="row">
       <span class="controls">
         <%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %>
@@ -30,11 +30,16 @@
       <% end %>
     </div>
   </div>
-  <div class="span3">
-    <%= form_tag("/search", method:"get", remote: true) do %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag("查找活动") %>
-    <% end %>
-    <h4>新加入：</h4>
+  <div class="span4">
+    <div class="row">
+      <%= form_tag "/search", method:"get", remote: true do %>
+        <%= text_field_tag :q, params[:q], class: "input-medium search-query float-left" %>
+        <%= submit_tag "查找", class: "btn btn-info float-left", style: "margin-left: 14px" %>
+      <% end %>
+    </div>
+    <hr/>
+    <div class="row">
+      <h4>新加入：</h4>
+    </div>
   </div>
 </div>
