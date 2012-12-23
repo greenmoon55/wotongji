@@ -20,6 +20,7 @@ Wotongji::Application.routes.draw do
   match '/started', to: 'activities#started'
   match '/ended', to: 'activities#ended'
   match '/search', to: 'activities#search'
+  match '/category', to: 'activities#category'
   match '/signup', to: 'users#new'
   match '/users/:id/activities', to: 'users#my_activities'
   match '/users/:id/interestact', to: 'users#interest_activities'

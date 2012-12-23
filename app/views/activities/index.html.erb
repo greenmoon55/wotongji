@@ -16,6 +16,14 @@
         <%= link_to "已结束的活动", { controller: "activities", action: "ended" }, remote: true %>
       </span>
     </div>
+    <div class="row">
+      <% @categories.each do |category| %>
+        <span class="controls">
+          <%= link_to category.name, { controller: "activities", action: "category", id: category.id },
+              remote: true %>
+        </span>
+      <% end %>
+    </div>
     <div id="activities">
       <% unless @activities == nil %>
         <%= render 'shared/activities_form' %>

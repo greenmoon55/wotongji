@@ -5,6 +5,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.paginate(page: params[:page])
+    @categories = Category.all
   end
 
   def search
@@ -47,6 +48,16 @@ class ActivitiesController < ApplicationController
   def ended
     @activities = Activity.where("end_time < ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
+  end
+
+  def category
+    @category = Category.find(params[:id])
+    #@category = params[:param]
+    @activities = @category.activities.paginate(page: params[:page])
     respond_to do |format|
       format.html { redirect_to root_url }
       format.js
