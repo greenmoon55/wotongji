@@ -1,10 +1,12 @@
 # -*- encoding : utf-8 -*-
 module SessionsHelper
 
+=begin
 	def sign_in(user)
 	  session[:current_user_id] = user.id
 	  self.current_user = user
 	end
+=end
 
 	def signed_in?
 	  !current_user.nil?
@@ -12,7 +14,8 @@ module SessionsHelper
 
   def sign_out
     self.current_user = nil
-    session.delete(:current_user_id)
+    session.delete :current_user_id
+    cookies.delete :remember_token
   end
 
   # setter
@@ -22,7 +25,11 @@ module SessionsHelper
 
   # getter
 	def current_user
-	  @current_user ||= User.find_by_id(session[:current_user_id])
+    if @current_user.nil?
+	    @current_user = User.find_by_id(session[:current_user_id]) if session[:current_user_id]
+      @current_user = User.find_by_remember_token(cookies[:remember_token]) if cookies[:remember_token]
+    end
+    @current_user
 	end
 
   # store current url

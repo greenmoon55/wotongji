@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email].downcase)
     if user && user.authenticate(params[:password])
-      sign_in user
+      if params[:remember_me]
+        cookies.permanent[:remember_token] = user.remember_token
+      else
+        session[:current_user_id] = user.id
+      end
+      self.current_user = user
       redirect_back_or user
     else
       flash.now[:error] = "Email或密码错误"

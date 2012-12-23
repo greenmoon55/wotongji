@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   before_save { |user| user.email = email.downcase }
+  before_save :create_remember_token
 
   def interested_in?(interest_activity)
     interests.find_by_activity_id(interest_activity.id)
@@ -50,12 +51,13 @@ class User < ActiveRecord::Base
     interests.find_by_activity_id(interest_activity.id).destroy
   end
 
-  def generate_token()
-    SecureRandom.urlsafe_base64
-  end
-
   def send_password_reset
-    create_password_reset!(token: generate_token)
+    create_password_reset!(token: SecureRandom.urlsafe_base64)
 		UserMailer.password_reset(self).deliver   
   end
+  
+  private
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 end
