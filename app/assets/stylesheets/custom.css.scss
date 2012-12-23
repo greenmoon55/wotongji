@@ -44,7 +44,7 @@ ul {
   display: block;
 }
 
-.well-white{
+.well-white {
 	background-color: white;
 	order: 1px solid #D5D5D5;
     margin-bottom: 20px;
@@ -63,14 +63,14 @@ ul {
 
     border-left: 1px solid #D9D9D9;
     
-  }
+}
 
 
 .form {
 margin-top: 20px;
 }
 
-.well-white-activity{
+.well-white-activity {
 	background-color: white;
 	order: 1px solid #D5D5D5;
     margin-bottom: 20px;
@@ -137,7 +137,60 @@ margin-top: 20px;
   float: left;
 }
 
+/* tabs menu */
 
+.menu 
+{
+  background-color:#61b4cf; 
+  color:#272727; 
+  border-bottom:1px solid #d7d7d7; 
+  height:25px;
+  width:635px;
+  font-size:22px;
+}
+
+.menu ul 
+{
+  margin-left: 25px;
+  padding:0px; 
+  list-style:none; 
+  text-align:center;
+}
+
+.menu li 
+{
+  display:inline; 
+  line-height:23px;
+  float:left
+}
+
+.menu li a 
+{
+  color:#000000; 
+  text-decoration:none; 
+  padding:4px 5px 6px 5px;  
+  border-left:1px solid #ececec; 
+  border-right:1px solid #ececec;
+}
+
+.menu li a.tabactive 
+{
+  border-left:1px solid #d7d7d7; 
+  border-right:1px solid #d7d7d7; 
+  background-color:#3aaacf; 
+  font-weight:bold;  
+  position:relative;
+}
+
+#tabcontent1,#tabcontent2,#tabcontent3,#tabcontent4 
+{
+  width:635px; 
+  text-align:center;
+  padding:6px 0px;
+  font-size:15px; 
+  margin-top: 10px;
+  margin-bottom:5px;
+}
 
 /* activity#show comments */
 .comment {
