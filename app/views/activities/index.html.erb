@@ -1,7 +1,8 @@
 <% provide(:title, '全部活动') %>
-
+<script type="text/javascript" language="javascript" src="bootstrap-modal.js"></script>
 <script type="text/javascript" language="javascript" src="easytabs.js"></script>
 <body>
+<div class="container">
 <div class="row">
   <div class="span8">
     <div class="row">
@@ -58,30 +59,6 @@
         <!--End Tabcontent 4-->
       </div>
     </div>
-    <!--
-    <div class="row">
-      <span class="controls">
-        <%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %>
-      </span>
-      <span class="controls">
-        <%= link_to "未开始的活动", { controller: "activities", action: "unstart" }, remote: true %>
-      </span>
-      <span class="controls">
-        <%= link_to "正在进行的活动", { controller: "activities", action: "started" }, remote: true %>
-      </span>
-      <span class="controls">
-        <%= link_to "已结束的活动", { controller: "activities", action: "ended" }, remote: true %>
-      </span>
-    </div>
-    <div class="row">
-      <% @categories.each do |category| %>
-        <span class="controls">
-          <%= link_to category.name, { controller: "activities", action: "category", id: category.id },
-              remote: true %>
-        </span>
-      <% end %>
-    </div>
-    -->
     <div id="activities">
       <% unless @activities == nil %>
         <%= render 'shared/activities_form' %>
@@ -98,7 +75,34 @@
     <hr/>
     <div class="row">
       <h4>新加入：</h4>
+      <div id="modals">
+        <div class="modal hide fade" id="myModal" style="display: none">
+          <div class="modal-header">
+          <a class="close" data-dismiss="modal">×</a>
+          <h3>登陆对话框？</h3>
+          </div>
+          <div class="modal-body">
+            <p>这个可以用来做登录对话框？</p>
+            <p>可以用来做登录对话框？</p>
+            <p>用来做登录对话框？</p>
+            <p>来做登录对话框？</p>
+            <p>做登录对话框？</p>
+            <p>登录对话框？</p>
+            <p>对话框？</p>
+            <p>话框？</p>
+            <p>框？</p>
+            <p>？</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">关闭</a>
+            <a href="#" class="btn btn-primary">保存更新</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <a class="btn btn-primary" data-toggle="modal" href="#myModal">点我点我快点我！</a>
     </div>
   </div>
+</div>
 </div>
 </body>
