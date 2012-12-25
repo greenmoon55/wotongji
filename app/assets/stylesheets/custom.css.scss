@@ -215,6 +215,104 @@ margin-top: 20px;
   margin: 20px 0 0 60px;
 }
 
+/*home*/
+.show-body{
+  color: #A5A4A4;
+}
+
+ul.navigation {
+  width: 204px;
+  float: right;
+}
+
+.home-person{
+  background: url(home-page0.png) no-repeat;
+  width: 650px;
+  height: 640px;
+  padding-top: 80px;
+}
+
+#person ul.navigation {
+padding-top: 50px;
+}
+
+.home-today{
+  width: 941px;
+  padding-right: 254px;
+  padding-top: 116px;
+  height: 680px;
+  background: url(home-page1.png) no-repeat top right;
+  }
+
+#person ul.navigation li.menu-top {
+  padding: 0 0 0 85px;
+}
+
+.today-panel {
+  padding-left: 34px;
+  padding-top: 5px;
+  text-align: right;
+  width: 650px;
+  float: right;
+  color: #BFF7FF;
+}
+
+.today-img{
+  position:relative;
+  height:395px;
+  width: 391px;
+  float:left;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.today-list{
+  padding-top: 20px;
+  text-transform: uppercase;
+  float: right;
+}
+
+
+#today ul.navigation {
+float: left;
+padding: 40px 0 0 20px;
+}
+
+#today ul.navigation li.menu-top {
+padding: 0 0 0 125px;
+}
+
+.home-yesterday{
+  width: 1110px;
+  padding-top: 95px;
+  height: 837px;
+  background: url(home-page2.png) no-repeat top right;
+}
+
+.home-tomorrow{
+  margin-top: 35px;
+  width: 990px;
+  padding: 105px 110px 0 0;
+  height: 719px;
+  background: url(home-page3.png) no-repeat;
+}
+
+.home-contact{
+  width: 960px;
+  padding: 40px 200px 10px 0;
+  background: url(home-page4.png) no-repeat top left;
+  float: left;
+}
+
+#today h2 {
+text-transform: uppercase;
+clear: both;
+font-size: 24px;
+color: white;
+}
+
+
+
 /* activity#new */
 /* css for timepicker */
 /* http://trentrichardson.com/examples/timepicker */
