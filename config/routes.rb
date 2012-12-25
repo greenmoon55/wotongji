@@ -39,7 +39,7 @@ Wotongji::Application.routes.draw do
   match '/password_reset/:id', to: 'password_resets#update', via: :put, as: :new_password
 
   namespace :admin do
-    resources :users
+    resources :users, :categories
   end
 
   # The priority is based upon order of creation:

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::UsersController < ApplicationController
   def index
     @users = User.all
