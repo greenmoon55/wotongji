@@ -24,13 +24,15 @@ module SessionsHelper
 	end
 
   # getter
-	def current_user
-    @current_user ||= User.find_by_id(session[:current_user_id]) 
-    if !cookies[:remember_token].nil?
-    @current_user ||= User.find_by_remember_token(cookies[:remember_token])
+  def current_user
+    if session[:current_user_id]
+      @current_user ||= User.find_by_id(session[:current_user_id]) 
+    end
+    if cookies[:remember_token]
+      @current_user ||= User.find_by_remember_token(cookies[:remember_token])
     end
     @current_user
-	end
+  end
 
   # store current url
   def store_location
