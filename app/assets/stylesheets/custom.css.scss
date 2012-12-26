@@ -318,7 +318,35 @@ color: white;
 
 
 /*new activity*/
+#new-act{
+  width: 960px;
+  height: 770px;
+  margin: 30px auto 0 auto;
+}
+.new-activity{
+  zoom:1;
+}
+.new-act-left{
+  width: 590px;
+  padding-right: 40px;
+  padding-left: 10px;
+}
 
+
+.field {
+display: inline-block;
+float: left;
+margin-right: 15px;
+text-align: right;
+width: 60px;
+line-height: 27px;
+font-size: 14px;
+vertical-align: middle;
+}
+.new-act-left,.new-act-text{
+  float: left;
+
+}
 
 /* activity#new */
 /* css for timepicker */

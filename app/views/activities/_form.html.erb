@@ -1,40 +1,62 @@
 <%= form_for @activity, :html => {:multipart => true} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-
  
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="new-activity" id="new-act">
+   <div class="new-act-left">
 
-  <%= f.label :start_time %>
-  <% if @activity.start_time? %>
-    <%= f.text_field :start_time, :autocomplete => :off, :value => @activity.start_time.to_s(:yymmdd)%>
-  <% else %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    
+    
 
-       <%= f.text_field :start_time, :autocomplete => :off %> 
-  <% end %>
-  <%= f.time_select :start_time, :ignore_date => true, :minute_step => 5%>
-  <%= f.label :end_time %>
-  <% if @activity.end_time? %>
-    <%= f.text_field :end_time, :autocomplete => :off, :value => @activity.end_time.to_s(:yymmdd)%>
-  <% else %>
-    <%= f.text_field :end_time, :autocomplete => :off %>
-  <% end %>
-  <%= f.time_select :end_time, :ignore_date => true, :minute_step => 5%>
+    <%= f.label :start_time %>
+      <% if @activity.start_time? %>
+      <%= f.text_field :start_time, :autocomplete => :off, :value => @activity.start_time.to_s(:yymmdd)%>
+      <% else %>
+      <%= f.text_field :start_time, :autocomplete => :off %> 
+      <% end %>
+    <%= f.time_select :start_time, :ignore_date => true, :minute_step => 5%>
+   
+    <%= f.label :end_time %>
+      <% if @activity.end_time? %>
+      <%= f.text_field :end_time, :autocomplete => :off, :value => @activity.end_time.to_s(:yymmdd)%>
+      <% else %>
+      <%= f.text_field :end_time, :autocomplete => :off %>
+      <% end %>
+    <%= f.time_select :end_time, :ignore_date => true, :minute_step => 5%>
 
-  <%= f.label :category_id, "目录" %>
-  <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]} %>
+    <%= f.label :category_id, "目录" %>
+    <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]} %>
   
-  <%= f.submit "提交", class: "dailin btn btn-default btn-primary" %>
- 
-  <%= f.label :content %>
-  <%- # f.text_area :content %>
-  
-  <%= f.file_field :image %>
-  <textarea cols="20" id="activity_content" name="activity[content]" rows="14"></textarea>   
   
  
+    <%= f.label :content %>
+    <%- # f.text_area :content %>
+  
+    <%= f.file_field :image %>
+    <textarea cols="20" id="activity_content" name="activity[content]" rows="14" style="width:500px"></textarea>   
 
-  <% end %>
+    <%= f.submit "提交", class: "dailin btn btn-default btn-primary" %>
+  
+    <% end %>
+
+ </div>
+
+
+ <div class="new-act-text">
+    <h2>创建活动须知 ···</h2>
+    <p>1. 活动标题简单明了，时间地点准确；</p>
+    <p>2. 活动内容和特点介绍详细；</p>
+    <p>3. 记得上传一张活动海报，分辨率大于500x500；</p>
+    <p>4. 遇到任何问题可以邮件联系我们获得帮助。</p>
+    <p>邮件地址：greenmon55</p>
+ </div>
+
+
+ 
+
+</div>
+  
   
 
 
