@@ -3,8 +3,9 @@
 /* universal */
 body {
   padding-top: 60px;
-  background-color: whiteSmoke;
+  
 }
+/*background-color: whiteSmoke;*/
 
 /* footer */
 footer {
@@ -318,6 +319,14 @@ color: white;
 
 
 /*new activity*/
+#new-act-text h2{
+  font-weight:normal;
+  margin: 10px 0px 0px 0px;
+  padding: 0;
+}
+#new-act-text p{
+  margin: 15px 0;
+}
 #new-act{
   width: 960px;
   height: 770px;
@@ -334,18 +343,29 @@ color: white;
 
 
 .field {
-display: inline-block;
-float: left;
-margin-right: 15px;
-text-align: right;
-width: 60px;
-line-height: 27px;
-font-size: 14px;
-vertical-align: middle;
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+  text-align: right;
+  width: 60px;
+  line-height: 27px;
+  font-size: 14px;
+  vertical-align: middle;
 }
 .new-act-left,.new-act-text{
   float: left;
 
+}
+.new-act-text{
+  width: 267px;
+  margin-left: 45px;
+  padding-bottom: 15px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-top-color: #DFDCDA;
+  border-bottom-color: #DFDCDA;
 }
 
 /* activity#new */
