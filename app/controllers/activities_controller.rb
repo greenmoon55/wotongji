@@ -76,6 +76,9 @@ class ActivitiesController < ApplicationController
     params[:activity][:start_time] += ' ' + params[:activity]["start_time(4i)"]+ ':' + params[:activity]["start_time(5i)"]
     params[:activity].delete("start_time(4i)")
     params[:activity].delete("start_time(5i)")
+    params[:activity][:end_time] += ' ' + params[:activity]["end_time(4i)"] + ':' + params[:activity]["end_time(5i)"]
+    params[:activity].delete("end_time(4i)")
+    params[:activity].delete("end_time(5i)")
     @activity = current_user.activities.build(params[:activity])
     
     if @activity.save
