@@ -11,26 +11,33 @@
               <div class="edit-user-group" id="edit-user"> 
                 <h1>编辑个人资料</h1>
                 <div class="edit-user-group1">
-                   <div class="edit-user-row1">
+                   <div class="edit-user-row">
                      <%= f.label :current_password, "当前密码" %>
 		    	     <%= f.password_field :current_password ,class:"w"%>
                    </div>	
                    
- 
-    			   <%= f.label :email %>
-	    		   <%= f.text_field :email ,class:"w"%>
+                   <div class="edit-user-row">
+                     <%= f.label :email %>
+	    		     <%= f.text_field :email ,class:"w"%>
+                   </div>
+    			   
+    			   <div class="edit-user-row">
+                     <%= f.label :name, "用户名" %>
+				     <%= f.text_field :name ,class:"w"%>
+    			   </div>
 
-				   <%= f.label :name, "用户名" %>
-				   <%= f.text_field :name ,class:"w"%>
-
-    			   <%= f.label :password, "密码" %>
-	    		   <%= f.password_field :password ,class:"w"%>
-
-		    	   <%= f.label :password_confirmation, "密码确认" %>
-			       <%= f.password_field :password_confirmation ,class:"w"%>
-
-				   <%= f.submit "更新", class: "btn btn-default btn-primary" %>
-
+				   <div class="edit-user-row">
+                     <%= f.label :password, "密码" %>
+	    		     <%= f.password_field :password ,class:"w"%>
+				   </div> 
+				   <div class="edit-user-row">
+                     <%= f.label :password_confirmation, "密码确认" %>
+			         <%= f.password_field :password_confirmation ,class:"w"%>
+				   </div> 
+				   <div class="edit-user-row">
+                     <%= f.submit "更新", class: "btn btn-default btn-primary" %>
+				   </div> 
+    			   
                 </div>
                
                </div>
