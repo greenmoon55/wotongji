@@ -1,10 +1,16 @@
 <%= provide(:title, @user.name) %>
 <div class="row">
   <div class="span8" id="user-activities">
-    <% unless @activities == nil %>
-      <h5>感兴趣的活动：</h5>
-      <%= render 'shared/activities_form' %>
-    <% end %>
+    <div class="user-show-right">
+      
+      <% unless @activities == nil %>
+       <h5>感兴趣的活动：</h5>
+       <%= render 'shared/activities_form' %>
+      <% end %>
+
+    </div>
+    
+  
   </div>
 
 
@@ -23,13 +29,17 @@
          </p> 
 
         <% if current_user?(@user) %>
-        <p>
+        <div class="user-activity">
+         <p>
           <strong>
             <%= link_to "我发布的活动 ( " + @user.activities.count.to_s + " )",
               { controller: "users", action: "my_activities" }, 
               remote: true %>
           </strong>
         </p>
+
+        </div>
+        <div class="user-interest-act">
         <p>
           <strong>
             <%= link_to "我感兴趣的活动 ( " + @user.interestactivities.count.to_s + " )",
@@ -37,7 +47,11 @@
               remote: true %>
           </strong>
         </p>
+
+        </div>
+       
       <% else %>
+       <div class="user-activity">
         <p>
           <strong>
             <%= link_to "他发布的活动 ( " + @user.activities.count.to_s + " )",
@@ -45,6 +59,8 @@
               remote: true %>
           </strong>
         </p>
+       </div>
+        <div class="user-interest-act">
         <p>
           <strong>
             <%= link_to "他感兴趣的活动 ( " + @user.interestactivities.count.to_s + " )",
@@ -52,6 +68,7 @@
               remote: true %>
           </strong>
         </p>
+      </div>
       <% end %>
 
       </div>
