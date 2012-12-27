@@ -116,6 +116,7 @@ margin-top: 20px;
   background: #eaeaea;
   word-wrap: break-word;
   word-break: normal;
+  margin-top: 7px;
 }
 
 /* activity#show users */
@@ -341,17 +342,6 @@ color: white;
   padding-left: 10px;
 }
 
-
-.field {
-  display: inline-block;
-  float: left;
-  margin-right: 15px;
-  text-align: right;
-  width: 60px;
-  line-height: 27px;
-  font-size: 14px;
-  vertical-align: middle;
-}
 .new-act-left,.new-act-text{
   float: left;
 
@@ -398,8 +388,15 @@ color: white;
 
 .show-share{
   margin-bottom: 15px;
-
 }
+.show-down{
+  margin-top: 15px;
+}
+.show-commend-field{
+  margin: 3px 0 0 3px;
+}
+
+
 
 /* activity#new */
 /* css for timepicker */

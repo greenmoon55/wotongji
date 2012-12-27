@@ -28,13 +28,14 @@
                 <b>发布者:</b>
                 <%= @activity.user.name %>
               </li>
+            </ul>
          </div>
          <div class="show-favor">
             <ul>
              <li>xx人感兴趣</li>
              <li>感兴趣</li>
             </ul>
-
+   
          </div>
     </div>
 
@@ -79,8 +80,6 @@
       </li>
  
     </div>
-
-   
       <li>
         <b>活动内容:</b>
           <div class="activity-content">
@@ -88,7 +87,8 @@
             <%= simple_format(Rinku.auto_link(@activity.content)) %>
           </div>
       </li>
-    </ul>
+
+  <div class="show-down">
     <b>评论</b>
     <% @activity.comments.each do |comment| %>
       <div class="comment">
@@ -103,14 +103,18 @@
         </div>
       </div>
     <% end %>
-    </ul>
+    
     <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
-      <div class="field">
+      <div class="show-commend-field">
         <%= f.hidden_field :activity_id, :value => @activity.id %>
-        <%= f.text_area :content, :cols => 65, :rows => 4, :placeholder => "说点什么吧..." %>
+        <%= f.text_area :content, :cols => 65, :rows => 6, :placeholder => "说点什么吧..." %>     
+        <%= f.submit "评论", class: "btn btn-default btn-primary" %>
       </div>
-      <%= f.submit "评论", class: "btn btn-large btn-primary" %>
     <% end %>
+   
+   </div>
+   
+
   </div>
 </div>
 
