@@ -1,12 +1,10 @@
 # -*- encoding : utf-8 -*-
 module SessionsHelper
 
-=begin
 	def sign_in(user)
 	  session[:current_user_id] = user.id
 	  self.current_user = user
 	end
-=end
 
 	def signed_in?
 	  !current_user.nil?
