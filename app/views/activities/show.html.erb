@@ -36,11 +36,10 @@
             </ul>
 
          </div>
-
-
-
     </div>
-   
+
+    <div class="show-share">
+      <li>
 <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
 <a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;"></a>
 <script type="text/javascript">
@@ -76,7 +75,12 @@
   document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
 })()
 </script>  
+ 
       </li>
+ 
+    </div>
+
+   
       <li>
         <b>活动内容:</b>
           <div class="activity-content">
@@ -85,7 +89,7 @@
           </div>
       </li>
     </ul>
-    <h3>评论</h3>
+    <b>评论</b>
     <% @activity.comments.each do |comment| %>
       <div class="comment">
         <div class="avatar"><%= gravatar_for comment.user%> </div>
