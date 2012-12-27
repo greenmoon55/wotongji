@@ -59,4 +59,11 @@ module SessionsHelper
       redirect_to signin_url, notice: "请先登录"
     end
   end
+
+  def require_super_admin
+    unless signed_in? and current_user.email = "greenmoon55@gmail.com"
+      store_location
+      redirect_to signin_url, notice: "请先登录"
+    end
+  end
 end

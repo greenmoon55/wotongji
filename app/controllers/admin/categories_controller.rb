@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Admin::CategoriesController < ApplicationController
+  before_filter :require_super_admin
   def index
     @categories = Category.all
   end
