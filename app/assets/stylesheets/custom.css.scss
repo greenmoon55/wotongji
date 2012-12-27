@@ -368,6 +368,33 @@ color: white;
   border-bottom-color: #DFDCDA;
 }
 
+/*show-activity*/
+.show-contant{
+  float: left;
+  width: 590px;
+  padding-right: 30px;
+}
+.show-up{
+  margin: 10px 0 30px 0;
+}
+.show-activity-pic{
+  float: left;
+  padding: 0;
+}
+.show-info{
+  float: left;
+  max-width: 250px;
+  margin-left: 20px;
+  margin-top: 7px;
+}
+.show-favor{
+  float: right;
+  width: 100px;
+  height: 100px;
+  padding-left: 5px;
+  border-left: 1px dashed #DDD;
+}
+
 /* activity#new */
 /* css for timepicker */
 /* http://trentrichardson.com/examples/timepicker */

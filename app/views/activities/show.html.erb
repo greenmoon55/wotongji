@@ -1,23 +1,46 @@
 <% provide(:title, @activity.title) %>
 <div class="row">
   <div class="span8">
+   <div class="show-content">
+
     <h2><%= @activity.title %></h2>
-    <%= render 'interest_form' if signed_in? %>
-    <%= image_tag @activity.image_url(:thumb) if @activity.image? %>
-    <ul>
-      <li>
-        <b>开始时间:</b>
-        <%= @activity.start_time %>
-      </li>
-      <li>
-        <b>结束时间:</b>
-        <%= @activity.end_time %>
-      </li>
-      <li>
-        <b>发布者:</b>
-        <%= @activity.user.name %>
-      </li>
-      <li>
+    
+    <div class="show-up">
+
+      <%= render 'interest_form' if signed_in? %>
+      <%= image_tag @activity.image_url(:thumb) if @activity.image? %>
+   
+         <div class="show-activity-pic">
+           <img src="http://duocaiii.com/resource/img/photo/act//200_200/718b82ca45d43e6c664310538e33e350.png">
+         </div>
+
+         <div class="show-info">
+            <ul>
+              <li>
+                <b>开始时间:</b>
+                <%= @activity.start_time %>
+              </li>
+              <li>
+                <b>结束时间:</b>
+                <%= @activity.end_time %>
+              </li>
+              <li>
+                <b>发布者:</b>
+                <%= @activity.user.name %>
+              </li>
+         </div>
+         <div class="show-favor">
+            <ul>
+             <li>xx人感兴趣</li>
+             <li>感兴趣</li>
+            </ul>
+
+         </div>
+
+
+
+    </div>
+   
 <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
 <a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;"></a>
 <script type="text/javascript">
@@ -85,6 +108,9 @@
       <%= f.submit "评论", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
+</div>
+
+
   <div class="span4">
     <p>感兴趣的人:</p>
     <% if @activity.interestedusers.any? %>
