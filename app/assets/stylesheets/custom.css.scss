@@ -3,7 +3,7 @@
 /* universal */
 body {
   padding-top: 60px;
-  
+  background-color: whiteSmoke;
 }
 /*background-color: whiteSmoke;*/
 
@@ -397,6 +397,46 @@ color: white;
 }
 
 
+/*edit user*/
+.edit-user-group{
+  position: relative;
+  background: #EFEFEF;
+  padding: 3px;
+  border-radius: 3px;
+  margin: 0 0 15px 0;
+  width: 655px;
+  height: 418px;
+}
+#edit-user h1{
+  background-image: -webkit-linear-gradient(#FAFAFA, #E0E0E0);
+  background-repeat: repeat-x;
+  margin: 0;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border: 1px solid #D8D8D8;
+  border-bottom: none;
+  padding: 10px 10px 11px 10px;
+  font-size: 14px;
+  text-shadow: 0 1px 0 white;
+  line-height: 18px
+}
+.w {
+  width: 400px;
+}
+.edit-user-group1{
+  padding: 1px 10px;
+  background: white;
+  border: 1px solid #D8D8D8;
+  border-top: 1px solid #CCC;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  color: #666;
+  font-size: 13px;
+  height: 375px;
+}
+.edit-user-row1{
+  margin: 15px 1px 1px;
+}
 
 /* activity#new */
 /* css for timepicker */
