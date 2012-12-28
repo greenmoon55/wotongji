@@ -7,11 +7,10 @@
     
     <div class="show-up">
 
-      <%= render 'interest_form' if signed_in? %>
-      <%= image_tag @activity.image_url(:thumb) if @activity.image? %>
    
          <div class="show-activity-pic">
            <img src="http://duocaiii.com/resource/img/photo/act//200_200/718b82ca45d43e6c664310538e33e350.png">
+           <!--img><%= image_tag @activity.image_url(:thumb) if @activity.image? %></img-->
          </div>
 
          <div class="show-info">
@@ -32,8 +31,7 @@
          </div>
          <div class="show-favor">
             <ul>
-             <li>xx人感兴趣</li>
-             <li>感兴趣</li>
+              <%= render 'interest_form' if signed_in? %>
             </ul>
    
          </div>
