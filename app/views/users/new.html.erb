@@ -1,20 +1,37 @@
+<body id="new-user">
 <% provide(:title, "注册") %>
 <div id="register">
 	<h1>注册用户</h1>
   <%= render 'shared/error_messages', :object => @user %>    
 	<%= form_for(@user) do |f| %>
-		<%= f.label :email %>
-		<%= f.text_field :email %>
+	  <div class="new-user-contant">
 
-		<%= f.label :name, "用户名" %>
-		<%= f.text_field :name %>
+        <div class="new-user-right">
+          
+          <h2>创建你的新用户</h2>
+          <%= f.label :email %>
+		  <%= f.text_field :email%>
 
-		<%= f.label :password, "密码" %>
-		<%= f.password_field :password %>
+		  <%= f.label :name, "用户名" %>
+		  <%= f.text_field :name %>
 
-		<%= f.label :password_confirmation, "密码确认" %>
-		<%= f.password_field :password_confirmation %>
+		  <%= f.label :password, "密码" %>
+		  <%= f.password_field :password %>
 
-		<%= f.submit "注册", class: "btn btn-default btn-primary" %>
+		  <%= f.label :password_confirmation, "密码确认" %>
+		  <%= f.password_field :password_confirmation %>
+
+		  <%= f.submit "注册", class: "btn btn-default btn-primary" %>
+
+ 
+
+        </div>
+
+       
+
+
+	  </div>
+		
 	<% end %>
 </div>
+</body>

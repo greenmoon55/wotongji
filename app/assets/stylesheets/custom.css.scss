@@ -484,3 +484,35 @@ color: white;
 #ui-datepicker-div {
   font-size: 5px;
 }
+
+
+/*new-user*/
+#new-user{
+  background-color: white;
+  font: 13px Helvetica, arial, freesans, clean, sans-serif;
+  line-height: 1.4;
+  color: #333;
+}
+#register h1{
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: #495961;
+  z-index: 0;
+}
+#register h2{
+  font-size: 16px;
+  color: #666;
+  margin: 15px 0 10px 0;
+}
+.new-user-contant{
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  height: 500px;
+  margin-top: 25px;
+}
+.new-user-right{
+  width: 440px;
+  float: right;
+}
