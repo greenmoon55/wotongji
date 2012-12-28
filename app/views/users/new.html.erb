@@ -13,26 +13,26 @@
           <div class="new-user-group">
 
           	<div class="new-user-row">
-             <%= f.label :email %>
-		     <%= f.text_field :email%>
+              <%= f.label :email %>
+		      <%= f.text_field :email,class:"new-user-block",style:"background: #FAFAFA none;"%>
           	</div>
 
             <div class="new-user-row">
               <%= f.label :name, "用户名" %>
-		      <%= f.text_field :name %>
+		      <%= f.text_field :name ,class:"new-user-block",style:"background: #FAFAFA none;"%>		   
           	</div>
 
 		   
-             <div class="new-user-row">
-		    <%= f.label :password, "密码" %>
-		    <%= f.password_field :password %>
-            	</div>
+            <div class="new-user-row">
+		      <%= f.label :password, "密码" %>
+		      <%= f.password_field :password ,class:"new-user-block",style:"background: #FAFAFA none;"%>
+            </div>
 
-            	 <div class="new-user-row">
-		    <%= f.label :password_confirmation, "密码确认" %>
-		    <%= f.password_field :password_confirmation %>
-             </div>
-             
+            <div class="new-user-row">
+		      <%= f.label :password_confirmation, "密码确认" %>
+		      <%= f.password_field :password_confirmation,class:"new-user-block",style:"background: #FAFAFA none;"%>
+            </div>
+
 		    <%= f.submit "注册", class: "btn btn-default btn-primary" %>
 
           </div>
