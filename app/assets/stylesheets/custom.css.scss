@@ -504,7 +504,7 @@ color: white;
 #register h2{
   font-size: 16px;
   color: #666;
-  margin: 15px 0 10px 0;
+  margin-left: 15px;
 }
 .new-user-contant{
   border-top: 1px solid #DDD;
@@ -512,7 +512,15 @@ color: white;
   height: 500px;
   margin-top: 25px;
 }
-.new-user-right{
+.new-user-left{
   width: 440px;
-  float: right;
+  border-right: 1px solid #DDD;
+  float: left;
+}
+.new-user-group{
+  margin: 10px 0 0 0;
+  padding: 10px;
+  background: url("https://a248.e.akamai.net/assets.github.com/images/modules/account/fieldgroup_back.png?7f415d42") 0 0 no-repeat;
+  margin-right: 20px;
+  margin-left: 10px;
 }
