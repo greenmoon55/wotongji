@@ -11,18 +11,28 @@
           <h2>创建你的新用户</h2>
 
           <div class="new-user-group">
-            <%= f.label :email %>
-		    <%= f.text_field :email%>
 
-		    <%= f.label :name, "用户名" %>
-		    <%= f.text_field :name %>
+          	<div class="new-user-row">
+             <%= f.label :email %>
+		     <%= f.text_field :email%>
+          	</div>
 
+            <div class="new-user-row">
+              <%= f.label :name, "用户名" %>
+		      <%= f.text_field :name %>
+          	</div>
+
+		   
+             <div class="new-user-row">
 		    <%= f.label :password, "密码" %>
 		    <%= f.password_field :password %>
+            	</div>
 
+            	 <div class="new-user-row">
 		    <%= f.label :password_confirmation, "密码确认" %>
 		    <%= f.password_field :password_confirmation %>
-
+             </div>
+             
 		    <%= f.submit "注册", class: "btn btn-default btn-primary" %>
 
           </div>
