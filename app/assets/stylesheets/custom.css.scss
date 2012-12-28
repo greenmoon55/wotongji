@@ -517,6 +517,7 @@ color: white;
   width: 440px;
   border-right: 1px solid #DDD;
   float: left;
+  height: 500px;
 }
 .new-user-group{
   margin: 10px 0 0 0;
@@ -536,4 +537,23 @@ color: white;
   background: #FAFAFA none;
   box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 1px;
   width:340px;
+}
+.form-warning{
+  margin: 35px 0;
+  padding: 8px 10px;
+  border: 1px solid #E7E4C2;
+  font-size: 14px;
+  color: #333;
+  background: #FFFFE2;
+  border-radius: 4px;
+  width: 333px;
+}
+.form-warning p{
+  margin: 0;
+  line-height: 1.5;
+}
+.new-user-bottom{
+  float: right;
+  margin-top: 5px;
+  margin-right: 33px;
 }

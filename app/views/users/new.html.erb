@@ -31,10 +31,16 @@
             <div class="new-user-row">
 		      <%= f.label :password_confirmation, "密码确认" %>
 		      <%= f.password_field :password_confirmation,class:"new-user-block",style:"background: #FAFAFA none;"%>
-            </div>
+           </div>
+        <div class="form-warning">
+           <p>在注册之前请阅读相关规定</p>
+ 
+        </div>  
 
-		    <%= f.submit "注册", class: "btn btn-default btn-primary" %>
-
+        <div class="new-user-bottom">        
+          <%= f.submit "注册", class: "btn btn-large btn-block btn-primary" %>
+        </div>
+		  
           </div>
           
  
