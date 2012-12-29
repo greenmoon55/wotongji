@@ -506,18 +506,25 @@ color: white;
   color: #666;
   margin-left: 15px;
   line-height: 25px;
+  margin-top: 20px;
+}
+#register h3{
+  font-size: 16px;
+  margin: 15px 0 10px 0;
+  color: #666;
 }
 .new-user-contant{
   border-top: 1px solid #DDD;
   border-bottom: 1px solid #DDD;
   height: 500px;
-  margin-top: 25px;
+  margin-top: 40px;
 }
 .new-user-left{
   width: 440px;
   border-right: 1px solid #DDD;
   float: left;
   height: 500px;
+  
 }
 .new-user-group{
   margin: 10px 0 0 0;
@@ -556,4 +563,11 @@ color: white;
   float: right;
   margin-top: 5px;
   margin-right: 33px;
+}
+
+.new-user-right{
+  float: right;
+  width: 400px;
+  margin-right: 50px;
+  margin-top: 25px;
 }
