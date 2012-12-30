@@ -1,6 +1,13 @@
+<body class="login" id="log"> 
 <%= provide(:title, "登录") %>
+<!--
 <h1>登录</h1>
+-->
+<div class="login-group">
+<h1>Log in</h1>	
+<div class="formbody">
 
+ 
 <%- #form_tag sessions_path do%>
 <%= form_tag signin_path do%>
   <%= label_tag :email %>
@@ -17,3 +24,7 @@
 
 <p>第一次来？<%= link_to "新用户注册", signup_path %> </p>
 
+</div>
+</div>
+
+</body>
