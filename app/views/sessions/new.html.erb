@@ -18,14 +18,24 @@
   <%= label_tag :password, "密码"%>
   <%= password_field_tag :password , params[:password] , class:"login-box"%>
   
-  
-  <div class="login-remember">
-  	<div class="login-left"><%= label_tag :remember_me %></div>
+    
+   <div class="login-rem">
+    <%= label_tag :remember_me,params[:remember_me], class:"login-left" %>
     <div class="login-right"><%= check_box_tag :remember_me %></div>
+  
+   </div>
+  	
  
-  </div>
+ 
 
-  <%= submit_tag "登录", class: "btn btn-defult btn-info" %>
+
+
+   <div class="login-bottom"> 
+   	 <%= submit_tag "登录", class: "btn btn-defult btn-info" %>
+   </div>
+   
+ 
+ 
 <% end %>
 
 <p>第一次来？<%= link_to "新用户注册", signup_path %> </p>

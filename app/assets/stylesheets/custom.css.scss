@@ -570,16 +570,23 @@ margin-top: 20px;
   border-color: #E9F1F4 #D8DEE2 #D8DEE2;
   border-radius: 0 0 3px 3px;
 }
-.login-remember{
- width: 300px;
+
+.login-box{
+  width: 300px;
+  background-color: white;
 }
 .login-left{
   float: left;
 }
 .login-right{
   float: left;
+  margin-left: 10px;
 }
-.login-box{
+.login-rem{
   width: 300px;
-  background-color: white;
+  height: 20px;
+}
+.login-bottom{
+  float: right;
+  margin-right: 20px;
 }
