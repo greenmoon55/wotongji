@@ -7,22 +7,16 @@
   <div class="span8">
     <div class="row">
       <div class="menu">
-        <!--Start of the Tabmenu1 -->
+     
         <div class="row">
           <ul>
             <li><a href="#" onmouseover="easytabs('1', '1');" onfocus="easytabs('1', '1');"
               onclick="return false;"  title="" id="tablink1">  活动时间  </a></li>
             <li><a href="#" onmouseover="easytabs('1', '2');" onfocus="easytabs('1', '2');"
-              onclick="return false;"  title="" id="tablink2">  活动类型  </a></li>
-            <!--li><a href="#" onmouseover="easytabs('1', '3');" onfocus="easytabs('1', '3');"
-              onclick="return false;"  title="" id="tablink3">Tab 3 </a></li>
-            <li><a href="#" onmouseover="easytabs('1', '4');" onfocus="easytabs('1', '4');"
-              onclick="return false;"  title="" id="tablink4">Tab 4 </a></li-->
+              onclick="return false;"  title="" id="tablink2">  
           </ul>
         </div>
-        <!--End of the Tabmenu1 -->
-
-        <!--Start Tabcontent 1 -->
+   
         <div class="row" id="tabcontent1">
           <span class="controls">
             <%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %>
@@ -37,9 +31,7 @@
             <%= link_to "已结束的活动", { controller: "activities", action: "ended" }, remote: true %>
           </span>
         </div>
-          <!--End Tabcontent 1-->
-        
-        <!--Start Tabcontent 2-->
+     
         <div class="row" id="tabcontent2">
           <% @categories.each do |category| %>
             <span class="controls">
@@ -48,15 +40,7 @@
             </span>
           <% end %>
         </div>
-        <!--End Tabcontent 2 -->
-        
-        <!--Start Tabcontent 3-->
-        <!--div id="tabcontent3"></div-->
-        <!--End Tabcontent 3-->
-        
-        <!--Start Tabcontent 4-->
-        <!--div id="tabcontent4"></div-->
-        <!--End Tabcontent 4-->
+    
       </div>
     </div>
     <div id="activities">
@@ -79,81 +63,26 @@
   </div>
 </div>
 </div>
+
+
+<!--
+
+<div class="home-area">
+  <div class="home-title" id="hometitle">
+    <h1>
+     "未开始的活动"
+     <a href="/new">more</a>
+    </h1>
+
+  </div>
+
+
+</div>
+
+-->
+
+
 </body>
 
 
 
-
-
-
-</div>
-
-<div class="home-person" id="person">
-  
-  <ul class="navigation">
-    <li class="menu-top">
-      <img src="http://localhost:3000/assets/menu-top.png">
-    </li> 
-  </ul>
-  
-</div>
-
-<div class="home-today" id="today">
-  <div class="today-panel">
-    <h2>today-activity</h2>
-    <ul class="today-img">
-      <img src="http://localhost:3000/assets/home-today.gif" class="img-circle">
-    </ul>
-    <ul class="today-list" id="today-list">
-         <li>
-            "category1"
-            <ul>
-              <li>
-                <a>activity1</a>
-              </li>
-              <li> 
-                <a>activity1</a>
-              </li>
-              <li>
-                <a>activity1</a>
-              </li>
-            </ul>
-         </li>
-         <li>
-            "category2"
-            <ul>
-              <li> <a>activity1</a></li>
-              <li> <a>activity1</a></li>
-              <li> <a>activity1</a></li>
-            </ul>
-         </li>
-         <li>
-            "category3"
-            <ul>
-              <li> <a>activity1</a></li>
-              <li> <a>activity1</a></li>
-              <li> <a>activity1</a></li>
-            </ul>
-         </li>
-      </ul>
-
-  </div> 
-
-  <ul class="navigation">
-    <li class="menu-top">
-      <img src="http://localhost:3000/assets/menu-top.png">
-    </li> 
-  </ul>
-
-</div>
-<div class="home-yesterday">
-
-</div>
-<div class="home-tomorrow">
-
-</div>
-
-<div class="home-contact" id="contact-us">
-
-
-</div>

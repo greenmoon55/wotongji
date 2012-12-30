@@ -218,105 +218,40 @@ margin-top: 20px;
 }
 
 /*home*/
-.show-body{
-  color: #A5A4A4;
+.home-area{
+  background-color: white;
+  padding: 19px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 30px #CCC;
+  height: 250px;
+  width: 600px;
+
 }
-
-.home-panel{
-  padding-top: 20px;
-  padding-left: 34px;
+.home-title{
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 25px;
+  font-size: 21px;
+  line-height: 50px;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #E5E5E5;
 }
-
-ul.navigation {
-  width: 204px;
-  float: right;
+#hometitle h1{
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  line-height: 20px;
 }
-
-.home-person{
-  background: url(home-page0.png) no-repeat;
-  width: 650px;
-  height: 640px;
-  padding-top: 80px;
-}
-
-#person ul.navigation {
-padding-top: 50px;
-}
-
-.home-today{
-  width: 941px;
-  padding-right: 254px;
-  padding-top: 116px;
-  height: 680px;
-  background: url(home-page1.png) no-repeat top right;
-  }
-
-#person ul.navigation li.menu-top {
-  padding: 0 0 0 85px;
-}
-
-.today-panel {
-  padding-left: 34px;
-  padding-top: 5px;
-  text-align: right;
-  width: 650px;
-  float: right;
-  color: #BFF7FF;
-}
-
-.today-img{
-  position:relative;
-  height:395px;
-  width: 391px;
-  float:left;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-
-.today-list{
-  padding-top: 20px;
-  text-transform: uppercase;
-  float: right;
+#hometitle a{
+  color: #2E8BCC;
+  text-decoration: none;
 }
 
 
-#today ul.navigation {
-float: left;
-padding: 40px 0 0 20px;
-}
-
-#today ul.navigation li.menu-top {
-padding: 0 0 0 125px;
-}
-
-.home-yesterday{
-  width: 1110px;
-  padding-top: 95px;
-  height: 837px;
-  background: url(home-page2.png) no-repeat top right;
-}
-
-.home-tomorrow{
-  margin-top: 35px;
-  width: 990px;
-  padding: 105px 110px 0 0;
-  height: 719px;
-  background: url(home-page3.png) no-repeat;
-}
-
-.home-contact{
-  width: 960px;
-  padding: 40px 200px 10px 0;
-  background: url(home-page4.png) no-repeat top left;
-  float: left;
-}
-
-#today h2 {
-text-transform: uppercase;
-clear: both;
-font-size: 24px;
-color: white;
-}
 
 
 /*new activity*/
@@ -398,6 +333,13 @@ color: white;
 
 
 /*edit user*/
+.user-edit-left{
+  float:left;
+
+
+}
+
+
 .edit-user-group{
   position: relative;
   background: #EFEFEF;
