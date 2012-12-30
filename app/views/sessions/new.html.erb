@@ -10,16 +10,21 @@
  
 <%- #form_tag sessions_path do%>
 <%= form_tag signin_path do%>
+  
   <%= label_tag :email %>
-  <%= text_field_tag :email, params[:email]%>
+  <%= text_field_tag :email, params[:email],class:"login-box"%>
+  
 
   <%= label_tag :password, "密码"%>
-  <%= password_field_tag :password %>
+  <%= password_field_tag :password, class:"login-box1"%>
+  
+  <div class="login-remember">
+  	<div class="login-left"><%= label_tag :remember_me %></div>
+    <div class="login-right"><%= check_box_tag :remember_me %></div>
+ 
+  </div>
 
-  <%= label_tag :remember_me %>
-  <%= check_box_tag :remember_me %>
-
-  <%= submit_tag "登录", class: "btn btn-large btn-primary" %>
+  <%= submit_tag "登录", class: "btn btn-defult btn-info" %>
 <% end %>
 
 <p>第一次来？<%= link_to "新用户注册", signup_path %> </p>
