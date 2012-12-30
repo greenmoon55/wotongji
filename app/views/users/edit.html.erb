@@ -5,13 +5,14 @@
 			 <div class="user-edit-left">
 
           <div class="user-show-pic">
-          <%= render 'shared/error_messages', :object => @user %>
-          <%= gravatar_for(@user) %>
+            <%= render 'shared/error_messages', :object => @user %>
+            <%= gravatar_for(@user) %>
           </div>  
-
-          <%= link_to "编辑头像", "http://gravatar.com" %>
-          <%= form_for(@user) do |f| %>
- 
+          <div id="user-changimg">
+            <%= link_to "编辑头像", "http://gravatar.com" ,class:"a"%>
+            <%= form_for(@user) do |f| %>
+          </div>
+          
        </div> 
       
 

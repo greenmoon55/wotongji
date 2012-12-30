@@ -334,11 +334,23 @@ margin-top: 20px;
 
 /*edit user*/
 .user-edit-left{
+  margin-top: 13px;
   float:left;
-
-
+}
+#user-changimg{
+  margin-top: 10px;
 }
 
+#user-changimg a{
+  display: block;
+  line-height: 1;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+  font: 20px Helvetica, arial, freesans, clean, sans-serif;
+  line-height: 1.4;
+
+}
 
 .edit-user-group{
   position: relative;
@@ -347,8 +359,11 @@ margin-top: 20px;
   border-radius: 3px;
   margin: 0 0 15px 0;
   width: 655px;
-  height: 450px;
-  float: right;
+  height: 500px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+
 }
 #edit-user h1{
   background-image: -webkit-linear-gradient(#FAFAFA, #E0E0E0);
@@ -375,7 +390,7 @@ margin-top: 20px;
   border-bottom-right-radius: 1px;
   color: #666;
   font-size: 13px;
-  height: 406px;
+  height: 456px;
 }
 .edit-user-row{
   margin: 15px 1px 1px;
