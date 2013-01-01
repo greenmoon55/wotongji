@@ -4,9 +4,9 @@
 		<div>
 			 <div class="user-edit-left">
 
-          <div class="user-show-pic">
+          <div class="user-show-pic img-rounded">
             <%= render 'shared/error_messages', :object => @user %>
-            <%= gravatar_for(@user) %>
+            <%= gravatar_for(@user, size: 201) %>
           </div>  
           <div id="user-changimg">
             <%= link_to "编辑头像", "http://gravatar.com" ,class:"a"%>

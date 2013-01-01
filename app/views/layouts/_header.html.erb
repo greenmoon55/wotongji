@@ -1,10 +1,10 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <nav>
         <%= link_to "我同济", root_path, class: "brand" %>
         <!-- <a class="brand" href="#">Home</a> -->
-        <ul class="nav pull-right">
+        <form class="navbar-form pull-right">
+        <ul class="nav">
     	    <li><%= link_to "发布", new_activity_path %></li>
           <% if signed_in? %>
             <li class="user-avatars"><%= link_to gravatar_for(current_user, size: 20) + current_user.name, 
@@ -27,10 +27,10 @@
        	    <li><%= link_to "注册", signup_path %></li>
           <% end %>
     	  </ul>
-      </nav>
+        </form>
     </div>
   </div>
-</header>
+</div>
 
 <div id="modals">
   <div class="modal hide fade" id="signin" style="display: none">
