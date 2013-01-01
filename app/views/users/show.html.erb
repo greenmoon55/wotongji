@@ -1,17 +1,6 @@
 <%= provide(:title, @user.name) %>
 <div class="row">
-  <div class="span8" id="user-activities">
-    <div class="user-show-right">
-      
-      <% unless @activities == nil %>
-       <h5>感兴趣的活动：</h5>
-       <%= render 'shared/activities_form' %>
-      <% end %>
-
-    </div>
-    
-  
-  </div>
+ 
 
 
 
@@ -76,5 +65,18 @@
      
       
     </div>
+  </div>
+
+   <div class="span8" id="user-activities">
+    <div class="user-show-right">
+      
+      <% unless @activities == nil %>
+       <h5>感兴趣的活动：</h5>
+       <%= render 'shared/activities_form' %>
+      <% end %>
+
+    </div>
+    
+  
   </div>
 </div>
