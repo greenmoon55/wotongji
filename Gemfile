@@ -13,6 +13,7 @@ gem 'carrierwave'
 gem 'rmagick' #image processing
 gem 'rinku' #autolink
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-wysihtml5-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

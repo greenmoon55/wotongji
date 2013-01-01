@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap.min
+ *= require bootstrap-wysihtml5
  *= require custom
  *= require_tree ./smoothness
  *= require bootstrap-datepicker
