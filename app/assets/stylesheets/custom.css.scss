@@ -3,9 +3,11 @@
 /* universal */
 body {
   padding-top: 60px;
-  background-color: whiteSmoke;
+  //background-color: whiteSmoke; commented by greenmoon55
 }
-/*background-color: whiteSmoke;*/
+.img-rounded {
+  border-radius: 3px;
+}
 
 /* footer */
 footer {
@@ -114,7 +116,7 @@ margin-top: 20px;
 
 .activity-content {
   width: 650;
-  background: #eaeaea;
+  //background: #eaeaea;
   word-wrap: break-word;
   word-break: normal;
   margin-top: 7px;

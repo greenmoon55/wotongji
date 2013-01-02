@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ActivitiesController < ApplicationController
   before_filter :require_signin, only: [:new, :create, :destroy]
-  before_filter :correct_user,   only: [:edit, :update, :destroy]
+  before_filter :check_user,     only: [:edit, :update, :destroy]
   before_filter :modify_params,  only: [:create, :update]
 
   def index
@@ -86,6 +86,7 @@ class ActivitiesController < ApplicationController
   end
   
   def edit
+    @activity = Activity.find(params[:id])
   end
 
   def update
@@ -100,8 +101,12 @@ class ActivitiesController < ApplicationController
   end
   
   private
-    def correct_user
-      @activity = current_user.activities.find_by_id(params[:id]) unless current_user.nil?
+    # checks if the activity belongs to current_user or current_user is an administrator
+    def check_user
+      unless current_user.nil?
+        return if current_user.admin?
+        @activity = current_user.activities.find_by_id(params[:id])
+      end
       if @activity.nil?
         flash[:error] = "权限不足"
         redirect_to Activity.find(params[:id])

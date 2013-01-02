@@ -14,22 +14,27 @@
         <div class="show-info">
           <ul>
             <li>
-              <b>开始时间:</b>
+              开始时间:
               <%= @activity.start_time %>
             </li>
             <li>
-              <b>结束时间:</b>
+              结束时间:
               <%= @activity.end_time %>
             </li>
             <li>
-              <b>发布者:</b>
+              类别:
+              <%= @activity.category.name %>
+            </li>
+            <li>
+              发布者:
               <%= @activity.user.name %>
             </li>
             <li>
-              <b>地点:</b>
+              地点:
               <%= @activity.location %>
             </li>
           </ul>
+          <%= link_to '编辑', edit_activity_path(@activity) if correct_user_or_admin? %>
         </div>
         <div class="show-favor">
           <ul>
