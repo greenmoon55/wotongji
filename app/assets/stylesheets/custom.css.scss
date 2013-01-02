@@ -29,11 +29,13 @@ footer ul li {
 ul {
 	list-style: none;
 	margin-left: 0;
+
 }
 
 .activity {
-	margin-top: 10px;
-  border-bottom: 1px solid gray;
+	margin-bottom: 25px;
+  border-bottom: 1px dashed #D4D4D4;
+  padding-bottom: 15px;
 }
 
 .title {
@@ -251,7 +253,14 @@ margin-top: 20px;
   text-decoration: none;
 }
 
+.show-body{
+  background-color: white;
 
+}
+.activities-content{
+  float: left;
+  width: 500px;
+}
 
 
 /*new activity*/
