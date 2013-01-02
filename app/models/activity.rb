@@ -15,6 +15,7 @@
 
 class Activity < ActiveRecord::Base
   attr_accessible :content, :end_time, :start_time, :title, :image, :category_id
+  attr_accessible :location
   belongs_to :user
   belongs_to :category
   mount_uploader :image, ImageUploader
