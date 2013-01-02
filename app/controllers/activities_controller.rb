@@ -2,6 +2,7 @@
 class ActivitiesController < ApplicationController
   before_filter :require_signin, only: [:new, :create, :destroy]
   before_filter :correct_user,   only: [:edit, :update, :destroy]
+  before_filter :modify_params,  only: [:create, :update]
 
   def index
     @activities = Activity.paginate(page: params[:page])
@@ -73,12 +74,6 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    params[:activity][:start_time] += ' ' + params[:activity]["start_time(4i)"]+ ':' + params[:activity]["start_time(5i)"]
-    params[:activity].delete("start_time(4i)")
-    params[:activity].delete("start_time(5i)")
-    params[:activity][:end_time] += ' ' + params[:activity]["end_time(4i)"] + ':' + params[:activity]["end_time(5i)"]
-    params[:activity].delete("end_time(4i)")
-    params[:activity].delete("end_time(5i)")
     @activity = current_user.activities.build(params[:activity])
     
     if @activity.save
@@ -111,5 +106,13 @@ class ActivitiesController < ApplicationController
         flash[:error] = "权限不足"
         redirect_to Activity.find(params[:id])
       end
+    end
+    def modify_params
+      params[:activity][:start_time] += ' ' + params[:activity]["start_time(4i)"]+ ':' + params[:activity]["start_time(5i)"]
+      params[:activity].delete("start_time(4i)")
+      params[:activity].delete("start_time(5i)")
+      params[:activity][:end_time] += ' ' + params[:activity]["end_time(4i)"] + ':' + params[:activity]["end_time(5i)"]
+      params[:activity].delete("end_time(4i)")
+      params[:activity].delete("end_time(5i)")
     end
 end
