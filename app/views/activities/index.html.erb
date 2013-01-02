@@ -3,8 +3,34 @@
 <body class="show-body">
 <div class="container">
 <div class="row">
-  <div class="span8">
-    <div class="row">
+<div class="span8">
+
+<div class="home-nagi">
+<div class="home-navigation">
+<ul>
+   <li><a href="#" onmouseover="easytabs('1', '1');" onfocus="easytabs('1', '1');"onclick="return false;"  title="" id="tablink1">  活动时间  </a></li>
+   <li><%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %></li> 
+   <li><%= link_to "未开始", { controller: "activities", action: "unstart" }, remote: true %></li> 
+   <li><%= link_to "进行中", { controller: "activities", action: "started" }, remote: true %></li>
+   <li><%= link_to "已结束", { controller: "activities", action: "ended" }, remote: true %></li> 
+ </ul>
+</div>
+
+<div class="home-navigation">
+  <ul>
+    <li><a href="#" onmouseover="easytabs('1', '2');" onfocus="easytabs('1', '2');"
+              onclick="return false;"  title="" id="tablink2">  活动类型  </a></li>  
+     <% @categories.each do |category| %>
+      <li>
+          <%= link_to category.name, { controller: "activities", action: "category", id: category.id },
+              remote: true %>
+      </li>
+     <% end %>
+
+  </ul>
+</div>
+</div>           
+  <!--  <div class="row">
       <div class="menu">
      
         <div class="row">
@@ -17,9 +43,6 @@
         </div>
    
         <div class="row" id="tabcontent1">
-
-          
-
           <span class="controls">
             <%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %>
           </span>
@@ -45,11 +68,10 @@
     
       </div>
     </div>
-
+  !-->
     <div class="activities-content" id="acti-con">
     <div id="activities">
       <div class="activities-rowl">
-       
 
       </div>
 
@@ -62,6 +84,7 @@
     
 
   </div>
+  <div class="home-right">
   <div class="span4">
     <div class="row">
       <%= form_tag "/search", method:"get", remote: true do %>
@@ -73,6 +96,7 @@
     <div class="row home-male1">
       <h4>新加入：</h4>
     </div>
+  </div>
   </div>
 </div>
 </div>
@@ -97,27 +121,4 @@
 
 
 </body>
-<div class="home-navigation">
-<ul>
-   <li><a href="#" onmouseover="easytabs('1', '1');" onfocus="easytabs('1', '1');"onclick="return false;"  title="" id="tablink1">  活动时间  </a></li>
-   <li><%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %></li> 
-   <li><%= link_to "未开始", { controller: "activities", action: "unstart" }, remote: true %></li> 
-   <li><%= link_to "进行中", { controller: "activities", action: "started" }, remote: true %></li>
-   <li><%= link_to "已结束", { controller: "activities", action: "ended" }, remote: true %></li> 
- </ul>
-</div>
 
-<div class="home-navigation">
-  <ul>
-    <li><a href="#" onmouseover="easytabs('1', '2');" onfocus="easytabs('1', '2');"
-              onclick="return false;"  title="" id="tablink2">  活动类型  </a></li>  
-     <% @categories.each do |category| %>
-      <li>
-          <%= link_to category.name, { controller: "activities", action: "category", id: category.id },
-              remote: true %>
-      </li>
-     <% end %>
-
-  </ul>
-</div>
-           

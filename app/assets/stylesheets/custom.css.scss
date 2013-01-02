@@ -253,11 +253,15 @@ margin-top: 20px;
   text-decoration: none;
 }
 
+.home-nagi{
+  width: 100px;
+  float: left;
+  margin-top: 10px;
+}
 .home-navigation{
   background-color: #EFEFEB;
   padding: 10px 0;
   margin-bottom: 20px;
-  width: 120px;
 }
 
 
@@ -267,7 +271,13 @@ margin-top: 20px;
 }
 .activities-content{
   float: left;
-  width: 500px;
+  width: 450px;
+  margin-left: 43px;
+  margin-top: 10px;
+}
+
+.home-right{
+  margin-top: 10px;
 }
 .home-male{
   margin-left: 16px;
