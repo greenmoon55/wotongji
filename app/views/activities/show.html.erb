@@ -35,6 +35,7 @@
             </li>
           </ul>
           <%= link_to '编辑', edit_activity_path(@activity) if correct_user_or_admin? %>
+          <%= link_to '删除', @activity, method: :delete, data: { confirm: '你真的要删除吗？'} if correct_user_or_admin? %>
         </div>
         <div class="show-favor">
           <ul>

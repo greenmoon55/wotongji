@@ -99,6 +99,13 @@ class ActivitiesController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    flash[:success] = "删除成功！"
+    redirect_to activities_url
+  end
   
   private
     # checks if the activity belongs to current_user or current_user is an administrator
