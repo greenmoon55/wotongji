@@ -53,9 +53,15 @@
 </div>
   
 <script>
+    var oneYear = new Date();
+    oneYear.setYear(oneYear.getFullYear() + 1);
     $("#activity_start_time, #activity_end_time").datepicker({
       format: 'yyyy-mm-dd',
-      language: 'zh-CN'
+      language: 'zh-CN',
+      autoclose: 'true',
+      weekStart: 1,
+      startDate: new Date(),
+      endDate: oneYear
     })
 
     $('#activity_content').wysihtml5({locale: 'zh-CN'});

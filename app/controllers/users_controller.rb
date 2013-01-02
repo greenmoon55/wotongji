@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    store_previous_location
+    #store_previous_location
     #session[:return_to] = request.referer
     @user = User.new
   end
