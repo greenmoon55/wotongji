@@ -101,7 +101,7 @@ class ActivitiesController < ApplicationController
   
   private
     def correct_user
-      @activity = current_user.activities.find_by_id(params[:id])
+      @activity = current_user.activities.find_by_id(params[:id]) unless current_user.nil?
       if @activity.nil?
         flash[:error] = "权限不足"
         redirect_to Activity.find(params[:id])
