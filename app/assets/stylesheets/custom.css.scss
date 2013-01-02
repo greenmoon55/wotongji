@@ -44,7 +44,7 @@ ul {
 
 /* user#new */
 .container form input {
-  display: block;
+  //display: block; // commented by greenmoon55 as unnecessary
 }
 
 .well-white {
@@ -93,7 +93,6 @@ margin-top: 20px;
 }
 
 .space1-activities{
-
     width: 220px;
     height: 290px;
     padding: 20px 25px 15px;
@@ -142,7 +141,6 @@ margin-top: 20px;
 }
 
 /* tabs menu */
-
 .menu 
 {
   background-color:#61b4cf; 
@@ -302,6 +300,14 @@ margin-top: 20px;
   border-bottom-color: #DFDCDA;
 }
 
+.time-select {
+  width: auto;
+}
+
+#activity_content {
+  width: 100%;
+}
+
 /*show-activity*/
 .show-contant{
   float: left;
@@ -431,26 +437,6 @@ margin-top: 20px;
   float: left;
   width: 680px;
 }
-
-/* activity#new */
-/* css for timepicker */
-/* http://trentrichardson.com/examples/timepicker */
-.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
-.ui-timepicker-div dl { text-align: left; }
-.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
-.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
-.ui-timepicker-div td { font-size: 90%; }
-.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
-
-.ui-timepicker-rtl{ direction: rtl; }
-.ui-timepicker-rtl dl { text-align: right; }
-.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
-
-/* modified by greenmoon55 */
-#ui-datepicker-div {
-  font-size: 5px;
-}
-
 
 /*new-user*/
 #new-user{
