@@ -99,6 +99,7 @@
               <span class="timestamp">
                 <%= comment.created_at.in_time_zone.to_s(:cn) %>
               </span>
+              <a onclick='reply(<%= comment.id %>, &quot;<%= comment.user.name %>&quot;)'>回复</a>
             </div>
           </div>
         <% end %>
