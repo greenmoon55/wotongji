@@ -23,10 +23,10 @@
       <% end %>
     <%= f.time_select :end_time, {ignore_date: true, minute_step: 5}, class: "time-select" %>
 
-    <%= f.label :category_id, "目录" %>
+    <%= f.label :category_id %>
     <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]} %>
 
-    <%= f.label :location, "地点" %>
+    <%= f.label :location %>
     <%= f.text_field :location %>
 
     <%= f.label :content %>
