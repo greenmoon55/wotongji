@@ -273,7 +273,9 @@ margin-top: 20px;
   padding: 10px 0;
   margin-bottom: 20px;
 }
-
+.home-navigation ul{
+  margin-left: 20px;
+}
 
 .show-body{
   background-color: white;
@@ -581,7 +583,7 @@ margin-top: 20px;
 }
 .login{
   background-color: white;
-  font: 13px Helvetica, arial, freesans, clean, sans-serif;
+  /*font: 13px Helvetica, arial, freesans, clean, sans-serif;*/
   line-height: 1.4;
   color: #333;
 }
