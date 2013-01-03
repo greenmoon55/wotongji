@@ -2,12 +2,10 @@
   <%= @activity.interestedusers.count %>
   <b> 人感兴趣</b>
 </li>
-<% unless current_user.id == @activity.user_id %>
-  <li id="interest-form">
+<li id="interest-form">
     <% if current_user.interested_in?(@activity) %>
       <%= render 'uninterest' %>
     <% else %>
       <%= render 'interest' %>
     <% end %>
-  </li>
-<% end %>
+</li>
