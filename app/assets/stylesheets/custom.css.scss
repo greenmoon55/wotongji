@@ -45,8 +45,9 @@ ul {
 }
 .activity-img{
   float: left;
-  width: 100px;
-  margin-right: 25px;
+  width: 110px;
+  margin-right: 30px;
+  margin-left: 5px;
 }
 
 .title {
@@ -310,6 +311,9 @@ margin-top: 20px;
 }
 .new-activity{
   zoom:1;
+}
+.new-activity-btn{
+  float:right;
 }
 .new-act-left{
   width: 590px;
