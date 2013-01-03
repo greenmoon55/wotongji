@@ -9,9 +9,10 @@ class CommentsController < ApplicationController
     if params[:comment][:parent_id].present?
       comment = Comment.find(params[:comment][:parent_id])
       unless comment.nil?
-        if params[:comment][:content].start_with?("@" + comment.user.name)
+        unless params[:comment][:content].start_with?("@" + comment.user.name)
           #params[:comment][:content].gsub!("@" + comment.user.name, 
           #  "@" + view_context.link_to(comment.user.name, comment.user))
+          params[:comment].delete(:parent_id);
         end
       end
     else

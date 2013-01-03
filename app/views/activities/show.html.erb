@@ -93,7 +93,10 @@
           <div class="comment">
             <div class="avatar"><%= gravatar_for comment.user%> </div>
             <div class="comment-content">
-              <div class="content"><%= comment.content %></div>
+              <div class="content">
+                <%= link_to '@' + comment.parent_comment.user.name, comment.parent_comment.user if comment.parent_id? %>
+                <%= comment.content %>
+              </div>
               <%= link_to comment.user.name, comment.user %>
               发表于
               <span class="timestamp">
