@@ -12,7 +12,10 @@
    <li><%= link_to "全部活动", { controller: "activities", action: "all" }, remote: true %></li> 
    <li><%= link_to "未开始", { controller: "activities", action: "unstart" }, remote: true %></li> 
    <li><%= link_to "进行中", { controller: "activities", action: "started" }, remote: true %></li>
-   <li><%= link_to "已结束", { controller: "activities", action: "ended" }, remote: true %></li> 
+
+   <li>
+    <%= link_to "已结束", { controller: "activities", action: "ended" }, remote: true %>
+   </li> 
  </ul>
 </div>
 
@@ -45,7 +48,11 @@
     <div class="row">
       <%= form_tag "/search", method:"get", remote: true do %>
         <%= text_field_tag :q, params[:q], class: "input-medium search-query float-left home-male" %>
+
+        
         <%= submit_tag "查找", class: "btn btn-info float-left", style: "margin-left: 14px" %>
+
+        
       <% end %>
     </div>
     <hr/>

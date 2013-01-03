@@ -566,13 +566,11 @@ margin-top: 20px;
 /*login*/
 #log h1{
   position: relative;
-  color: white;
+  color: #5A5A5A;
   font-size: 16px;
   font-weight: bold;
-  background-color: #6C8393;
-  background-image: -webkit-linear-gradient(#7F95A5, #6C8393);
+  background-color: #EAEAEA;
   background-repeat: repeat-x;
-  border: 1px solid #6E8290;
   border-bottom: 1px solid #586873;
   border-radius: 3px 3px 0 0;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
@@ -580,6 +578,8 @@ margin-top: 20px;
   padding: 8px 18px;
   -webkit-font-smoothing: antialiased;
   line-height: 20px;
+  background-image: -webkit-linear-gradient(#FAFAFA, #EAEAEA);
+  border: 1px solid #CACACA;
 }
 .login{
   background-color: white;
@@ -594,7 +594,7 @@ margin-top: 20px;
   height: 400px;
 }
 .formbody{
-  width: 351px;
+  width: 347px;
   padding: 2em;
   background-color: white;
   margin: 0 0 1em 0;
