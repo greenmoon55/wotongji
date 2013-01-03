@@ -195,6 +195,20 @@ zh-CN:
     errors:
       <<: *errors
   activerecord:
+    models:
+    attributes:
+      activity:
+        title: "标题"
+        start_time: "开始时间"
+        end_time: "结束时间"
+        category_id: "类别"
+        location: "地点"
+        content: "内容"
+        image: "图片"
+      user:
+        name: "用户名"
+        password: "密码"
+        password_confirmation: "密码确认"
     errors:
       <<: *errors
 

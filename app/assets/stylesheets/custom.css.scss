@@ -5,10 +5,14 @@ body {
   padding-top: 60px;
   //background-color: whiteSmoke; commented by greenmoon55
 }
+
 .img-rounded {
-  border-radius: 3px;
+  border-radius: 3px; // overrides bootstrap defaults, looks better
 }
 
+a {
+  cursor: pointer; // for reply links
+}
 /* footer */
 footer {
   margin-top: 45px;
