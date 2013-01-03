@@ -107,6 +107,7 @@
         <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
           <div class="show-commend-field">
             <%= f.hidden_field :activity_id, :value => @activity.id %>
+            <%= f.hidden_field :parent_id %>
             <%= f.text_area :content, :cols => 65, :rows => 6, :placeholder => "说点什么吧..." %>     
             <%= f.submit "评论", class: "btn btn-default btn-primary" %>
           </div>
@@ -123,7 +124,7 @@
       <div class="user-avatars">
         <% @activity.interestedusers.each do |user| %>
           <div class="float-left">
-            <p><%= link_to gravatar_for(user, size: 30), user %></p>
+            <p><%= link_to gravatar_for(user), user %></p>
             <p><%= link_to user.name, user %></p>
         </div>
         <% end %>
