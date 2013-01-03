@@ -39,9 +39,15 @@ ul {
 }
 
 .activity {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
   border-bottom: 1px dashed #D4D4D4;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
+}
+.activity-img{
+  float: left;
+  width: 110px;
+  margin-right: 30px;
+  margin-left: 5px;
 }
 
 .title {
@@ -305,6 +311,9 @@ margin-top: 20px;
 }
 .new-activity{
   zoom:1;
+}
+.new-activity-btn{
+  float:right;
 }
 .new-act-left{
   width: 590px;
@@ -613,3 +622,6 @@ margin-top: 20px;
   float: right;
   margin-right: 20px;
 }
+
+
+
