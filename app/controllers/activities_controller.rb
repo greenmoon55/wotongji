@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
   def index
     @activities = Activity.paginate(page: params[:page])
     @categories = Category.all
+    @@select_time = 'all'
   end
 
   def search
@@ -22,6 +23,7 @@ class ActivitiesController < ApplicationController
 
   def all
     @activities = Activity.paginate(page: params[:page])
+    @@selected_time = params[:selected]
     respond_to do |format|
       format.html { redirect_to root_url }
       format.js
@@ -31,6 +33,7 @@ class ActivitiesController < ApplicationController
   def unstart
     @activities = Activity.where("start_time > ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
+    @@selected_time = params[:selected]
     respond_to do |format|
       format.html { redirect_to root_url }
       format.js
@@ -40,6 +43,7 @@ class ActivitiesController < ApplicationController
   def started
     @activities = Activity.where("start_time < ? and end_time > ?", Time.now, Time.now)
     @activities = @activities.paginate(page: params[:page])
+    @@selected_time = params[:selected]
     respond_to do |format|
       format.html { redirect_to root_url }
       format.js
@@ -49,6 +53,7 @@ class ActivitiesController < ApplicationController
   def ended
     @activities = Activity.where("end_time < ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
+    @@selected_time = params[:selected]
     respond_to do |format|
       format.html { redirect_to root_url }
       format.js
@@ -56,9 +61,21 @@ class ActivitiesController < ApplicationController
   end
 
   def category
-    @category = Category.find(params[:id])
-    #@category = params[:param]
-    @activities = @category.activities.paginate(page: params[:page])
+    case @@selected_time
+    when 'all'
+       @category = Category.find(params[:id])
+       @activities = @category.activities.paginate(page: params[:page])
+    when 'unstart'
+      @activities = Activity.where("start_time > ? and category_id == ?", Time.now, params[:id])
+      @activities = @activities.paginate(page: params[:page])
+    when 'started'
+      @activities = Activity.where("start_time < ? and end_time > ? and category_id == ?",
+                                   Time.now, Time.now, params[:id])
+      @activities = @activities.paginate(page: params[:page])
+    when 'ended'
+      @activities = Activity.where("end_time < ? and category_id == ?", Time.now, params[:id])
+      @activities = @activities.paginate(page: params[:page])
+    end
     respond_to do |format|
       format.html { redirect_to root_url }
       format.js
