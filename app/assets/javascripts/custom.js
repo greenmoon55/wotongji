@@ -10,8 +10,16 @@ function reply(commentId, userName) {
   return false;
 }
 
-function changeBackground(elementId) {
+function highlightTime(elementId) {
+  $(".activities-time.link-back-click").removeClass("link-back-click");
   var li = document.getElementById(elementId);
-  li.setAttribute("class", "link-back-click");
+  li.className += " " + "link-back-click";
+  return false;
+}
+
+function highlightCategory(elementId) {
+  $(".activities-category.link-back-click").removeClass("link-back-click");
+  var li = document.getElementById(elementId);
+  li.className += " " + "link-back-click";
   return false;
 }

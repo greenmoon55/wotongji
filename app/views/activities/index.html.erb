@@ -7,44 +7,50 @@
 
 <div class="home-nagi">
 <div class="home-navigation">
-<ul>
-   <li><h5>  活动时间  </h5></li>
-   <li id="all"><%= link_to "全部活动", { controller: "activities", action: "all" },
-                    { onclick: "changeBackground('all')", remote: true } %></li> 
-   <li id="unstart"><%= link_to "未开始", { controller: "activities", action: "unstart" },
-                        { onclick: "changeBackground('unstart')", remote: true } %></li> 
-   <li id="started"><%= link_to "进行中", { controller: "activities", action: "started" },
-                        { onclick: "changeBackground('started')", remote: true } %></li>
-   <li id="ended"><%= link_to "已结束", { controller: "activities", action: "ended" },
-                        { onclick: "changeBackground('ended')", remote: true } %></li>
- </ul>
+  <ul>
+    <li><h5>  活动时间  </h5></li>
+    <li class="activities-time link-back-click" id="all">
+      <%= link_to "全部活动", { controller: "activities", action: "all" },
+        { onclick: "highlightTime('all')", remote: true } %>
+    </li>
+    <li class="activities-time" id="unstart">
+      <%= link_to "未开始", { controller: "activities", action: "unstart" },
+        { onclick: "highlightTime('unstart')", remote: true } %>
+    </li>
+    <li class="activities-time" id="started">
+      <%= link_to "进行中", { controller: "activities", action: "started" },
+        { onclick: "highlightTime('started')", remote: true } %>
+    </li>
+    <li class="activities-time" id="ended">
+      <%= link_to "已结束", { controller: "activities", action: "ended" },
+        { onclick: "highlightTime('ended')", remote: true } %>
+    </li>
+  </ul>
 </div>
 
 <div class="home-navigation">
   <ul>
     <li><h5>  活动类型  </h5></li>
      <% @categories.each do |category| %>
-       <li id="<%= category.id %>">
+       <li class="activities-category" id="<%= category.id %>">
           <%= link_to category.name, { controller: "activities", action: "category", id: category.id },
-            { onclick: "changeBackground(#{category.id})", remote: true } %>
+            { onclick: "highlightCategory(#{category.id})", remote: true } %>
        </li>
      <% end %>
 
   </ul>
 </div>
-</div>           
-    <div class="activities-content" id="acti-con">
-    <div id="activities">
-  
-      <% unless @activities == nil %>
-        <%= render 'shared/activities_form'  %>
-      <% end %>
-    </div>
-    </div>
-    
+</div>
 
+<div class="activities-content" id="acti-con">
+  <div id="activities">
+    <% unless @activities == nil %>
+      <%= render 'shared/activities_form'  %>
+    <% end %>
   </div>
-  <div class="home-right">
+</div>
+</div>
+<div class="home-right">
   <div class="span4">
     <div class="row">
       <%= form_tag "/search", method:"get", remote: true do %>
@@ -61,7 +67,7 @@
       <h4>新加入：</h4>
     </div>
   </div>
-  </div>
+</div>
 </div>
 </div>
 </body>
