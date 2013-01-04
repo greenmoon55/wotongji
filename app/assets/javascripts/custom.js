@@ -9,3 +9,9 @@ function reply(commentId, userName) {
     reply_body.focus().val(reply_body.val() + new_text);
   return false;
 }
+
+function changeBackground(elementId) {
+  var li = document.getElementById(elementId);
+  li.setAttribute("class", "link-back-click");
+  return false;
+}

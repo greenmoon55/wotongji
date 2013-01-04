@@ -54,7 +54,10 @@ module SessionsHelper
   def require_signin
     unless signed_in?
       store_location
-      redirect_to signin_url, notice: "请先登录"
+      respond_to do |format|
+        format.html { redirect_to signin_url, notice: "请先登录"}
+        format.js
+      end
     end
   end
 
