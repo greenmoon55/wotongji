@@ -1,0 +1,5 @@
+<% provide(:title, "提醒") %>
+
+<% @notifications.each do |notification| %>
+  <%= notification.text %>
+<% end %>

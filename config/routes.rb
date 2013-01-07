@@ -27,6 +27,7 @@ Wotongji::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: :get
   match '/signin', to: 'sessions#create', via: :post
   match '/signout', to: 'sessions#destroy', via: :delete
+  match '/notifications', to: 'notifications#show', via: :get
 
   #root to: 'static_pages#home'
   root to: 'activities#index'
