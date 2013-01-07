@@ -22,6 +22,12 @@ function highlightCategory(elementId) {
   return false;
 }
 
+if(history && history.pushState) {
+  $(window).bind("popstate", function() {
+    $.getScript(location.href);
+  })
+}
+
 /*
 window.addEventListener("popstate", false);
 
