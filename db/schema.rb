@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107081436) do
+ActiveRecord::Schema.define(:version => 20130107163001) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
@@ -59,9 +59,11 @@ ActiveRecord::Schema.define(:version => 20130107081436) do
     t.integer  "user_id"
     t.string   "text"
     t.string   "link"
-    t.boolean  "read"
+    t.boolean  "read",       :default => false
     t.datetime "created_at"
   end
+
+  add_index "notifications", ["user_id", "created_at"], :name => "index_notifications_on_user_id_and_created_at"
 
   create_table "password_resets", :force => true do |t|
     t.string   "token"

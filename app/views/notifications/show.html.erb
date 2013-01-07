@@ -1,5 +1,5 @@
 <% provide(:title, "提醒") %>
 
 <% @notifications.each do |notification| %>
-  <%= notification.text %>
+  <%= link_to notification.text, notification.link %> <%= notification.created_at.to_s(:cn) %>
 <% end %>
