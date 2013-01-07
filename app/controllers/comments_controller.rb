@@ -14,7 +14,8 @@ class CommentsController < ApplicationController
           #  "@" + view_context.link_to(comment.user.name, comment.user))
           params[:comment].delete(:parent_id);
         else
-          params[:comment][:content].gsub!(/@#{comment.user.name}\s*/, "")
+          # rubular.com
+          params[:comment][:content].gsub!(/\A@#{comment.user.name}\s*/, "")
         end
       end
     else
