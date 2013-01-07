@@ -21,3 +21,13 @@ function highlightCategory(elementId) {
   li.className += " " + "link-back-click";
   return false;
 }
+
+/*
+window.addEventListener("popstate", false);
+
+$(".activities-time").onclick = function() {
+  history.pushState( null, '', '/unstart' );
+  history.replaceState( null, '', '/unstart' )
+  return false;
+};
+*/
