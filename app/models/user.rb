@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :activities, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   has_many :interests, foreign_key: "user_id", dependent: :destroy
   has_many :interestactivities, through: :interests, source: :activity
   has_many :comments, dependent: :destroy
@@ -56,6 +57,9 @@ class User < ActiveRecord::Base
 		UserMailer.password_reset(self).deliver   
   end
   
+  def build_notification(comment)
+    notifications.create!(text: "#{comment.user.name}回复了您对#{comment.activity.title}的评论", link: Rails.application.routes.url_helpers.activity_path(comment.activity), read: false)
+  end
   private
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64

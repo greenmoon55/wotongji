@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
         else
           # rubular.com
           params[:comment][:content].gsub!(/\A@#{comment.user.name}\s*/, "")
+          current_user.build_notification(comment)
         end
       end
     else
@@ -31,4 +32,5 @@ class CommentsController < ApplicationController
 
   def destroy
   end
+
 end
