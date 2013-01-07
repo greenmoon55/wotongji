@@ -3,11 +3,17 @@
  
 <div class="new-activity" id="new-act">
   <div class="new-act-left">
-
-    <%= f.label :title %>
+    
+    <div class="tag">
+    <i class="icon-tag"></i> 标题
+    </div>
+    <!--   <%= f.label :title %>  -->
     <%= f.text_field :title %>
     
-    <%= f.label :start_time %>
+     <div class="tag">
+     <i class="icon-ok"></i> 开始时间
+     </div>
+   <!--  <%= f.label :start_time %> -->
       <% if @activity.start_time? %>
       <%= f.text_field :start_time, autocomplete: :off, value: @activity.start_time.to_s(:yymmdd) %>
       <% else %>
@@ -15,7 +21,10 @@
       <% end %>
     <%= f.time_select :start_time, {ignore_date: true, minute_step: 5}, class: "time-select" %>
 
-    <%= f.label :end_time %>
+     <div class="tag">
+       <i class="icon-remove"></i> 结束时间
+     </div>
+   <!-- <%= f.label :end_time %>  -->
       <% if @activity.end_time? %>
       <%= f.text_field :end_time, autocomplete: :off, value: @activity.end_time.to_s(:yymmdd) %>
       <% else %>
@@ -23,10 +32,16 @@
       <% end %>
     <%= f.time_select :end_time, {ignore_date: true, minute_step: 5}, class: "time-select" %>
 
-    <%= f.label :category_id %>
+    <div class="tag">
+       <i class="icon-th-list"></i> 类别
+     </div>
+   <!-- <%= f.label :category_id %> -->
     <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]} %>
 
-    <%= f.label :location %>
+    <div class="tag">
+       <i class="icon-road"></i> 地点
+     </div>
+  <!--  <%= f.label :location %>  -->
     <%= f.text_field :location %>
 
     <%= f.label :content %>
@@ -34,7 +49,9 @@
   
     <%= f.file_field :image %>
 
-    <%= f.submit "提交", class: "new-activity-btn dailin btn btn-default btn-primary" %>
+     
+      <%= f.submit "提交", class: "btn btn-default btn-primary btn-lo"%>
+
   
     <% end %>
 
