@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'bcrypt-ruby', '3.0.1'
 gem "magic_encoding", "~> 0.0.2"
