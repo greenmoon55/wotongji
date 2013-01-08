@@ -7,6 +7,14 @@ Wotongji::Application.routes.draw do
   end
 
   resources :sessions, only: :create
+
+  match '/activities/all', to: 'activities#all'
+  match '/activities/active', to: 'activities#active'
+  match '/activities/upcoming', to: 'activities#upcoming'
+  match '/activities/past', to: 'activities#past'
+  match '/activities/search', to: 'activities#search'
+  match '/category', to: 'activities#category'
+
   resources :activities do
     resources :comments
   end
@@ -16,9 +24,9 @@ Wotongji::Application.routes.draw do
   resources :interests, only: [:create, :destroy]
 
   match '/all', to: 'activities#all'
-  match '/unstart', to: 'activities#unstart'
-  match '/started', to: 'activities#started'
-  match '/ended', to: 'activities#ended'
+  match '/active', to: 'activities#active'
+  match '/upcoming', to: 'activities#upcoming'
+  match '/past', to: 'activities#past'
   match '/search', to: 'activities#search'
   match '/category', to: 'activities#category'
   match '/signup', to: 'users#new'

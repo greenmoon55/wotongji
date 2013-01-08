@@ -30,7 +30,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  def unstart
+  def upcoming
     @activities = Activity.where("start_time > ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
     @@selected_time = params[:selected]
@@ -40,7 +40,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  def started
+  def active
     @activities = Activity.where("start_time < ? and end_time > ?", Time.now, Time.now)
     @activities = @activities.paginate(page: params[:page])
     @@selected_time = params[:selected]
@@ -50,7 +50,7 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  def ended
+  def past
     @activities = Activity.where("end_time < ?", Time.now)
     @activities = @activities.paginate(page: params[:page])
     @@selected_time = params[:selected]
@@ -65,14 +65,14 @@ class ActivitiesController < ApplicationController
     when 'all'
        @category = Category.find(params[:id])
        @activities = @category.activities.paginate(page: params[:page])
-    when 'unstart'
+    when 'upcoming'
       @activities = Activity.where("start_time > ? and category_id == ?", Time.now, params[:id])
       @activities = @activities.paginate(page: params[:page])
-    when 'started'
+    when 'active'
       @activities = Activity.where("start_time < ? and end_time > ? and category_id == ?",
                                    Time.now, Time.now, params[:id])
       @activities = @activities.paginate(page: params[:page])
-    when 'ended'
+    when 'past'
       @activities = Activity.where("end_time < ? and category_id == ?", Time.now, params[:id])
       @activities = @activities.paginate(page: params[:page])
     end

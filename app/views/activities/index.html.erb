@@ -13,17 +13,17 @@
       <%= link_to "全部活动", { controller: "activities", action: "all", selected: 'all' },
         { onclick: "highlightTime('all')", remote: true } %>
     </li>
-    <li class="activities-time" id="unstart">
-      <%= link_to "未开始", { controller: "activities", action: "unstart", selected: 'unstart' },
-        { onclick: "highlightTime('unstart')", remote: true } %>
+    <li class="activities-time" id="upcoming">
+      <%= link_to "未开始", { controller: "activities", action: "upcoming", selected: 'upcoming' },
+        { onclick: "highlightTime('upcoming')", remote: true } %>
     </li>
-    <li class="activities-time" id="started">
-      <%= link_to "进行中", { controller: "activities", action: "started", selected: 'started' },
-        { onclick: "highlightTime('started')", remote: true } %>
+    <li class="activities-time" id="active">
+      <%= link_to "进行中", { controller: "activities", action: "active", selected: 'active' },
+        { onclick: "highlightTime('active')", remote: true } %>
     </li>
-    <li class="activities-time" id="ended">
-    <%= link_to "已结束", { controller: "activities", action: "ended", selected: 'ended' },
-        { onclick: "highlightTime('ended')", remote: true } %>
+    <li class="activities-time" id="past">
+    <%= link_to "已结束", { controller: "activities", action: "past", selected: 'past' },
+        { onclick: "highlightTime('past')", remote: true } %>
     </li>
   </ul>
 </div>

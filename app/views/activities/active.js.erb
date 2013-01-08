@@ -1,0 +1,6 @@
+$("#activities").html("<%= escape_javascript(render('shared/activities_form')) %>")
+$("#active").live('ajax:beforeSend', function(event, xhr, settings) {
+  if(history && history.pushState) {
+    history.pushState(null, document.title, '/activities/active');
+  }
+});

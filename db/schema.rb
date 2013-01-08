@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20130107163001) do
     t.integer  "user_id"
     t.string   "text"
     t.string   "link"
-    t.boolean  "read",       :default => false
+    t.boolean  "read"
     t.datetime "created_at"
   end
 
