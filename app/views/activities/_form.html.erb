@@ -1,73 +1,65 @@
 <%= form_for @activity, :html => {:multipart => true} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
- 
-<div class="new-activity" id="new-act">
-  <div class="new-act-left">
-    
-    <div class="tag">
-    <i class="icon-tag"></i> 标题
-    </div>
-    <!--   <%= f.label :title %>  -->
-    <%= f.text_field :title %>
-    
-     <div class="tag">
-     <i class="icon-ok"></i> 开始时间
-     </div>
-   <!--  <%= f.label :start_time %> -->
+  <div class="new-activity" id="new-act">
+    <div class="new-act-left">   
+      <div class="tag">
+        <i class="icon-tag"></i> 标题     
+      </div>
+            <!--   <%= f.label :title %>  -->
+      <%= f.text_field :title %>
+
+      <div class="tag">
+        <i class="icon-ok"></i> 开始时间
+      </div>
+
+      <!--  <%= f.label :start_time %> -->
       <% if @activity.start_time? %>
       <%= f.text_field :start_time, autocomplete: :off, value: @activity.start_time.to_s(:yymmdd) %>
       <% else %>
       <%= f.text_field :start_time, autocomplete: :off %> 
       <% end %>
-    <%= f.time_select :start_time, {ignore_date: true, minute_step: 5}, class: "time-select" %>
+      <%= f.time_select :start_time, {ignore_date: true, minute_step: 5}, class: "time-select" %>
 
-     <div class="tag">
-       <i class="icon-remove"></i> 结束时间
-     </div>
-   <!-- <%= f.label :end_time %>  -->
+      <div class="tag">
+        <i class="icon-remove"></i> 结束时间
+      </div>
+
+      <!-- <%= f.label :end_time %>  -->
       <% if @activity.end_time? %>
       <%= f.text_field :end_time, autocomplete: :off, value: @activity.end_time.to_s(:yymmdd) %>
       <% else %>
       <%= f.text_field :end_time, autocomplete: :off %>
       <% end %>
-    <%= f.time_select :end_time, {ignore_date: true, minute_step: 5}, class: "time-select" %>
+      <%= f.time_select :end_time, {ignore_date: true, minute_step: 5}, class: "time-select" %>
 
-    <div class="tag">
-       <i class="icon-th-list"></i> 类别
-     </div>
-   <!-- <%= f.label :category_id %> -->
-    <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]} %>
+      <div class="tag">
+        <i class="icon-th-list"></i> 类别
+      </div>
 
-    <div class="tag">
-       <i class="icon-road"></i> 地点
-     </div>
-  <!--  <%= f.label :location %>  -->
-    <%= f.text_field :location %>
+      <!-- <%= f.label :category_id %> -->
+      <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]} %>
 
-    <%= f.label :content %>
-    <%= f.text_area :content, :cols => 20, :rows => 14 %>
-  
-    <%= f.file_field :image %>
+      <div class="tag">
+        <i class="icon-road"></i> 地点
+      </div>
 
-     
+      <!--  <%= f.label :location %>  -->
+      <%= f.text_field :location %>
+      <%= f.label :content %>
+      <%= f.text_area :content, :cols => 20, :rows => 14 %>
+      <%= f.file_field :image %>
       <%= f.submit "提交", class: "btn btn-default btn-primary btn-lo"%>
-
-  
-    <% end %>
-
+      <% end %>
+    </div>
+    <div class="new-act-text" id="new-act-text">
+      <h2>创建活动须知 ···</h2>
+      <p>1. 活动标题简单明了，时间地点准确；</p>
+      <p>2. 活动内容和特点介绍详细；</p>
+      <p>3. 记得上传一张活动海报，分辨率大于500x500；</p>
+      <p>4. 遇到任何问题可以邮件联系我们获得帮助。</p>
+      <p>邮件地址：greenmon55</p>
+    </div>
   </div>
-
-
-  <div class="new-act-text" id="new-act-text">
-    <h2>创建活动须知 ···</h2>
-    <p>1. 活动标题简单明了，时间地点准确；</p>
-    <p>2. 活动内容和特点介绍详细；</p>
-    <p>3. 记得上传一张活动海报，分辨率大于500x500；</p>
-    <p>4. 遇到任何问题可以邮件联系我们获得帮助。</p>
-    <p>邮件地址：greenmon55</p>
-  </div>
-
-</div>
   
 <script>
     var oneYear = new Date();
