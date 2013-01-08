@@ -58,8 +58,13 @@ class User < ActiveRecord::Base
   end
   
   def build_notification(comment)
-    notifications.create!(text: "#{comment.user.name}回复了您对#{comment.activity.title}的评论", link: Rails.application.routes.url_helpers.activity_path(comment.activity), read: false)
+    notifications.create!(text: "#{comment.user.name} 回复了您对 #{comment.activity.title} 的评论", link: Rails.application.routes.url_helpers.activity_path(comment.activity), read: false)
   end
+
+  def unread_notifications_count()
+    notifications.where(read: false).count
+  end
+
   private
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
