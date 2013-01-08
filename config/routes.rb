@@ -19,8 +19,7 @@ Wotongji::Application.routes.draw do
     resources :comments
   end
 
-  resources :comments, only: :create
-
+  resources :comments, only: [:create, :destroy]
   resources :interests, only: [:create, :destroy]
 
   match '/signup', to: 'users#new'

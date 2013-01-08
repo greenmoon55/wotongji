@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class CommentsController < ApplicationController
   before_filter :require_signin
+  before_filter :require_admin, only: :destroy
 
   def create
-    # Do we need this extra selcect? What about a hidden field?
+    # Do we need this extra select? What about a hidden field?
     # http://stackoverflow.com/questions/6480713/how-to-get-the-post-id-in-rails
     #@activity = Activity.find(params[:activity_id])
     if params[:comment][:parent_id].present?
@@ -31,6 +32,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    activity = @comment.activity
+    @comment.destroy
+    flash[:success] = "删除成功"
+    redirect_to activity
   end
-
 end

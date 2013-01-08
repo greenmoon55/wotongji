@@ -67,4 +67,11 @@ module SessionsHelper
       redirect_to signin_url, notice: "请先登录"
     end
   end
+
+  def require_admin
+    unless signed_in? and current_user.admin == true
+      store_location
+      redirect_to signin_url, notice: "抱歉，只有管理员才能执行本操作"
+    end
+  end
 end

@@ -35,7 +35,7 @@
             </li>
           </ul>
           <%= link_to '编辑', edit_activity_path(@activity) if correct_user_or_admin? %>
-          <%= link_to '删除', @activity, method: :delete, data: { confirm: '你真的要删除吗？'} if correct_user_or_admin? %>
+          <%= link_to '删除', @activity, method: :delete, data: { confirm: '您真的要删除吗？'} if correct_user_or_admin? %>
         </div>
         <div class="show-favor">
           <ul>
@@ -104,8 +104,10 @@
               </span>
               <% if signed_in? %>
                 <span class="reply"><a onclick='reply(<%= comment.id %>, &quot;<%= comment.user.name %>&quot;)'>回复</a></span>
-                <% if correct_user_or_admin? %>
-                  <span class="destroy-comment"><a href='#'>删除</a></span>
+                <% if current_user.admin? %>
+                  <span class="destroy-comment">
+                    <%= link_to '删除', comment, method: :delete, data: { confirm: '您真的要删除吗'} %>
+                  </span>
                 <% end %>
               <% end %>
             </div>
