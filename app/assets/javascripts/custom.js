@@ -23,27 +23,44 @@ function highlightCategory(elementId) {
 }
 
 $(function() {
+
   $("#all").live('ajax:beforeSend', function(event, xhr, settings) {
+    var state = {
+      action: 'all',
+      url: '/activities'
+    };
     if(history && history.pushState) {
-      history.pushState(null, document.title, '/activities');
+      history.pushState(state, document.title, '/activities');
     }
   });
 
   $("#past").live('ajax:beforeSend', function(event, xhr, settings) {
+    var state = {
+      action: 'past',
+      url: '/activities/past'
+    };
     if(history && history.pushState) {
-      history.pushState(null, document.title, '/activities/past');
+      history.pushState(state, document.title, '/activities/past');
     }
   });
 
   $("#upcoming").live('ajax:beforeSend', function(event, xhr, settings) {
+    var state = {
+      action: 'upcoming',
+      url: '/activities/upcoming'
+    };
     if(history && history.pushState) {
-      history.pushState(null, document.title, '/activities/upcoming');
+      history.pushState(state, document.title, '/activities/upcoming');
     }
   });
 
   $("#active").live('ajax:beforeSend', function(event, xhr, settings) {
+    var state = {
+      action: 'active',
+      url: '/activities/active'
+    };
     if(history && history.pushState) {
-      history.pushState(null, document.title, '/activities/active');
+      history.pushState(state, document.title, '/activities/active');
     }
   });
 });
@@ -59,12 +76,27 @@ if(history && history.pushState) {
   });
 }
 
-/*
-window.addEventListener("popstate", false);
-
-$(".activities-time").onclick = function() {
-  history.pushState( null, '', '/unstart' );
-  history.replaceState( null, '', '/unstart' )
+window.onpopstate = function(e) {
+  $(".activities-time.link-back-click").removeClass("link-back-click");
+  $(".activities-category.link-back-click").removeClass("link-back-click");
+  /*
+  switch (e.state.action) {
+    case 'all':
+      break;
+    case 'upcoming':
+      break;
+    case 'active':
+      break;
+    case 'past':
+      break;
+  }
+  */
+  if (e.state == null) {
+    var li = document.getElementById('all');
+    li.className += " " + "link-back-click";
+  } else {
+    var li = document.getElementById(e.state.action);
+    li.className += " " + "link-back-click";
+  }
   return false;
-};
-*/
+}

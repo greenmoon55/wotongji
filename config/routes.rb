@@ -8,7 +8,7 @@ Wotongji::Application.routes.draw do
 
   resources :sessions, only: :create
 
-  match '/activities/all', to: 'activities#all'
+  match '/activities', to: 'activities#all'
   match '/activities/active', to: 'activities#active'
   match '/activities/upcoming', to: 'activities#upcoming'
   match '/activities/past', to: 'activities#past'
