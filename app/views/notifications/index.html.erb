@@ -1,0 +1,17 @@
+<% provide(:title, "提醒") %>
+
+<table>
+  <% @notifications.each do |notification| %>
+    <tr <%= "class='new-notification'" unless notification.read == true%>>
+      <td>
+        <%= link_to notification.text, notification_path(notification), method: :put %> 
+      </td>
+      <td>
+        <%= notification.created_at.to_s(:cn) %> 
+      </td>
+      <td>
+        <%= link_to "忽略", notification_path(notification), method: :put, remote: :true unless notification.read == true%>
+      </td>
+    </tr>
+  <% end %>
+</table>
