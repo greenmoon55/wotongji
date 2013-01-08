@@ -1,62 +1,45 @@
 <body id="new-user">
-<% provide(:title, "注册") %>
-<div id="register">
-	<h1>注册用户</h1>
-  <%= render 'shared/error_messages', :object => @user %>    
-	<%= form_for(@user) do |f| %>
+  <% provide(:title, "注册") %>
+  <div id="register">
+	  <h1>注册用户</h1>
+    <%= render 'shared/error_messages', :object => @user %>    
+	  <%= form_for(@user) do |f| %>
 	  <div class="new-user-contant">
 
-        <div class="new-user-left">
-          
+        <div class="new-user-left">          
           <h2>创建你的新用户</h2>
-
           <div class="new-user-group">
-
           	<div class="new-user-row">
               <%= f.label :email %>
-		      <%= f.text_field :email,class:"new-user-block",style:"background: #FAFAFA none;"%>
+		          <%= f.text_field :email,class:"new-user-block",style:"background: #FAFAFA none;"%>
           	</div>
-
             <div class="new-user-row">
               <%= f.label :name, "用户名" %>
-		      <%= f.text_field :name ,class:"new-user-block",style:"background: #FAFAFA none;"%>		   
+		          <%= f.text_field :name ,class:"new-user-block",style:"background: #FAFAFA none;"%>		   
           	</div>
-
-		   
             <div class="new-user-row">
-		      <%= f.label :password, "密码" %>
-		      <%= f.password_field :password ,class:"new-user-block",style:"background: #FAFAFA none;"%>
+		          <%= f.label :password, "密码" %>
+		          <%= f.password_field :password ,class:"new-user-block",style:"background: #FAFAFA none;"%>
             </div>
-
             <div class="new-user-row">
-		      <%= f.label :password_confirmation, "密码确认" %>
-		      <%= f.password_field :password_confirmation,class:"new-user-block",style:"background: #FAFAFA none;"%>
-           </div>
-        <div class="form-warning">
-           <p>在注册之前请阅读相关规定</p>
- 
-        </div>  
-
-        <div class="new-user-bottom">        
-          <%= f.submit "注册", class: "btn btn-large btn-primary" %>
-        </div>
-		  
+		          <%= f.label :password_confirmation, "密码确认" %>
+		          <%= f.password_field :password_confirmation,class:"new-user-block",style:"background: #FAFAFA none;"%>
+            </div>
+            <div class="form-warning">
+              <p>在注册之前请阅读相关规定</p>
+            </div>  
+            <div class="new-user-bottom">        
+              <%= f.submit "注册", class: "btn btn-large btn-primary" %>
+            </div>
           </div>
-
         </div>
 
         <div class="new-user-right">
-
           <img alt="Collabocats" src="https://a248.e.akamai.net/assets.github.com/images/modules/octocats/collabocats.jpg?1352403301" width="100%">
           <h3>Wotongji XXXXXXXXX1</h3>
           <h3>Wotongji XXXXXXXXX2</h3>
-
         </div>
-       
-
-
-	  </div>
-		
-	<% end %>
-</div>
+    </div>
+	 <% end %>
+ </div>
 </body>
