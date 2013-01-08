@@ -7,7 +7,12 @@
         <ul class="nav">
     	    <li><%= link_to "发布", new_activity_path %></li>
           <% if signed_in? %>
-            <li><%= link_to "提醒#{current_user.unread_notifications_count}", notifications_path %></li>
+            <li><%= link_to notifications_path do %>
+              提醒
+              <span class="bubble <%= "no-notifications" if current_user.unread_notifications_count == 0 %>">
+                <%= current_user.unread_notifications_count %> 
+              </span>
+            <% end %>
             <li class="user-avatars"><%= link_to gravatar_for(current_user, size: 20) + current_user.name, current_user %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
