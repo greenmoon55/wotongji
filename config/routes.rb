@@ -23,12 +23,6 @@ Wotongji::Application.routes.draw do
 
   resources :interests, only: [:create, :destroy]
 
-  match '/all', to: 'activities#all'
-  match '/active', to: 'activities#active'
-  match '/upcoming', to: 'activities#upcoming'
-  match '/past', to: 'activities#past'
-  match '/search', to: 'activities#search'
-  match '/category', to: 'activities#category'
   match '/signup', to: 'users#new'
   match '/users/:id/activities', to: 'users#my_activities'
   match '/users/:id/interestact', to: 'users#interest_activities'
