@@ -22,10 +22,41 @@ function highlightCategory(elementId) {
   return false;
 }
 
+$(function() {
+  $("#all").live('ajax:beforeSend', function(event, xhr, settings) {
+    if(history && history.pushState) {
+      history.pushState(null, document.title, '/activities');
+    }
+  });
+
+  $("#past").live('ajax:beforeSend', function(event, xhr, settings) {
+    if(history && history.pushState) {
+      history.pushState(null, document.title, '/activities/past');
+    }
+  });
+
+  $("#upcoming").live('ajax:beforeSend', function(event, xhr, settings) {
+    if(history && history.pushState) {
+      history.pushState(null, document.title, '/activities/upcoming');
+    }
+  });
+
+  $("#active").live('ajax:beforeSend', function(event, xhr, settings) {
+    if(history && history.pushState) {
+      history.pushState(null, document.title, '/activities/active');
+    }
+  });
+});
+
 if(history && history.pushState) {
+  var loaded = false;
   $(window).bind("popstate", function() {
-    $.getScript(location.href);
-  })
+    if (!loaded) {
+      loaded = true;
+    } else {
+      $.getScript(location.href);
+    }
+  });
 }
 
 /*
