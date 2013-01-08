@@ -4,7 +4,6 @@
 <div class="container">
 <div class="row">
 <div class="span8">
-
 <div class="home-nagi">
 <div class="home-navigation">
   <ul>
@@ -32,12 +31,11 @@
   <ul>
     <li><h5>  活动类型  </h5></li>
      <% @categories.each do |category| %>
-       <li class="activities-category" id="<%= category.id %>">
+    <li class="activities-category" id="<%= category.id %>">
           <%= link_to category.name, { controller: "activities", action: "category", id: category.id },
             { onclick: "highlightCategory(#{category.id})", remote: true } %>
-       </li>
-     <% end %>
-
+    </li>
+    <% end %>
   </ul>
 </div>
 </div>
@@ -54,12 +52,8 @@
   <div class="span4">
     <div class="row">
       <%= form_tag "/search", method:"get", remote: true do %>
-        <%= text_field_tag :q, params[:q], class: "input-medium search-query float-left home-male" %>
-
-        
-        <%= submit_tag "查找", class: "btn btn-info float-left", style: "margin-left: 14px" %>
-
-        
+      <%= text_field_tag :q, params[:q], class: "input-medium search-query float-left home-male" %>
+      <%= submit_tag "查找", class: "btn btn-info float-left", style: "margin-left: 14px" %>
       <% end %>
     </div>
     <hr/>
