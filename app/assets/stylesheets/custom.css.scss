@@ -179,7 +179,7 @@ margin-top: 20px;
 {
   display:inline; 
   line-height:23px;
-  float:left
+  float:left;
 }
 
 .menu li a 
@@ -202,17 +202,17 @@ margin-top: 20px;
 
 #tabcontent1,#tabcontent2,#tabcontent3,#tabcontent4 
 {
-  width:635px; 
-  text-align:center;
-  padding:6px 0px;
-  font-size:15px; 
+  width: 635px; 
+  text-align: center;
+  padding: 6px 0px;
+  font-size: 15px; 
   margin-top: 10px;
-  margin-bottom:5px;
+  margin-bottom: 5px;
 }
 
 /* activity#show comments */
 .comment {
-  margin-top: 10px;
+  margin: 10px 0;
   overflow: hidden;
 }
 
@@ -301,6 +301,7 @@ margin-top: 20px;
 .home-male1{
   margin-left: 1px;
 }
+
 /*new activity*/
 #new-act-text h2{
   font-weight:normal;
@@ -385,10 +386,13 @@ margin-top: 20px;
 .show-down{
   margin-top: 15px;
 }
-.show-commend-field{
+.show-comment-field{
   margin: 3px 0 0 3px;
 }
-
+.reply, .destroy-comment{
+  float: right;
+  margin-left: 3px;
+}
 
 /*edit user*/
 .user-edit-left{

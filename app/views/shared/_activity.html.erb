@@ -1,4 +1,4 @@
-<li class="activity" id="<% activity.id %>">
+<div class="activity" id="<% activity.id %>">
 	
 	<div class="activity-img"> 
 	  <%= image_tag activity.image_url(:thumb) if activity.image? %> 
@@ -7,6 +7,4 @@
       <p class="title"> <%= link_to activity.title, activity %> </p>
       <p class="starttime"> 开始时间：<%= activity.start_time.in_time_zone.to_s(:cn_without_year) %> </p>
       <p class="username"> 发布者：<%= activity.user.name %> </p>
-      
-
-</li>
+</div>

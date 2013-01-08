@@ -102,20 +102,28 @@
               <span class="timestamp">
                 <%= comment.created_at.in_time_zone.to_s(:cn) %>
               </span>
-              <a onclick='reply(<%= comment.id %>, &quot;<%= comment.user.name %>&quot;)'>回复</a>
+              <% if signed_in? %>
+                <span class="reply"><a onclick='reply(<%= comment.id %>, &quot;<%= comment.user.name %>&quot;)'>回复</a></span>
+                <% if correct_user_or_admin? %>
+                  <span class="destroy-comment"><a href='#'>删除</a></span>
+                <% end %>
+              <% end %>
             </div>
           </div>
         <% end %>
 
-        <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
-          <div class="show-commend-field">
-            <%= f.hidden_field :activity_id, :value => @activity.id %>
-            <%= f.hidden_field :parent_id %>
-            <%= f.text_area :content, :cols => 65, :rows => 6, :placeholder => "说点什么吧..." %>     
-            <%= f.submit "评论", class: "btn btn-default btn-primary" %>
-          </div>
+        <% if signed_in? %>
+          <%= form_for :comment, :url => activity_comments_path(@activity) do |f| %>
+            <div class="show-comment-field">
+              <%= f.hidden_field :activity_id, :value => @activity.id %>
+              <%= f.hidden_field :parent_id %>
+              <%= f.text_area :content, :cols => 65, :rows => 6, :placeholder => "说点什么吧..." %> 
+              <%= f.submit "评论", class: "btn btn-default btn-primary" %>
+            </div>
+          <% end %>
+        <% else %>
+          <p> 评论前请先 <%= link_to "登录", signin_path %> 或 <%= link_to "注册", new_user_path%> </p>
         <% end %>
-
       </div>
     </div>
   </div>
