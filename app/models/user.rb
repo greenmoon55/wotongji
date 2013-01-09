@@ -57,8 +57,8 @@ class User < ActiveRecord::Base
 		UserMailer.password_reset(self).deliver   
   end
   
-  def build_notification(comment)
-    notifications.create!(text: "#{comment.user.name} 回复了您对 #{comment.activity.title} 的评论", link: Rails.application.routes.url_helpers.activity_path(comment.activity), read: false)
+  def build_notification(comment, user)
+    notifications.create!(text: "#{user.name} 回复了您对 #{comment.activity.title} 的评论", link: Rails.application.routes.url_helpers.activity_path(comment.activity), read: false)
   end
 
   def unread_notifications_count()

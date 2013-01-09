@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
         else
           # rubular.com
           params[:comment][:content].gsub!(/\A@#{comment.user.name}\s*/, "")
-          current_user.build_notification(comment)
+          comment.user.build_notification(comment, current_user) unless current_user == comment.user
         end
       end
     else
