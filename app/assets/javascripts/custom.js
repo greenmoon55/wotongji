@@ -22,6 +22,17 @@ function highlightCategory(elementId) {
   return false;
 }
 
+function getElementsByClassName(className) {
+  var el = new Array();
+  var _el = document.getElementsByTagName("*");
+  for (var i=0; i<_el.length; i++ ) {
+    if (_el[i].className == className) {
+      el[el.length] = _el[i];
+    }
+  }
+  return el;
+}
+
 $(function() {
 
   $("#all").live('ajax:beforeSend', function(event, xhr, settings) {
@@ -63,6 +74,22 @@ $(function() {
       history.pushState(state, document.title, '/activities/active');
     }
   });
+
+  var categories = getElementsByClassName('activities-category');
+  for (var i = 0; i < categories.length; i++) {
+    $(categories[i]).live('ajax:beforeSend', function(event, xhr, settings){
+      var url = '/activities/category/';
+      var id = $(this).attr('id');
+      url += id;
+      var state = {
+        action: id,
+        url: url
+      };
+      if (history && history.pushState) {
+        history.pushState(state, document.title, url);
+      }
+    });
+  }
 });
 
 if(history && history.pushState) {
