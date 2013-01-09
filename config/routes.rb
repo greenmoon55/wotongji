@@ -13,7 +13,7 @@ Wotongji::Application.routes.draw do
   match '/activities/upcoming', to: 'activities#upcoming'
   match '/activities/past', to: 'activities#past'
   match '/activities/search', to: 'activities#search'
-  match '/category', to: 'activities#category'
+  match '/activities/category', to: 'activities#category'
 
   resources :activities do
     resources :comments

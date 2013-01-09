@@ -35,7 +35,7 @@ function getElementsByClassName(className) {
 
 $(function() {
 
-  $("#all").live('ajax:beforeSend', function(event, xhr, settings) {
+  $("#all").live('ajax:beforeSend', function(event) {
     var state = {
       action: 'all',
       url: '/activities'
@@ -45,7 +45,7 @@ $(function() {
     }
   });
 
-  $("#past").live('ajax:beforeSend', function(event, xhr, settings) {
+  $("#past").live('ajax:beforeSend', function(event) {
     var state = {
       action: 'past',
       url: '/activities/past'
@@ -55,7 +55,7 @@ $(function() {
     }
   });
 
-  $("#upcoming").live('ajax:beforeSend', function(event, xhr, settings) {
+  $("#upcoming").live('ajax:beforeSend', function(event) {
     var state = {
       action: 'upcoming',
       url: '/activities/upcoming'
@@ -65,7 +65,7 @@ $(function() {
     }
   });
 
-  $("#active").live('ajax:beforeSend', function(event, xhr, settings) {
+  $("#active").live('ajax:beforeSend', function(event) {
     var state = {
       action: 'active',
       url: '/activities/active'
@@ -77,10 +77,21 @@ $(function() {
 
   var categories = getElementsByClassName('activities-category');
   for (var i = 0; i < categories.length; i++) {
-    $(categories[i]).live('ajax:beforeSend', function(event, xhr, settings){
-      var url = '/activities/category/';
+    $(categories[i]).live('ajax:beforeSend', function(event){
+      var url = '/activities';
       var id = $(this).attr('id');
-      url += id;
+      var timeStr = '';
+      var thisURL = window.location.href;
+      if (thisURL.indexOf('upcoming') != -1) {
+        timeStr = '/upcoming/category/';
+      } else if (thisURL.indexOf('active') != -1) {
+        timeStr = '/active/category/';
+      } else if (thisURL.indexOf('past') != -1) {
+        timeStr = '/past/category/';
+      } else {
+        timeStr = '/category/';
+      }
+      url += timeStr + id;
       var state = {
         action: id,
         url: url
@@ -106,18 +117,7 @@ if(history && history.pushState) {
 window.onpopstate = function(e) {
   $(".activities-time.link-back-click").removeClass("link-back-click");
   $(".activities-category.link-back-click").removeClass("link-back-click");
-  /*
-  switch (e.state.action) {
-    case 'all':
-      break;
-    case 'upcoming':
-      break;
-    case 'active':
-      break;
-    case 'past':
-      break;
-  }
-  */
+
   if (e.state == null) {
     var li = document.getElementById('all');
     li.className += " " + "link-back-click";
