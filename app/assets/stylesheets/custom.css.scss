@@ -2,7 +2,7 @@
 
 /* universal */
 body {
-  padding-top: 60px;
+  padding-top: 40px;
   //background-color: whiteSmoke; commented by greenmoon55
 }
 
@@ -42,6 +42,7 @@ ul {
 	margin-bottom: 20px;
   border-bottom: 1px dashed #D4D4D4;
   padding-bottom: 10px;
+  padding-left: 43px;
 }
 .activity-img{
   float: left;
@@ -55,7 +56,11 @@ ul {
 }
 
 .link-back-click {
-  background: #FF5640;
+  background: #d6ddeb;
+}
+
+.link-back-hover {
+  background: #eceff4;
 }
 
 /* user#new */
@@ -156,60 +161,6 @@ margin-top: 20px;
   float: left;
 }
 
-/* tabs menu */
-.menu 
-{
-  background-color:#61b4cf; 
-  color:#272727; 
-  border-bottom:1px solid #d7d7d7; 
-  height:25px;
-  width:635px;
-  font-size:22px;
-}
-
-.menu ul 
-{
-  margin-left: 25px;
-  padding:0px; 
-  list-style:none; 
-  text-align:center;
-}
-
-.menu li 
-{
-  display:inline; 
-  line-height:23px;
-  float:left;
-}
-
-.menu li a 
-{
-  color:#000000; 
-  text-decoration:none; 
-  padding:4px 5px 6px 5px;  
-  border-left:1px solid #ececec; 
-  border-right:1px solid #ececec;
-}
-
-.menu li a.tabactive 
-{
-  border-left:1px solid #d7d7d7; 
-  border-right:1px solid #d7d7d7; 
-  background-color:#3aaacf; 
-  font-weight:bold;  
-  position:relative;
-}
-
-#tabcontent1,#tabcontent2,#tabcontent3,#tabcontent4 
-{
-  width: 635px; 
-  text-align: center;
-  padding: 6px 0px;
-  font-size: 15px; 
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
 /* activity#show comments */
 .comment {
   margin: 10px 0;
@@ -268,17 +219,29 @@ margin-top: 20px;
 }
 
 .home-nagi{
-  width: 100px;
+  width: 20%;
+  height: 100%;
   float: left;
-  margin-top: 10px;
+  margin: 0px;
+  padding: 0px;
 }
 .home-navigation{
-  background-color: #EFEFEB;
-  padding: 10px 0;
-  margin-bottom: 20px;
 }
 .home-navigation ul{
-  margin-left: 20px;
+  margin: 0px;
+  padding: 0px;
+  li{
+    line-height: 30px;
+    a:link {
+      display: block;
+      color: #333;
+      padding: 7px, 10px, 7px, 5px;
+      font-size: 11pt;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .show-body{
@@ -288,8 +251,8 @@ margin-top: 20px;
 .activities-content{
   float: left;
   width: 450px;
-  margin-left: 43px;
-  margin-top: 10px;
+  padding-top: 10px;
+  border-left: 1px solid #cccccc;
 }
 
 .home-right{

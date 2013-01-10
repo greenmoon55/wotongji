@@ -35,6 +35,18 @@ function getElementsByClassName(className) {
 
 $(function() {
 
+  $(".activities-time").hover(function() {
+    $(this).addClass("link-back-hover");
+  }, function() {
+    $(this).removeClass("link-back-hover");
+  });
+
+  $(".activities-category").hover(function() {
+    $(this).addClass("link-back-hover");
+  }, function() {
+    $(this).removeClass("link-back-hover");
+  });
+
   $("#all").live('ajax:beforeSend', function(event) {
     var state = {
       action: 'all',
