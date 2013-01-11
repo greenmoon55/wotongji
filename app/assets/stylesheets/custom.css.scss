@@ -3,7 +3,6 @@
 /* universal */
 body {
   padding-top: 40px;
-  //background-color: whiteSmoke; commented by greenmoon55
 }
 
 .img-rounded {
@@ -16,6 +15,7 @@ a {
 /* footer */
 footer {
   margin-top: 45px;
+  margin-bottom: 100px;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
 	color: #999;
@@ -39,10 +39,14 @@ ul {
 }
 
 .activity {
-	margin-bottom: 20px;
-  border-bottom: 1px dashed #D4D4D4;
+  margin-left: 10px;
+	margin-bottom: 10px;
+  //border: 1px dashed #D4D4D4;
+  padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 43px;
+  background: white;
+  -webkit-box-shadow: 2px 2px 8px #51535d;
 }
 .activity-img{
   float: left;
@@ -222,8 +226,10 @@ margin-top: 20px;
   width: 20%;
   height: 100%;
   float: left;
-  margin: 0px;
+  margin-top: 5px;
   padding: 0px;
+  background: white;
+  border-right: 1px solid #cccccc;
 }
 .home-navigation{
 }
@@ -240,19 +246,17 @@ margin-top: 20px;
     }
     a:hover {
       text-decoration: none;
+      }
     }
-  }
-}
-
+  } 
 .show-body{
-  background-color: white;
+  background-color: #eaeaea;
 
 }
 .activities-content{
   float: left;
   width: 450px;
   padding-top: 10px;
-  border-left: 1px solid #cccccc;
 }
 
 .home-right{
