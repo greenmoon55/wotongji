@@ -34,6 +34,39 @@ function getElementsByClassName(className) {
 }
 
 $(function() {
+  $("#slides").slides({
+    pagination: true,
+    preload: false,
+    //preloadImage: '',
+    play: 5000,
+    pause: 2500,
+    hoverPause: true,
+    animationStart: function(current){
+      $('.caption').animate({
+        bottom:-203
+      },100);
+      if (window.console && console.log) {
+      // example return of current slide number
+      console.log('animationStart on slide: ', current);
+      };
+    },
+    animationComplete: function(current){
+      $('.caption').animate({
+        bottom: -168
+      },200);
+      if (window.console && console.log) {
+      // example return of current slide number
+      console.log('animationComplete on slide: ', current);
+      };
+      },
+    slidesLoaded: function() {
+      $('.caption').animate({
+        bottom: -203
+      },200);
+    }
+  });
+
+  $(".pagination").remove();
 
   $(".activities-time").hover(function() {
     $(this).addClass("link-back-hover");

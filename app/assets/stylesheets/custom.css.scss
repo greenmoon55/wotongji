@@ -40,7 +40,7 @@ ul {
 }
 
 .activity {
-  margin-left: 10px;
+  margin-left: 15px;
 	margin-bottom: 10px;
   //border: 1px dashed #D4D4D4;
   padding-top: 10px;
@@ -228,10 +228,9 @@ margin-top: 20px;
   height: 100%;
   float: left;
   margin-top: 10px;
-  padding: 0px;
   background: white;
   //border-right: 1px solid #cccccc;
-  -webkit-box-shadow: 2px 2px 8px #51535d;
+  -webkit-box-shadow: 1px 1px 8px #51535d;
 }
 .home-navigation{
 }
@@ -239,6 +238,7 @@ margin-top: 20px;
   margin: 0px;
   padding: 0px;
   li{
+    padding-left: 15px;
     line-height: 30px;
     a:link {
       display: block;
@@ -643,4 +643,49 @@ margin-top: 20px;
 
 .bubble.no-notifications {
   background: #777;
+}
+/* sliders */
+#slides {
+  height: 220px;
+}
+.slides_container {
+  width: 450px;
+  height: 213px;
+}
+.slides_container div {
+  margin: 10px 5px 0px 10px;
+  width: 450px;
+  height: 213px;
+  display: block;
+}
+
+.caption {
+  z-index: 500;
+  position: absolute;
+  bottom: -203px;
+  left: -10px;
+  height: 10px;
+  padding: 5px 20px 0 20px;
+  background: #000;
+  background: rgba(0,0,0,.5);
+  width: 450px;
+  font-size: 1.3em;
+  line-height: 1.33;
+  color: #fff;
+  border-top: 1px solid #000;
+  text-shadow: none;
+}
+
+#slides .next,#slides .prev {
+  position: relative;
+  top: -383px;
+  left: 120px;
+  width: 24px;
+  height: 43px;
+  display: block;
+  z-index: 101;
+}
+
+#slides .next {
+  left: 574px;
 }
