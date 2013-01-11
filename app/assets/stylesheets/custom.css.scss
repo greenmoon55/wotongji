@@ -3,6 +3,7 @@
 /* universal */
 body {
   padding-top: 40px;
+  background: #eaeaea;
 }
 
 .img-rounded {
@@ -226,10 +227,11 @@ margin-top: 20px;
   width: 20%;
   height: 100%;
   float: left;
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 0px;
   background: white;
-  border-right: 1px solid #cccccc;
+  //border-right: 1px solid #cccccc;
+  -webkit-box-shadow: 2px 2px 8px #51535d;
 }
 .home-navigation{
 }
@@ -426,20 +428,22 @@ margin-top: 20px;
 }
 /*user-show*/
 .user-show-left{
+  margin-top: 10px;
   float: left;
-  width: 220px;
+  width: 90%;
+  border: 1px solid #cccccc;
+  background: white;
+  -webkit-box-shadow: 2px 2px 8px #51535d; 
 }
 .user-show-pic{
+  margin-left: 3px;
   padding: 5px;
   background: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   width: 201px;
   height: 201px;
-  border: 1px solid #DDD;
 }
 .user-activity{
   border-top: 1px solid #DDD;
-  border-bottom: 1px solid #DDD;
   margin: 0 0 8px 0;
   padding: 8px 0 0 0;
 }
@@ -449,7 +453,7 @@ margin-top: 20px;
 
 .user-show-right{
   float: left;
-  width: 680px;
+  width: 100%;
 }
 
 /*new-user*/
