@@ -74,8 +74,8 @@
   </div>
 </div>
 </div>
-<div class="home-right">
-  <div class="span4">
+<div class="home-right" id="home-right">
+  <div class="">
     <div class="row">
       <%= form_tag "/search", method:"get", remote: true do %>
       <%= text_field_tag :q, params[:q], class: "input-medium search-query float-left home-male" %>
