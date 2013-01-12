@@ -7,8 +7,11 @@
 
       <div class="show-up">
         <div class="show-activity-pic">
-         <img src="http://duocaiii.com/resource/img/photo/act//200_200/718b82ca45d43e6c664310538e33e350.png">
-         <!--img><%= image_tag @activity.image_url(:thumb) if @activity.image? %></img-->
+          <% if @activity.image? %>
+            <%= link_to image_tag(@activity.image_url, height: 200, width: 200), @activity.image_url %>
+          <% else %>
+            <img src="http://greenmoon55.com/default.jpg" height=200 width=200>
+          <% end %>
         </div>
 
         <div class="show-info">
