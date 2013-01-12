@@ -8,7 +8,7 @@
       <div class="show-up">
         <div class="show-activity-pic">
           <% if @activity.image? %>
-            <%= link_to image_tag(@activity.image_url, height: 200, width: 200), @activity.image_url %>
+            <%= link_to image_tag(@activity.image_url), @activity.image_url %>
           <% else %>
             <img src="http://greenmoon55.com/default.jpg" height=200 width=200>
           <% end %>
