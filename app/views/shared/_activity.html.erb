@@ -1,7 +1,11 @@
 <div class="activity" id="<% activity.id %>">
 	
 	<div class="activity-img"> 
-	  <%= image_tag activity.image_url(:thumb) if activity.image? %> 
+    <% if activity.image? %>
+	    <%= image_tag activity.image_url(:thumb) if activity.image? %> 
+    <% else %>
+      <%= image_tag "http://greenmoon55.com/default.jpg", height: 100, width: 100 %>
+    <% end %>
 	</div>
 
       <p class="title"> <%= link_to activity.title, activity %> </p>

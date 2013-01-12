@@ -1,13 +1,13 @@
 <body id="new-user">
   <% provide(:title, "注册") %>
   <div id="register">
-	  <h1>注册用户</h1>
+	  <h1>注册</h1>
     <%= render 'shared/error_messages', :object => @user %>    
 	  <%= form_for(@user) do |f| %>
 	  <div class="new-user-contant">
 
         <div class="new-user-left">          
-          <h2>创建你的新用户</h2>
+          <h2>创建您的账户</h2>
           <div class="new-user-group">
           	<div class="new-user-row">
               <%= f.label :email %>
@@ -35,9 +35,10 @@
         </div>
 
         <div class="new-user-right">
-          <img alt="Collabocats" src="https://a248.e.akamai.net/assets.github.com/images/modules/octocats/collabocats.jpg?1352403301" width="100%">
-          <h3>Wotongji 校园活动发布平台</h3>
-          <h3>Wotongji 方便你 我 他</h3>
+          <h3>欢迎注册 我同济校园活动平台</h3>
+          <h5>我们不会向第三方透露您的IP地址等个人信息，除非因法律原因</h5>
+          <h5>我们保留随时修改或中断服务而不需通知用户的权利<h5>
+          <h5>请不要发布违法侵权等不恰当的内容，我们会删除这些信息，甚至删除您的帐号</h5>
         </div>
     </div>
 	 <% end %>
