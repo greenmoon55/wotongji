@@ -8,9 +8,11 @@
             <%= gravatar_for(@user, size: 200) %>
           </div>        
         </p>
+        <div id="user-show-name">
         <p>
           <h3><%= @user.name %></h3>
         </p> 
+        </div>
         
         <% if current_user?(@user) %>
         <div class="user-activity">
