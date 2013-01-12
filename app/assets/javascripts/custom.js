@@ -68,6 +68,14 @@ $(function() {
 
   $(".pagination").remove();
 
+  /*
+  $("#sidebar").scrollFollow({
+    container: 'outer'
+  });
+  */
+
+  $("#sidebar").floatdiv("lefttop");
+
   $(".activities-time").hover(function() {
     $(this).addClass("link-back-hover");
   }, function() {

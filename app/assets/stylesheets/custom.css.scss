@@ -225,9 +225,10 @@ margin-top: 20px;
 }
 
 .home-nagi{
-  width: 20%;
-  height: 100%;
-  float: left;
+  float: none;
+  width: 140px;
+  height: 460px;
+  position: relative;
   margin-top: 10px;
   background: white;
   //border-right: 1px solid #cccccc;
@@ -251,7 +252,7 @@ margin-top: 20px;
       text-decoration: none;
       }
     }
-  } 
+  }
 .show-body{
   background-color: #eaeaea;
 
@@ -664,12 +665,13 @@ hr{
   height: 220px;
 }
 .slides_container {
-  width: 450px;
+  width: 800px;
   height: 213px;
+  overflow: auto;
 }
 .slides_container div {
-  margin: 10px 5px 0px 10px;
-  width: 450px;
+  margin: 5px 5px 0px 7px;
+  width: 800px;
   height: 213px;
   display: block;
 }
@@ -678,7 +680,7 @@ hr{
   z-index: 500;
   position: absolute;
   bottom: -203px;
-  left: -10px;
+  left: -7px;
   height: 10px;
   padding: 5px 20px 0 20px;
   background: #000;
@@ -693,8 +695,8 @@ hr{
 
 #slides .next,#slides .prev {
   position: relative;
-  top: -383px;
-  left: 120px;
+  top: -115px;
+  left: -10px;
   width: 24px;
   height: 43px;
   display: block;
@@ -702,7 +704,8 @@ hr{
 }
 
 #slides .next {
-  left: 574px;
+  top: -160px;
+  left: 800px;
 }
 
 .modal-body{

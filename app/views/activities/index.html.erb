@@ -1,10 +1,9 @@
 <% provide(:title, '全部活动') %>
-<script type="text/javascript" language="javascript" src=""></script>
 <body class="show-body">
 <div class="container">
-<div class="row">
-<div class="span8">
-<div class="home-nagi">
+<div class="row" id="outer">
+<div class="span1">
+<div class="home-nagi" id="sidebar">
 <div class="home-navigation">
   <ul>
     <li><h5>  活动时间  </h5></li>
@@ -39,7 +38,9 @@
   </ul>
 </div>
 </div>
+</div>
 
+<div class="span10">
 <div id="slides">
   <div class="slides_container">
     <div class="slide">
@@ -73,7 +74,6 @@
     <% end %>
   </div>
 </div>
-</div>
 <div class="home-right" id="home-right">
   <div class="">
     <div class="row">
@@ -87,25 +87,6 @@
 </div>
 </div>
 </div>
-</body>
-
-
-<!--
-
-<div class="home-area">
-  <div class="home-title" id="hometitle">
-    <h1>
-     "未开始的活动"
-     <a href="/new">more</a>
-    </h1>
-
-  </div>
-
-
 </div>
-
--->
-
-
 </body>
 
