@@ -264,6 +264,17 @@ margin-top: 20px;
 
 .home-right{
   margin-top: 10px;
+ 
+}
+#home-right {
+  width: 250px;
+  float: right;
+}
+hr{
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid white;
 }
 .home-male{
   margin-left: 16px;
@@ -463,6 +474,9 @@ margin-top: 20px;
   font: 13px Helvetica, arial, freesans, clean, sans-serif;
   line-height: 1.4;
   color: #333;
+}
+#register {
+  margin-top: 30px;
 }
 #register h1{
   font-size: 30px;
@@ -689,4 +703,15 @@ margin-top: 20px;
 
 #slides .next {
   left: 574px;
+}
+
+.modal-body{
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 15px;
+  margin-left: 10px;
+}
+.modal.fade.in {
+  top: 50%;
+  width: 450px;
 }
