@@ -4,6 +4,7 @@
 body {
   padding-top: 40px;
   background: #eaeaea;
+  font-family: 'Microsoft YaHei','微软雅黑', Helvetica, Sans-serif;
 }
 
 .img-rounded {
@@ -40,7 +41,7 @@ ul {
 }
 
 .activity {
-  margin-left: 10px;
+  margin-left: 15px;
 	margin-bottom: 10px;
   //border: 1px dashed #D4D4D4;
   padding-top: 10px;
@@ -224,14 +225,14 @@ margin-top: 20px;
 }
 
 .home-nagi{
-  width: 20%;
-  height: 100%;
-  float: left;
+  float: none;
+  width: 140px;
+  height: 460px;
+  position: relative;
   margin-top: 10px;
-  padding: 0px;
   background: white;
   //border-right: 1px solid #cccccc;
-  -webkit-box-shadow: 2px 2px 8px #51535d;
+  -webkit-box-shadow: 1px 1px 8px #51535d;
 }
 .home-navigation{
 }
@@ -239,6 +240,7 @@ margin-top: 20px;
   margin: 0px;
   padding: 0px;
   li{
+    padding-left: 15px;
     line-height: 30px;
     a:link {
       display: block;
@@ -250,7 +252,7 @@ margin-top: 20px;
       text-decoration: none;
       }
     }
-  } 
+  }
 .show-body{
   background-color: #eaeaea;
 
@@ -263,6 +265,17 @@ margin-top: 20px;
 
 .home-right{
   margin-top: 10px;
+ 
+}
+#home-right {
+  width: 250px;
+  float: right;
+}
+hr{
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid white;
 }
 .home-male{
   margin-left: 16px;
@@ -463,6 +476,9 @@ margin-top: 20px;
   line-height: 1.4;
   color: #333;
 }
+#register {
+  margin-top: 30px;
+}
 #register h1{
   font-size: 30px;
   font-weight: normal;
@@ -643,4 +659,62 @@ margin-top: 20px;
 
 .bubble.no-notifications {
   background: #777;
+}
+/* sliders */
+#slides {
+  height: 220px;
+}
+.slides_container {
+  width: 800px;
+  height: 213px;
+  overflow: auto;
+}
+.slides_container div {
+  margin: 5px 5px 0px 7px;
+  width: 800px;
+  height: 213px;
+  display: block;
+}
+
+.caption {
+  z-index: 500;
+  position: absolute;
+  bottom: -203px;
+  left: -7px;
+  height: 10px;
+  padding: 5px 20px 0 20px;
+  background: #000;
+  background: rgba(0,0,0,.5);
+  width: 450px;
+  font-size: 1.3em;
+  line-height: 1.33;
+  color: #fff;
+  border-top: 1px solid #000;
+  text-shadow: none;
+}
+
+#slides .next,#slides .prev {
+  position: relative;
+  top: -115px;
+  left: -10px;
+  width: 24px;
+  height: 43px;
+  display: block;
+  z-index: 101;
+}
+
+#slides .next {
+  top: -160px;
+  left: 800px;
+}
+
+.modal-body{
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 15px;
+  margin-left: 10px;
+}
+.modal.fade.in {
+  top: 50%;
+  width: 450px;
 }

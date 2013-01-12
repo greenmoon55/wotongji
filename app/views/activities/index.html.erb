@@ -1,10 +1,9 @@
 <% provide(:title, '全部活动') %>
-<script type="text/javascript" language="javascript" src=""></script>
 <body class="show-body">
 <div class="container">
-<div class="row">
-<div class="span8">
-<div class="home-nagi">
+<div class="row" id="outer">
+<div class="span1">
+<div class="home-nagi" id="sidebar">
 <div class="home-navigation">
   <ul>
     <li><h5>  活动时间  </h5></li>
@@ -39,7 +38,35 @@
   </ul>
 </div>
 </div>
+</div>
 
+<div class="span10">
+<div id="slides">
+  <div class="slides_container">
+    <div class="slide">
+      <%= image_tag "slide-1.jpg", { alt: "Slide 1"} %>
+      <div class="caption" style="bottom:0">
+        <p>Happy Bokeh Thursday!</p>
+      </div>
+    </div>
+    <div class="slide">
+      <%= image_tag "slide-2.jpg", { alt: "Slide 2"} %>
+      <div class="caption">
+        <p>Taxi</p>
+      </div>
+    </div>
+    <div class="slide">
+      <%= image_tag "slide-3.jpg", { alt: "Slide 3"} %>
+      <div class="caption">
+        <p>Happy Bokeh raining Day</p>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="prev"><%= image_tag "arrow-prev.png", { width:"24", height:"43", alt:"Arrow Prev" } %>
+  </a>
+  <a href="#" class="next"><%= image_tag "arrow-next.png", { width:"24", height:"43", alt:"Arrow Next" } %>
+  </a>
+</div>
 <div class="activities-content" id="acti-con">
   <div id="activities">
     <% unless @activities == nil %>
@@ -47,9 +74,8 @@
     <% end %>
   </div>
 </div>
-</div>
-<div class="home-right">
-  <div class="span4">
+<div class="home-right" id="home-right">
+  <div class="">
     <div class="row">
       <%= form_tag "/search", method:"get", remote: true do %>
       <%= text_field_tag :q, params[:q], class: "input-medium search-query float-left home-male" %>
@@ -57,32 +83,10 @@
       <% end %>
     </div>
     <hr/>
-    <div class="row home-male1">
-      <h4>新加入：</h4>
-    </div>
   </div>
 </div>
 </div>
 </div>
-</body>
-
-
-<!--
-
-<div class="home-area">
-  <div class="home-title" id="hometitle">
-    <h1>
-     "未开始的活动"
-     <a href="/new">more</a>
-    </h1>
-
-  </div>
-
-
 </div>
-
--->
-
-
 </body>
 
