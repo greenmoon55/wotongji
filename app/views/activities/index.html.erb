@@ -46,19 +46,20 @@
     <div class="slide">
       <%= image_tag "slide-1.jpg", { alt: "Slide 1"} %>
       <div class="caption" style="bottom:0">
-        <p>Happy Bokeh Thursday!</p>
+        <p>欢迎来到我同济校园活动发布平台!</p>
       </div>
     </div>
     <div class="slide">
       <%= image_tag "slide-2.jpg", { alt: "Slide 2"} %>
       <div class="caption">
-        <p>Taxi</p>
+        <p>登录后可以关注、评论、分享你感兴趣的活动，还可以自由组织活动让大家参与。
+        </p>
       </div>
     </div>
     <div class="slide">
       <%= image_tag "slide-3.jpg", { alt: "Slide 3"} %>
       <div class="caption">
-        <p>Happy Bokeh raining Day</p>
+        <p>祝您在这玩得开心！</p>
       </div>
     </div>
   </div>
@@ -67,7 +68,7 @@
   <a href="#" class="next"><%= image_tag "arrow-next.png", { width:"24", height:"43", alt:"Arrow Next" } %>
   </a>
 </div>
-<div class="activities-content" id="acti-con">
+<div class="activities-content span7" id="acti-con">
   <div id="activities">
     <% unless @activities == nil %>
       <%= render 'shared/activities_form'  %>
@@ -75,11 +76,26 @@
   </div>
 </div>
 <div class="home-right" id="home-right">
-  <div class="">
+  <div class="span5">
     <div class="row">
       <%= form_tag "/search", method:"get", remote: true do %>
       <%= text_field_tag :q, params[:q], class: "input-medium search-query float-left home-male" %>
       <%= submit_tag "查找", class: "btn btn-info float-left", style: "margin-left: 14px" %>
+      <% end %>
+    </div>
+    <div class="row" style="width: 330px">
+      <h4 style="border-bottom: 1px solid black; display: block; margin-left: 20px; margin-top: 20px">
+        新加入的同学:
+      </h4>
+      <% if @users.any? %>
+        <div class="user-avatars" style="margin-left: 20px; width 330px">
+          <% @users.each do |user| %>
+            <div class="float-left">
+              <p><%= link_to gravatar_for(user), user %></p>
+              <p><%= link_to user.name, user %></p>
+            </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <hr/>

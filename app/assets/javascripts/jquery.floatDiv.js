@@ -69,7 +69,7 @@ jQuery.fn.floatdiv=function(location){
 					loc={left:"0px",bottom:"0px"};
 					break;	
 				case("lefttop")://左上角
-					loc={left:"70px",top:"40px"};
+					loc={left:"100px",top:"40px"};
 					top=0;
 					break;
 				case("righttop")://右上角

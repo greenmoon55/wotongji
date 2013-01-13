@@ -16,7 +16,7 @@ a {
 }
 /* footer */
 footer {
-  margin-top: 45px;
+  margin-top: 240px;
   margin-bottom: 100px;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
@@ -154,6 +154,11 @@ margin-top: 20px;
   .avatar {
     margin: 0px;
   }
+  a {
+    width: 50px;
+    display: block;
+    overflow: hidden;
+  }
 }
 
 /* float and margin */
@@ -225,9 +230,10 @@ margin-top: 20px;
 }
 
 .home-nagi{
+  padding-top: 10px;
   float: none;
   width: 140px;
-  height: 460px;
+  height: 550px;
   position: relative;
   margin-top: 10px;
   background: white;
@@ -257,6 +263,14 @@ margin-top: 20px;
   background-color: #eaeaea;
 
 }
+.show-content {
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 1px 1px 7px #51535d;
+}
 .activities-content{
   float: left;
   width: 450px;
@@ -269,7 +283,8 @@ margin-top: 20px;
 }
 #home-right {
   width: 250px;
-  float: right;
+  float: left;
+  padding-bottom: 20px;
 }
 hr{
   margin: 20px 0;
@@ -366,7 +381,10 @@ hr{
   margin-bottom: 15px;
 }
 .show-down{
+  background: white;
   margin-top: 15px;
+  padding: 2px;
+  -webkit-box-shadow: 1px 1px 5px #51535d;
 }
 .show-comment-field{
   margin: 3px 0 0 3px;

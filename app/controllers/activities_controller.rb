@@ -8,6 +8,7 @@ class ActivitiesController < ApplicationController
     @activities = Activity.paginate(page: params[:page])
     @categories = Category.all
     @@select_time = 'all'
+    @users = User.all
   end
 
   def search
