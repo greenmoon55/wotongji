@@ -14,7 +14,6 @@ gem 'rmagick' #image processing
 gem 'rinku' #autolink
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-wysihtml5-rails'
-gem 'sqlite3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,7 +24,7 @@ group :development, :test do
 end
 
 group :production do
-#  gem "pg"
+  gem "pg"
 end
 
 
