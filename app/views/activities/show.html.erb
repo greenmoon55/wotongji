@@ -139,10 +139,7 @@
     <% if @activity.interestedusers.any? %>
       <div class="user-avatars">
         <% @activity.interestedusers.each do |user| %>
-          <div class="float-left">
-            <p><%= link_to gravatar_for(user), user %></p>
-            <p><%= link_to user.name, user %></p>
-        </div>
+          <%= render partial: "shared/user_avatar", locals: {user: user} %>
         <% end %>
       </div>
     <% end %>

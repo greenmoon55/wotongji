@@ -63,10 +63,7 @@
             <% if @users.any? %>
               <div class="user-avatars" style="margin-left: 20px; width 330px">
                 <% @users.each do |user| %>
-                  <div class="user-little">
-                    <%= link_to gravatar_for(user), user %>
-                    <%= link_to user.name, user %>
-                  </div>
+                  <%= render partial: "shared/user_avatar", locals: {user: user} %>
                 <% end %>
               </div>
             <% end %>
