@@ -5,6 +5,7 @@
         <!-- <a class="brand" href="#">Home</a> -->
         <form class="navbar-form pull-right">
         <ul class="nav">
+    	    <li><%= link_to "帮忙", "http://help.wotongji.com" %></li>
     	    <li><%= link_to "发布", new_activity_path %></li>
           <% if signed_in? %>
             <li><%= link_to notifications_path do %>
