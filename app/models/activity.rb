@@ -29,14 +29,7 @@ class Activity < ActiveRecord::Base
   validates :title, length: { maximum: 50 }
   validates :content, length: { minimum: 50}
 
-  # need to change
-  validate :time_in_the_future, on: :create
   validate :start_time_before_end_time
-  def time_in_the_future
-    if start_time <= DateTime.current
-      errors.add(:alarm, "Please Choose A Future Date & Time")
-    end
-  end
 
   def start_time_before_end_time
     if start_time >= end_time
