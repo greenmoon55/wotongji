@@ -44,10 +44,6 @@ class User < ActiveRecord::Base
     interests.create!(activity_id: interest_activity.id)
   end
 
-  def build_interest(interest_activity)
-    interests.build(user_id: self.id, activity_id: interest_activity.id)
-  end
-
   def uninterest!(interest_activity)
     interests.find_by_activity_id(interest_activity.id).destroy
   end
