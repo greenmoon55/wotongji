@@ -47,4 +47,14 @@ class UserTest < ActiveSupport::TestCase
     @user.email = '"user@something"@example.com'
     assert @user.save
   end
+
+  test "should save user with very very strange email address" do
+    @user.email = %q{"very.(),:;<>[]\".VERY.\"very@\\ \"very\".unusual"@strange.example.com}
+    assert @user.save 
+  end
+
+  test "should not save user with very long email address" do
+    @user.email = "a@saklfjdsaklfjdsklfjksdljfkasdddaasdfsfddllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllsdjfklsdjfksdjfklsdjfklsdajfklsdajfklsajfklsdjfkljsdaklfjksdaljfklsdjflksdjflksdjafklsajflksdjfkljsdklfjsdakljfklsdajflksdajfklsdajjfksdjfklsdjfklsdajfklsdajfklsajfklsdjfkljsdaklfjksdaljfklsdjflksdjflksdjafklsajflksdjfkljsdklfjsdakljfklsdajflksdajfklsdajjfklsdajfklsdajfklsajfklsdjfkljsdaklfjksdaljfklsdjflksdjflksdjafklsajflksdjfkljsdklfjsdakljfklsdajflksdajfklsdajflkdsjalkfjsdalkjfklsajflksajfklsdjfklsdajfkldsjfkjsdaklfjsdklajfklasjfkldsjkfjskalfjklsdajfkldsjfklsdajfkldsjaklfjsaklfjskdajfklsajfklsdajfklsajfklasjklfdskladjfkdlsajfksaljfklsajjljsdafkljfklsdajf.com"
+    assert !@user.save, @user.email
+  end
 end
