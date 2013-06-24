@@ -3,6 +3,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
+    # 正常的user
     @user = User.new
     @user.name = "greenmoon55"
     @user.email = "a@b.com"
@@ -10,58 +11,75 @@ class UserTest < ActiveSupport::TestCase
     @user.password_confirmation = "11111111"
   end
 
-  test "正常保存" do
+  test "001_001_001" do
+    user = @user
+    user.name = ""
+    user.email = "M1@qq.com"
+    assert !user.save
+  end
+
+  test "001_001_002" do
+    user = @user
+    user.email = ""
+    user.name = "测试1"
+    assert !user.save
+  end
+
+  test "001_001_003" do
+    user = @user
+    user.name = "测试2"
+    user.email = "M2@sohu.com"
+    user.password = ""
+    assert !user.save
+  end
+
+  test "001_001_004" do
+    user = @user
+    user.name = "测试3"
+    user.email = "M3@sina.com"
+    user.password_confirmation = ""
+    assert !user.save
+  end
+
+  test "001_002_001" do
+    user = @user
+    user.name = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1"
+    user.email = "M4@tongji.com"
+    user.password = "ff"
+    user.password_confirmation = "ff"
+    assert !user.save
+  end
+
+  test "001_003_001" do
+    @user.name = "我同济"
     assert @user.save
+    user = User.new
+    user.name = "我同济"
+    user.email = "m5@fudan.edu.cn"
+    user.password = "11111111"
+    user.password_confirmation = "11111111"
+    assert !user.save
   end
 
-  test "should not save user with no password" do
-    @user.password = ""
-    assert !@user.save
+  test "001_004_001" do
+    user = @user
+    user.name = "测试4"
+    user.email = "dailin@gmail"
+    assert !user.save
+  end
+  
+  test "001_004_002" do
+    user = @user
+    user.name = "测试5"
+    user.email = "gmail.com"
+    assert !user.save
   end
 
-  test "密码过短应该报错" do
-    @user.password = "123"
-    @user.password_confirmation = "123"
-  end
-
-  test "should not save user with no password_confirmation" do
-    @user.password_confirmation = ""
-    assert !@user.save
-  end
-
-  test "should not save user with no email" do
-    @user.email = ""
-    assert !@user.save
-  end
-
-  test "should not save user with invalid email address" do
-    @user.email = "12345"
-    assert !@user.save
-  end
-
-  test "should not save user with invalid email address1" do
-    @user.email = "12345@asfjsda"
-    assert !@user.save
-  end
-
-  test "should not save user with invalid email address2" do
-    @user.email = "12345@asfj.@sda"
-    assert !@user.save
-  end
-
-  test "should save user with valid email address" do
-    @user.email = '"user@something"@example.com'
-    assert @user.save
-  end
-
-  test "should save user with very very strange email address" do
-    @user.email = %q{"very.(),:;<>[]\".VERY.\"very@\\ \"very\".unusual"@strange.example.com}
-    assert @user.save 
-  end
-
-  test "should not save user with very long email address" do
-    @user.email = "a@saklfjdsaklfjdsklfjksdljfkasdddaasdfsfddllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllsdjfklsdjfksdjfklsdjfklsdajfklsdajfklsajfklsdjfkljsdaklfjksdaljfklsdjflksdjflksdjafklsajflksdjfkljsdklfjsdakljfklsdajflksdajfklsdajjfksdjfklsdjfklsdajfklsdajfklsajfklsdjfkljsdaklfjksdaljfklsdjflksdjflksdjafklsajflksdjfkljsdklfjsdakljfklsdajflksdajfklsdajjfklsdajfklsdajfklsajfklsdjfkljsdaklfjksdaljfklsdjflksdjflksdjafklsajflksdjfkljsdklfjsdakljfklsdajflksdajfklsdajflkdsjalkfjsdalkjfklsajflksajfklsdjfklsdajfkldsjfkjsdaklfjsdklajfklasjfkldsjkfjskalfjklsdajfkldsjfklsdajfkldsjaklfjsaklfjskdajfklsajfklsdajfklsajfklasjklfdskladjfkdlsajfksaljfklsajjljsdafkljfklsdajf.com"
-    assert !@user.save
+  test "001_004_003" do
+    user = @user
+    user.name = "test6"
+    user.email = "dailin@gmail"
+    assert !user.save
   end
 
   test "密码1" do
