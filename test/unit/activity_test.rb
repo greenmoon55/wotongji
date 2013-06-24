@@ -3,6 +3,10 @@ require 'test_helper'
 
 class ActivityTest < ActiveSupport::TestCase
   def setup
+    4.times do |i|
+      Category.create!(name: "category#{i}")
+    end
+
     @activity = Activity.new
     @activity.title = "test"
     @activity.user_id = 1
@@ -127,4 +131,83 @@ class ActivityTest < ActiveSupport::TestCase
     check_invalid
   end
 
+  test "002_001_001" do
+    @activity.title = ""
+    @activity.content = "a"*55
+    @activity.category_id = 1
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert !@activity.save
+  end
+  
+  test "002_001_002" do
+    @activity.title = "Hello"
+    @activity.content = ""
+    @activity.category_id = 1
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert !@activity.save
+  end
+
+  test "002_001_003" do
+    @activity.title = "Book"
+    @activity.content = "一"*50
+    @activity.category_id = nil 
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert !@activity.save
+  end
+  
+  test "002_001_004" do
+    @activity.title = "测试"
+    @activity.content = "2013年10月，大数据报告演讲。"*10
+    @activity.category_id = 1 
+    @activity.start_time = ""
+    @activity.end_time = "2012-01-01 12:12"
+    check_error
+    assert !@activity.save
+  end
+
+  test "002_001_005" do
+    @activity.title = "金融"
+    @activity.content = "2011年11月，校运动会。"*20
+    @activity.category_id = 1 
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = ""
+    check_error
+    assert !@activity.save
+  end
+
+  test "002_002_001" do
+    @activity.title = "设计" * 50
+    @activity.content = "test" * 50
+    @activity.category_id = 1 
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert !@activity.save
+  end
+
+  test "002_003_001" do
+    @activity.title = "设计" * 50
+    @activity.content = "test" * 50
+    @activity.category_id = 1 
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert !@activity.save
+  end
+
+  test "002_004_001" do
+    @activity.title = "软件测试"
+    @activity.content = "saas"
+    @activity.category_id = 1 
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert !@activity.save
+  end
 end

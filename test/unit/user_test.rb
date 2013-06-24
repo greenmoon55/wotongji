@@ -85,7 +85,7 @@ class UserTest < ActiveSupport::TestCase
   test "001_005_001" do
     user = @user
     user.name = "test7"
-    user.email = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb@gmail.com"
+    user.email = "a"*196 + "@b.co"
     assert !user.save
   end
 
@@ -141,7 +141,7 @@ class UserTest < ActiveSupport::TestCase
   test "001_009_002" do
     user = User.new
     user.name = "do#gj*n"
-    user.email = "30787231837@qq.com"
+    user.email = "a"*196 + "@b.c"
     user.password = "dongjin"
     user.password_confirmation = "dongjin"
     assert user.save
@@ -149,11 +149,11 @@ class UserTest < ActiveSupport::TestCase
 
   test "001_009_003" do
     user = User.new
-    user.name = "dailin"
+    user.name = "t"*30
     user.email = "dailin_307481111@qq.com"
     user.password = "戴琳戴琳戴琳戴琳戴琳"
     user.password_confirmation = "戴琳戴琳戴琳戴琳戴琳" 
-    assert user.save
+    assert user.save, user.errors.messages.inspect
   end
 
   test "001_009_004" do

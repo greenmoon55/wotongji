@@ -18,6 +18,8 @@ gem 'bootstrap-wysihtml5-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem "mocha", :require => false
+
 group :development, :test do
   gem 'sqlite3'
   gem 'annotate'
