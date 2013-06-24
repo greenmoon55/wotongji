@@ -210,4 +210,54 @@ class ActivityTest < ActiveSupport::TestCase
     check_success
     assert !@activity.save
   end
+
+  test "002_005_001" do
+    @activity.title = "软件项目管理"
+    @activity.content = "test" * 50
+    @activity.category_id = 9 
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert !@activity.save
+  end
+
+  test "002_006_001" do
+    @activity.title = "软件学院会议"
+    @activity.content = "本次实验包括软件项目管理、软件测试的内容，请认真完成。" * 10
+    @activity.category_id = 1
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert @activity.save
+  end
+
+  test "002_006_002" do
+    @activity.title = "书"*50
+    @activity.content = "本次实验包括软件项目管理、软件测试的内容，请认真完成。" * 10
+    @activity.category_id = 2 
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert @activity.save
+  end
+
+  test "002_006_003" do
+    @activity.title = "Category_book"
+    @activity.content = "a" * 50
+    @activity.category_id = 3
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert @activity.save
+  end
+
+  test "002_006_004" do
+    @activity.title = "Book Name Hellow Book Name Hellow Book Name Hello"
+    @activity.content = "a" * 1000
+    @activity.category_id = 4
+    @activity.start_time = "2011-01-01 11:11"
+    @activity.end_time = "2012-01-01 12:12"
+    check_success
+    assert @activity.save
+  end
 end
