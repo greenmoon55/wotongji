@@ -164,11 +164,20 @@ class UserTest < ActiveSupport::TestCase
     user.password_confirmation = "te思d1111"
     assert user.save
   end
-  
-  test "密码1" do
+
+  test "002_001_001" do
+    assert @user.save, "保存失败"
+    assert @user.authenticate("") == false, "错误的密码"
+  end
+
+  test "002_002_001" do
+    assert @user.save, "保存失败"
+    assert @user.authenticate("11112222") == false, "错误的密码"
+  end
+
+  test "002_003_001" do
     assert @user.save, "保存失败"
     assert @user.authenticate("11111111"), "正确的密码"
-    assert @user.authenticate("1111111") == false, "错误的密码"
   end
 
 end
