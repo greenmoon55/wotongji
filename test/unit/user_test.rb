@@ -82,6 +82,89 @@ class UserTest < ActiveSupport::TestCase
     assert !user.save
   end
 
+  test "001_005_001" do
+    user = @user
+    user.name = "test7"
+    user.email = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb@gmail.com"
+    assert !user.save
+  end
+
+  test "001_006_001" do
+    user = @user.dup
+    user.name = "wotongji"
+    user.email = "dailin@gmail.com"
+    assert user.save
+    user = @user
+    user.name = "tj"
+    user.email = "dailin@gmail.com"
+    assert !user.save
+  end
+
+  test "001_006_002" do
+    user = @user.dup
+    user.name = "wotongji"
+    user.email = "dailin@gmail.com"
+    assert user.save
+    user = @user
+    user.name = "tj"
+    user.email = "DaiLin@gmail.com"
+    assert !user.save
+  end
+
+  test "001_007_001" do
+    user = User.new
+    user.name = "戴琳"
+    user.email = "307423@qq.com"
+    user.password = "happy"
+    user.password_confirmation = "happy"
+    assert !user.save
+  end
+
+  test "001_008_001" do
+    user = User.new
+    user.name = "董金"
+    user.email = "dongjin@sohu.com"
+    user.password = "happyhappy"
+    user.password_confirmation = "greatgreat"
+    assert !user.save
+  end
+
+  test "001_009_001" do
+    user = User.new
+    user.name = "戴佳"
+    user.email = "daijia@gmail.edu.cn"
+    user.password = "dai*jia"
+    user.password_confirmation = "dai*jia"
+    assert user.save
+  end
+
+  test "001_009_002" do
+    user = User.new
+    user.name = "do#gj*n"
+    user.email = "30787231837@qq.com"
+    user.password = "dongjin"
+    user.password_confirmation = "dongjin"
+    assert user.save
+  end
+
+  test "001_009_003" do
+    user = User.new
+    user.name = "dailin"
+    user.email = "dailin_307481111@qq.com"
+    user.password = "戴琳戴琳戴琳戴琳戴琳"
+    user.password_confirmation = "戴琳戴琳戴琳戴琳戴琳" 
+    assert user.save
+  end
+
+  test "001_009_004" do
+    user = User.new
+    user.name = "test我同济"
+    user.email = 'happy@end"se@qq.com'
+    user.password = "te思d1111"
+    user.password_confirmation = "te思d1111"
+    assert user.save
+  end
+  
   test "密码1" do
     assert @user.save, "保存失败"
     assert @user.authenticate("11111111"), "正确的密码"
