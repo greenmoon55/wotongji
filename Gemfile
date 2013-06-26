@@ -19,10 +19,13 @@ gem 'bootstrap-wysihtml5-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "mocha", :require => false
+  gem 'test-unit'
+  gem 'rack-mini-profiler'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'annotate'
+  gem 'ruby-prof'
 end
 
 group :production do
