@@ -27,19 +27,13 @@ class Activity < ActiveRecord::Base
 
   validates :title, :content, :end_time, :start_time, :user_id, presence: true
   validates :title, length: { maximum: 50 }
-  validates :content, length: { minimum: 50}
+  validates :content, length: { minimum: 50, maximum: 1000}
+  validates :category_id, presence: true
 
   #validate :start_time_before_end_time
 
   def start_time_before_end_time
-    logger.info self
-    logger.info self.title
-    logger.info self.title
-    logger.info self.title
-    logger.info self.title
-    logger.info self.title
-    logger.info self.title
-    if start_time >= end_time
+    if start_time > end_time
       errors.add(:alarm, "开始时间应早于结束时间")
     end
   end
